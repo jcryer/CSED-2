@@ -1,0 +1,33 @@
+Minutes 17/02/2020
+
+Attendning:
+- Teo
+- Sam 1 + 2
+- Lance
+- Eddy
+- Sandra
+- Adam
+- Joe
+
+Minutes:
+
+Key points on spec: 
+	code quality not important
+	data can be fake
+
+Ideas for project:
+	Dietting tracking
+	Music tracking
+
+Decided on music tracking
+
+Personal projects dealt out:
+
+Fraser:
+A description of the problem area (Personal Informatics) supported by references to goodquality contemporary literature.
+
+Sam D:
+A clear statement of the main aim of your software system as a potential solution in theproblem area.
+
+Others:
+Gather articles for research and a short paragraph on what they're about
