@@ -1,0 +1,31 @@
+Minutes 20/02/2020
+Attendance:
+- Sam F
+- Sam D
+- Eddy
+- Lance
+- Sandra
+- Adam
+- Fraser
+- Teo
+- Joe
+Minutes: 12.15pm – 13.05pm
+Key Points
+-	Music Tracking, looking into a different users patterns.
+-	Mood assumptions based on the type of music they are listening to.
+-	Is the project ethical.
+Joe, Teo, Lance:
+-	Requirements.
+Sandra:
+-	Ethics
+Eddy, Sam F, Adam:
+-	Research, data collection and representation
+Eddy:
+-	Latex 
+
+By next meeting:
+-	Introduction
+-	Started requirements.
+-	Begin looking into ethics.
+-	Additional research.
+
