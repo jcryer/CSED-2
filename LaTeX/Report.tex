@@ -1,7 +1,10 @@
 \documentclass[12pt]{report}
-\usepackage[utf8]{inputenc}
-\setcounter{section}{0}
+%\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage[hyphens]{url}
 
+%Removes 'Chapter x' at the start of each section
+\titleformat{\chapter}[display] {\normalfont\bfseries}{}{0pt}{\Large}
 
 \title{CSED Coursework 2}
 \author{
@@ -36,11 +39,16 @@
 \section{Proposed Solution}
 
 Since the problem domain is personal informatics, we have decided to research how music can affect a listeners' mood and perspective based mainly on the type of music they are listening to, whether that is upbeat music or it’s a more calming sound, etc. We will also be looking into how different genres will impact on users, and we will take into consideration the time of day as well. Our application will analyse this data and return the mood that a user would generally feel while listening to it. We will be collecting this data from music streaming app Spotify. We would like to have the framework to include different music streaming services such as Apple Music, Deezer, etc.
-We know of features which are similar to what we aim to create. For example, Spotify Wrapped, which started as a simple microsite in 2015, showing users how they engaged with the service [1]. In 2018, they introduced a personalised feature based off the original in 2015. This personalised feature shows their most listened-to artists, albums, songs, playlists and features from across the year for all users [2]. This has required Spotify to start taking users listening data in order for them to create their annual list for each user. This helps us as the Spotify API which we are going to end up using has a lot of features which we can implement into our own work [3]. We can use this API to look at the danceability, energy, liveliness, loudness, etc. These will be taken into account when analysing the data.
+
+We know of features which are similar to what we aim to create. For example, Spotify Wrapped, which started as a simple microsite in 2015, showing users how they engaged with the service \cite{Swant}. In 2018, they introduced a personalised feature based off the original in 2015. This personalised feature shows their most listened-to artists, albums, songs, playlists and features from across the year for all users \cite{Somerville}. This has required Spotify to start taking users listening data in order for them to create their annual list for each user. This helps us as the Spotify API which we are going to end up using has a lot of features which we can implement into our own work \cite{WebAPI}. We can use this API to look at the danceability, energy, liveliness, loudness, etc. These will be taken into account when analysing the data.
+
 For this project we will primarily be looking into the Spotify API only in order to show the main features and the capability of our application, however, we will generalise a lot of the code, this will greatly increase the extensibility of the application. This makes it so we able to add other APIs such as Apple Music and Deezer. Doing this, our application would be able to be used by more than one music streaming apps, broadening our target audience, making it accessible to a larger number of potential users. This will maximise the amount of people we can potentially help with our app.
-There have been a number of articles related to studies conducted linking people’s moods to upbeat or sad songs. According to a study by Psych Central, upbeat music more than likely raises the mood and perception of a listener [4]. Upbeat music tends to be more happier. It has also been established that people listen to sad music are often sad and are looking for comfort, pleasure or pain [5]. All this type of information will be very useful in determining the mood and perspective of a listener. However, there are other things we must include like what makes exactly makes a song a happy one or a sad one, and whether a genre has an impact on being happy or sad.
+
+There have been a number of articles related to studies conducted linking people’s moods to upbeat or sad songs. According to a study by Psych Central, upbeat music more than likely raises the mood and perception of a listener \cite{Nauert2018}. Upbeat music tends to be more happier. It has also been established that people listen to sad music are often sad and are looking for comfort, pleasure or pain \cite{Eerola2016}. All this type of information will be very useful in determining the mood and perspective of a listener. However, there are other things we must include like what makes exactly makes a song a happy one or a sad one, and whether a genre has an impact on being happy or sad.
 
 
-
+%Loads bibliography
+\bibliography{ref}{}
+\bibliographystyle{bathx}
 
 \end{document}

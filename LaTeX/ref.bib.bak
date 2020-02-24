@@ -1,0 +1,41 @@
+% Encoding: UTF-8
+
+@Unpublished{Swant,
+  author = {Marty Swant},
+  title  = {{Spotify Rolls Out New {'Wrapped'} Campaign To Help Users Remember Their Decade Of Music}},
+  note   = {Introduction},
+  year   = {2019},
+  url    = {https://www.forbes.com/sites/martyswant/2019/12/17/spotify-rolls-out-new-wrapped-campaign-help-users-remember-their-decade-of-music/},
+}
+
+@Unpublished{Somerville,
+  author = {Ewan Somerville},
+  title  = {{Spotify Wrapped 2019: here's how to see your most played song statistics for the year and decade}},
+  note   = {Intro},
+  year   = {2019},
+  url    = {https://inews.co.uk/culture/spotify-wrapped-2019-when-date-statistics-year-decade-review-top-songs-most-played-1330397},
+}
+
+@Manual{WebAPI,
+  title = {{Spotify WebAPI Documentation}},
+  year  = {2020},
+  url   = {https://developer.spotify.com/documentation/web-api/},
+}
+
+@Article{Nauert2018,
+  author  = {Rick Nauert},
+  title   = {{Upbeat Music Helps Improve Mood}},
+  journal = {The Journal of Positive Psychology},
+  year    = {2018},
+  url     = {https://psychcentral.com/news/2013/05/16/upbeat-music-helps-improve-mood/54898.html},
+}
+
+@Article{Eerola2016,
+  author  = {Tuomas Eerola and Henna-Riikka Peltola},
+  title   = {{Memorable Experiences with Sad Music—Reasons, Reactions and Mechanisms of Three Types of Experiences}},
+  journal = {Plos One},
+  year    = {2016},
+  url     = {https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0157444},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
