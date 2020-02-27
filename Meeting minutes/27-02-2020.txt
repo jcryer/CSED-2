@@ -1,0 +1,37 @@
+Minutes 27/02/2020
+Attendance:
+- Sam F
+- Sam D
+- Eddy
+- Sandra
+- Adam
+- Fraser
+- Joe
+
+Minutes: 12:15pm - 1:05pm
+Key Points
+- 	
+
+Potential Features list:
+- Serverside listener 
+	- Listen = 30 seconds+
+	- Database
+		- Make an object class
+		- Setup tables
+	- Connect to Spotify Web API
+	- Setup Web API for client
+- Client
+	- UI
+	- Receive from server Web API	
+	- Good visualisation of data
+		- Timeline of your listening history
+		- Recommendations
+
+
+By next meeting:
+- 	
+
+
+
+
+
