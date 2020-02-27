@@ -9,7 +9,6 @@ Attendance:
 Minutes: 11.15am - 12pm
 Key Points
 -	Continue requirements and ethics.
--	
 
 By next meeting:
 -	Finish requirements.
