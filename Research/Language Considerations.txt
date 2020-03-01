@@ -1,0 +1,20 @@
+programming langauges:
+
+	- interfacing with spotify api
+	  -- .NET, Clojure, Elixir, Go, Java/Android, Javascript(Client-Side), Node.JS, Perl, PHP, Python
+	   - https://developer.spotify.com/documentation/web-api/libraries/
+
+	- be able to store data nicely
+ 	  -- C#, Java, Javascript, Perl, Python
+	   - https://www.json.org/
+
+	- decent networking capabilities
+	  -- JavaScript, Python, Perl, SQL.
+
+	- speed to network
+	  -- Java, JavaScript, C, C++
+
+	- data visualisation
+	  -- Any, just code it right.
+
+
