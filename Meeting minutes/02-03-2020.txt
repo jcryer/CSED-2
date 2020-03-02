@@ -1,0 +1,20 @@
+02/03/20
+
+In Attendance
+-Eddy
+-Fraser
+-Joe
+-Sam
+-Sandra
+-Adam
+-Lance
+-Teo
+
+TODO:
+-Research password security
+-Ethics of security
+-Write sprint into GitHub
+-Add report requirements to GitHub
+
+Decided:
+-Languages: Front: JS, HTML, CSS; Back: Node and SQLite
