@@ -1,0 +1,20 @@
+Minutes 05/03/2020
+Attendance:
+- Joe
+- Fraser
+- Sandra
+- Adam
+- Teo
+- Eddy
+- Sam D
+
+Key points:
+- Add a test plan for end of sprint.
+- Sprint is going to plan.
+- Everyone continue their sprint jobs.
+
+Eddy:
+- Test plan for sprint.
+
+Eddy, Fraser:
+- Work on UML Diagrams.
