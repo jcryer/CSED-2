@@ -1,1 +1,81 @@
+$(document).ready(function() {
+	$('#submit').click(function() {
+		var username = $('username').val();
+		var password = $('password').val();
+		//$.post("https://csed-server.herokuapp.com/api/login/", {"username": username, "password": password});
+		
+		$.ajax({
+			url: "https://csed-server.herokuapp.com/api/login/",
+			type: "POST",
+			data: JSON.stringify({"username": username, "password": password}),
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			success: function() {
+				console.log("Works");
+			}
+		});
+	});
+});
 
+
+
+
+<!DOCTYPE html>
+<html>
+
+	<style>
+	
+		* {
+		
+			font-family: arial;
+			
+		}
+		
+		h1 {
+		
+			font-size: 40px;
+		
+		}
+		
+		form {
+		
+			font-size: 20px;
+		
+		}
+	
+	</style>
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src = "login.js"></script>
+
+	<script>
+		
+		function userLogin() {	
+			document.location = "differentPage.html";
+		}
+	
+	</script>
+
+	<title> Login Page </title>
+
+	<body>
+	
+		<center>
+		
+			<h1> Login Page </h1><br><br>
+			
+			<form name = "loginForm">
+			
+				<label for = "username">Enter username:</label><br>
+				<input type = "text" id = "username" name = "username"><br><br>
+				<label for = "password">Enter password:</label><br>
+				<input type = "text" id = "password" name = "password"><br><br>
+				
+			</form>
+			
+			<button id="submit">Submit</button>
+
+		</center>
+
+	</body>
+
+</html>
