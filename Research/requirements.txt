@@ -1,0 +1,8 @@
+Description: The web app must attempt to send data to the client when requested. This data could be specified so it needs to be able to handle the specific request. The web app will then deal with the data it is given. 	Priority: HIGH
+Dependencies: 
+
+
+
+
+
+Description: The web app must be able to request data from the server for whatever process it would like the data for. This data should be able to be requested for specific data, for example, song details, song name or even everything in a database, etc. This is useful as it can restrict the amount of data to be sent over to the network.
