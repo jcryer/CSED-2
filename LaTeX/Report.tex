@@ -74,6 +74,25 @@ Upon reviewing all the data we had gathered to compile our list of requirements,
 
 When we had created our list of requirements, we were careful to avoid any conflicting requirements. These could have arisen from varying opinions from different stake holders. In order to avoid including conflicting requirements, we considered all the data that we had collected and then prioritised the one with the highest interest. Finally, we split all of our requirements into a structured indexed list to help illustrate dependencies and also to avoid repetition or conflict between requirements.
 
+\section{Functional}
+
+\begin{table}[]
+\begin{tabular}{lll}
+\hline
+\multicolumn{3}{|l|}{1. Requirement Name - Server} \\ \hline
+1.1 & Send data to client when requested & Author: Sam Davidson \\
+\multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}The web app must attempt to send data to the client when requested.\\ This data could be specified so it needs to be able to handle the\\ specific request. The web app will then deal with the data it is given.\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Priority: HIGH\\ Dependencies: 2.1\end{tabular} \\ \hline
+\multicolumn{3}{|l|}{2. Requirement Name - Data Collection} \\ \hline
+2.1 & Get data from Spotify & Author: Joseph Cryer \\
+\multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}The server must be able to request data from Spotify’s public web API for a user. This can only happen once this user has connected to Spotify through our system successfully. \\ 	\\ Our system must send a message to the Spotify web API containing the authorisation token for that user (see 'Connect to Spotify'). On success, Spotify's web API will return an access token that can then be used to make requests to the API for a certain amount of time.\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Priority: HIGH\\ Dependencies: None\end{tabular} \\ \hline
+\multicolumn{3}{|l|}{3. Requirement Name - Data Storage and Processing} \\ \hline
+3.1 & Store data from Spotify for each user & Author: Teodora Dinca \\
+\multicolumn{2}{l}{The server must process the data received from the Spotify API and take all the data that will be used and put it into a database in an efficient intermediate format keeping only the data we need and not storing any redundant data which offers little to no value to our client.} & \begin{tabular}[c]{@{}l@{}}Priority: HIGH\\ Dependencies: 2.1\end{tabular} \\
+3.2 & Recommend songs based on trends & Author: Fraser Dwyer \\
+\multicolumn{2}{l}{The system should be able to recommend songs to the user based off of mood patterns or based off of genre that the user likes to listen to.} & \begin{tabular}[c]{@{}l@{}}Priority: MEDIUM\\ Dependencies: None\end{tabular} \\ \hline
+\end{tabular}
+\end{table}
+
 %Loads bibliography
 \bibliography{ref}{}
 \bibliographystyle{bathx}
