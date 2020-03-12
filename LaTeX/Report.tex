@@ -55,6 +55,44 @@ For this project we will primarily be looking into the Spotify API only in order
 
 There have been a number of articles related to studies conducted linking people’s moods to upbeat or sad songs. According to a study by Psych Central, upbeat music more than likely raises the mood and perception of a listener \cite{Nauert2018}. Upbeat music tends to be more happier. It has also been established that people listen to sad music are often sad and are looking for comfort, pleasure or pain \cite{Eerola2016}. All this type of information will be very useful in determining the mood and perspective of a listener. However, there are other things we must include like what makes exactly makes a song a happy one or a sad one, and whether a genre has an impact on being happy or sad.
 
+
+\chapter{Requirements}
+
+\section{Gathering - FD}
+
+In order to make our system as useful as possible, we decided to collect our requirements from a wide range of varying resources. Primarily, we researched heavily into the area surrounding Personal Informatics and based a large portion of our requirements off this. By gathering a lot of requirements from articles such as those that have been peer reviewed allows us to have a better understanding about the sorts of things that our final system should and shouldn’t be doing.
+
+Moreover, we held a focus group. During this focus group, several requirements that we had missed were made apparent. By having a semi-structured conversation with potential stake holders, we were able to see roughly what a large proportion of people would want from a system like the one that we are developing. In addition to this, the focus group allowed us to quickly and efficiently gather data from people who most greatly reflect the audience we are aiming for. This meant that we had more time to work on constructing the system as opposed to researching for more requirements.
+
+Finally, we also sent out a questionnaire. We received X RESPONSES, from which we were able to gather additional requirements. From the focus group, a mass of information was yielded which showed us a lot of perspectives we hadn’t necessarily put a lot of thought into. It also provided many niche requirements which if we have time to get to would really enrich our system and take it a step above where we were aiming before.
+
+\section{Priorities - FD}
+
+Upon reviewing all the data we had gathered to compile our list of requirements, we labelled all of our requirements with priorities and dependencies. The dependencies really highlighted how crucial some requirements were and which of our requirements were more of the additional extras which would be nice to include if time allows. We considered the necessity of each requirement and its dependencies for the priority of any given requirement.
+
+\section{Conflicts - FD}
+
+When we had created our list of requirements, we were careful to avoid any conflicting requirements. These could have arisen from varying opinions from different stake holders. In order to avoid including conflicting requirements, we considered all the data that we had collected and then prioritised the one with the highest interest. Finally, we split all of our requirements into a structured indexed list to help illustrate dependencies and also to avoid repetition or conflict between requirements.
+
+\section{Functional}
+
+\begin{table}[]
+\begin{tabular}{lll}
+\hline
+\multicolumn{3}{|l|}{1. Requirement Name - Server} \\ \hline
+1.1 & Send data to client when requested & Author: Sam Davidson \\
+\multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}The web app must attempt to send data to the client when requested.\\ This data could be specified so it needs to be able to handle the\\ specific request. The web app will then deal with the data it is given.\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Priority: HIGH\\ Dependencies: 2.1\end{tabular} \\ \hline
+\multicolumn{3}{|l|}{2. Requirement Name - Data Collection} \\ \hline
+2.1 & Get data from Spotify & Author: Joseph Cryer \\
+\multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}The server must be able to request data from Spotify’s public web API for a user. This can only happen once this user has connected to Spotify through our system successfully. \\ 	\\ Our system must send a message to the Spotify web API containing the authorisation token for that user (see 'Connect to Spotify'). On success, Spotify's web API will return an access token that can then be used to make requests to the API for a certain amount of time.\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Priority: HIGH\\ Dependencies: None\end{tabular} \\ \hline
+\multicolumn{3}{|l|}{3. Requirement Name - Data Storage and Processing} \\ \hline
+3.1 & Store data from Spotify for each user & Author: Teodora Dinca \\
+\multicolumn{2}{l}{The server must process the data received from the Spotify API and take all the data that will be used and put it into a database in an efficient intermediate format keeping only the data we need and not storing any redundant data which offers little to no value to our client.} & \begin{tabular}[c]{@{}l@{}}Priority: HIGH\\ Dependencies: 2.1\end{tabular} \\
+3.2 & Recommend songs based on trends & Author: Fraser Dwyer \\
+\multicolumn{2}{l}{The system should be able to recommend songs to the user based off of mood patterns or based off of genre that the user likes to listen to.} & \begin{tabular}[c]{@{}l@{}}Priority: MEDIUM\\ Dependencies: None\end{tabular} \\ \hline
+\end{tabular}
+\end{table}
+
 %Loads bibliography
 \bibliography{ref}{}
 \bibliographystyle{bathx}
