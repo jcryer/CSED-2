@@ -2,6 +2,7 @@
 %\usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage[hyphens]{url}
+\usepackage{verbatim}
 
 %Removes 'Chapter x' at the start of each section
 \titleformat{\chapter}[display] {\normalfont\bfseries}{}{0pt}{\Large}
@@ -20,7 +21,7 @@
 	\and
 	Sam Freeman
 	\and
-	Sandra Comradi
+	Sandra-Maria Comradi
 	\and
 	Teodora Dinca
 }	
@@ -76,8 +77,11 @@ When we had created our list of requirements, we were careful to avoid any confl
 
 \section{Functional}
 
+
+%Old Requirements table 
+\begin{comment}
 \begin{table}[]
-\begin{tabular}{lll}
+\begin{tabularx}{l l l }
 \hline
 \multicolumn{3}{|l|}{1. Requirement Name - Server} \\ \hline
 1.1 & Send data to client when requested & Author: Sam Davidson \\
@@ -92,6 +96,56 @@ When we had created our list of requirements, we were careful to avoid any confl
 \multicolumn{2}{l}{The system should be able to recommend songs to the user based off of mood patterns or based off of genre that the user likes to listen to.} & \begin{tabular}[c]{@{}l@{}}Priority: MEDIUM\\ Dependencies: None\end{tabular} \\ \hline
 \end{tabular}
 \end{table}
+\end{comment}
+
+\begin{tabular}{| p{10cm} | p{3cm} |}
+\hline
+\multicolumn{2}{|l|}{\textbf{\textit{1. Server}}} \\
+\hline
+\textbf{1.1 - Send data to client when requested} & \textbf{Author: SD} \\
+\hline
+The web app must attempt to send data to the client when requested. This data could be specified so it needs to be able to handle the specific request. The web app will then deal with the data it is given. & Priority: HIGH Dependencies: 2.1 \\
+\hline
+\multicolumn{2}{|l|}{\textbf{\textit{2. Data Collection}}} \\
+\hline
+\textbf{2.1 - Get data from Spotify} & \textbf{Author: JC} \\
+\hline
+The server must be able to request data from Spotify’s public web API for a user. This can only happen once this user has connected to Spotify through our system successfully. Our system must send a message to the Spotify web API containing the authorisation token for that user (see 'Connect to Spotify'). On success, Spotify's web API will return an access token that can then be used to make requests to the API for a certain amount of time. & Priority: HIGH Dependencies: None \\
+\hline
+\multicolumn{2}{|l|}{\textbf{\textit{3. Data Storage and Processing}}} \\
+\hline
+\textbf{3.1 - Get data from Spotify} & \textbf{Author: TD} \\
+\hline
+The server must process the data received from the Spotify API and take all the data that will be used and put it into a database in an efficient intermediate format keeping only the data we need and not storing any redundant data which offers little to no value to our client. & Priority: HIGH Dependencies: 2.1 \\
+\hline
+\textbf{3.2 - Recommend songs based on trends} & \textbf{Author: FD} \\
+\hline
+The system should be able to recommend songs to the user based off of mood patterns or based off of genre that the user likes to listen to. & Priority: MED Dependencies: None \\
+\hline
+\multicolumn{2}{|l|}{\textbf{\textit{4. Client}}} \\
+\hline
+\textbf{4.1 - Create a new account} & \textbf{Author: SC} \\
+\hline
+The server must allow the user to create a new account. The user will be required to enter a username and a password when creating an account. The information will be sent to the server which will check it against the existing users’ usernames. If the username they entered already exists, the user will receive an error asking them to enter another username. If the username they entered is valid, a new account will be created by adding the new user’s information to the users list (the username and the hashed password). A new file will be created and linked to the user in which future data will be stored. The user will receive a message saying that their account has been created. & Priority: HIGH Dependencies: 3.1 \\
+\hline
+\textbf{4.2 - Connect to Spotify} & \textbf{Author: JC} \\
+\hline
+The client must request that the user connects their account to their Spotify account. The user will be redirected to a Spotify webpage showing the data that is being requested by our system, and will be asked to first login to Spotify, and then authorise our system to use the relevant data. If successful, a 'success' callback message will be sent to the server containing an authorisation code, meaning our system can now make requests to the Spotify web API to request that user's music data. If unsuccessful, a 'fail' callback message will be sent to the server. & Priority: HIGH Dependencies: None \\
+\hline
+\textbf{4.3 - Login to the Server} & \textbf{Author: SC} \\
+\hline
+The server must allow users to log into their accounts. The user will need to enter their username and password. The server will then try to find the given username in the usernames list. If it is not found the user will receive an error. If it is found, then the supplied password will be hashed and compared with the stored hash. If the password is correct the user will be logged in and will have access to his data, otherwise the user will receive an error. &  Priority: HIGH Dependencies: 1.1, 3.1, 4.1 \\
+\hline
+\textbf{4.4 - Display data to the user} & \textbf{Author: TD} \\
+\hline
+Reformat data into a set of interesting visual representations which can be displayed to the user, data for these visual representations should be provided only when they are actually requested by the user so as to save the user bandwidth and reduce server load, these should also follow the guidelines for visual data as set out in the research and each should have a specific aim such that they provide the user with understandable and usable data &  Priority: HIGH Dependencies: 1.1, 3.1, 4.1, 4.2, 4.3 \\
+\hline
+\textbf{4.5 -Request data from server} & \textbf{Author: SD} \\
+\hline
+The web app must be able to request data from the server for whatever process it would like the data for. This data should be able to be requested for specific data, for example, song details, song name or even everything in a database, etc. This is useful as it can restrict the amount of data to be sent over to the network. & Priority: HIGH Dependencies: 2.1, 4.3 \\
+\hline
+
+\end{tabular}
 
 %Loads bibliography
 \bibliography{ref}{}
