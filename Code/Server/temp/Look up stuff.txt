@@ -1,0 +1,40 @@
+[14:31] Joseph Cryer
+
+{songs :[
+{
+"hour": 3,
+"mood": 2
+},
+
+{
+"hour": 6,
+"mood": 3
+},
+
+
+{
+"hour": 5,
+"mood": 1
+}
+
+]}
+
+
+0: Neutral
+1: Happy
+5: Exuberant
+7: Joyful
+ 
+3: Calm
+8: Contentment
+9: Relaxing
+13: For Concentration
+14: Motivational
+ 
+6: Lively
+10: Frantic
+4: Energetic
+ 
+11: Depressing
+12: Melancholic
+2: Sad

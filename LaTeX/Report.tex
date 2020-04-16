@@ -81,7 +81,7 @@ Initially, we planned to have three, two-week sprints in our project. Alongside 
 
 \section{Prior Research - LG}
 
-This research was performed before the final solution was decided, it was performed by various members then collated by Lance Garcia:\newline
+This research was performed before the final solution was decided, it was performed by various members then collated by Lance Garcia.\newline
 
 A recurring theme throughout our research into personal informatics is the idea that the user must want to track their data, as well understand how to best make use of the system given to them. \cite{Rapp2014a} suggests that “common users” with little prior experience can suffer from problems with familiarity and motivation with the tracking of their personal data. They go on to suggest factors that affect self-monitoring such as “motivation for change” and “goal-setting feedback and reinforcement” should be kept in mind during the development of the program in order to maximise user interaction with the app. Through the factors given in this article, we should be able to increase the effectiveness of the user monitoring their own data, as well as collect accurate and important data.
 
@@ -93,7 +93,7 @@ The idea of trust in a system is an important concept; a user’s trust in the s
 
 \section{Security Ethics - ?}
 
-This research was performed during the production of the product, in order to assertain ethcal guidelines for users to developers to follow when securing user data\newline
+This research was performed during the production of the product, in order to assertain ethcal guidelines for users to developers to follow when securing user data.\newline
 
 The idea of responsible disclosure is highlighted by \cite{2010a} which describe it as: “researchers who uncover a flaw don't go public until the system's developer has had a chance to fix it”.  This is of note as this not only provides the developer’s with time to patch their system, but also to prevent the public from losing trust in said system.  Responsible disclosure is a “community accepted” protocol, so while it may not be mandatory for researchers and developers to follow through, it is in the best interest of most companies to align themselves by it.
 
@@ -102,7 +102,7 @@ A growing ethical concern is the phenomenon of social networks.  With the group 
 
 \section{Hashing and Password Storage - AG}
 
-This research was performed during the production of the product, in order to assertain security guidelines for the storing of passwords \newline
+This research was performed during the production of the product, in order to assertain security guidelines for the storing of passwords.\newline
 
 Without any sort of hashing or protection a database breach could lead attacks to obtaining users usernames and passwords in plaintext, allowing them to access users accounts on this or any other service which they used the same credientials for in a credential stuffing attack, one of the most common styles of cyber attacks \cite{OWASP2020}. Hasing turns a plaintext password into a random string of characters which cannot be unhashed, instead, when a user enters their password it is hashed and the 2 hashes are comapred.
 
@@ -110,9 +110,18 @@ A common principle to follow in system security is Shannon's Maxim: "one ought t
 
 For this reason salts are used, which are randomly generated strings added to the password before hashing when the password is created, the salt is stored in the database alongside the password. This helps prevent against these pre-calculated hash tables because the hacker has to then recalculate these tables for each user they wish to hack into as they will have their own unique salt with them which makes these attacks more costly. Brute force attacks can never be fully stopped but using a modern hashing alogrithm can make it more expensive for the attcker, as these focus less on speed, but instead flexiblity, for exmaple, argon2 has parameters such as memory size, iteration count, parallelism and salt length which can be adjusted to make the hash more (or less) complex making it more expensive to brute force as more resources can be required to perform a hash \cite{Biryukov2016}. For these reasons we recommened the use of Argon2 over other modern algorithms such as the SHA family or Bcrypt.
 
-\section{Song attributes and mood - SD}
+\section{Ethics of Data Storage - SD}
 
-This resesarch was performed during the production of the product, in order to assertain the relationship between characteristics of songs and their moods\newline
+This research was performed during the production of the product, in order to assertain guidelines for the storage and usage of user data.\newline
+
+Data today is something that is a key asset to companies and the day to day operations in the world. Behind it, there are many legal and ethical aspects which are important to the privacy and safety of the users who give up their data. To understand what the responsibilities are we would look into the Association of Computing  Machinery’s Code of Ethics and Professional Conduct. In section 1.2 it is considered a general ethical principle to “avoid harm”, harm meaning any negative or unfair and significant consequences \cite{ComputingMachineryACM2018}. In terms of the data that we hold, if we pass on or give up the data to anyone else other than just for our program then we would potentially be harming the user, who have put their trust in us using their data. One example of a large company misusing information is the Facebook-Cambridge Analytica scandal in 2018. This is when Facebook allowed enough data for the political consulting company Cambridge Analytica to create psychological profiles on 70.6 million US citizens during the US presidential election in 2016 \cite{Horwitz2018}. They used this collected data to create political regressive models on users for advertisement purposes, this led to predicting users personalities which were then presented with adverts which promoted certain political agendas, influencing voters through micro-targeted advertisements \cite{Rathi2019}. This incident was considered illegal and unethical as they broke the British law, harvesting almost all data without explicit consent \cite{ASNC2018}. As we are dealing with personal information as well, it is very possible that the data we collect could create psychological profiles. This must be avoided and data collected will be deleted after its intended use.
+
+So when considering the ethical concerns for storing and analysis of data, there is none when the user has given their expressed consent where they are informed fully of what the data will be used for. Additionally, with accordance to the GDPR, which looks for fairness and transparency, if a user wishes to retract their information from being used then we must return or delete the data. We must also only use the data we collect for the use we have clearly said to the user
+
+
+\section{Song attributes and mood - SC}
+
+This resesarch was performed during the production of the product, in order to assertain the relationship between characteristics of songs and their moods.\newline
 
 SANDRA PLEASE DO THIS
 LOVE YOU XXX
@@ -159,17 +168,95 @@ Motivational		&n&+&+&/\\
 \end{longtable}
 
 
-\chapter{Risk Assessment - LG}
-Personal informatics applications are already a market that exists, with many apps surrounding the tracking of music, such as Spotify Wrapped, and Last.fm.  As a result, one risk we must consider is how our app is going to break into the market, with big music app owners already tracking their own data and sharing it with their customers.   A potential solution to this is to have our app cover various music apps and for it to combine the statistics for all the apps.  This would allow us to cover a larger audience than other apps would as many users only use one specific app to listen to music due to premium memberships in apps like Apple Music and Spotify.  In addition to this, it would enable us to cater to users that use multiple apps as all their stats would be available in a single app rather than having them use various apps for several music streaming services.
+\chapter{Risk Assessment - LG \& SD}
+Personal informatics applications already exist within a market, with many apps surrounding the tracking of music, such as Spotify Wrapped, and Last.fm. As a result, one risk we must consider is how our app is going to break into the market, with big music app owners already tracking their own data and sharing it with their customers. A potential solution to this is to have our app cover various music apps and for it to combine the statistics for all the apps. This would allow us to cover a larger audience than other apps would as many users only use one specific app to listen to music due to premium memberships in apps like Apple Music and Spotify. In addition to this, it would enable us to cater to users that use multiple apps as all their stats would be available in a single app rather than having them use various apps for several music streaming services.
 
-Understanding the customer is vital to creating a good product, however as developers, we may not always understand the customers’ point of view since we are the ones designing the program.  As a countermeasure to this, we have ensured that we have done plenty of research into our audience, including the creation of a questionnaire for simple feedback, and having a focus group for more in depth feedback from a group of people that are unrelated to the development of the app.  It is important to get clear and concise feedback where possible as this means that there is less to be misunderstood by the developers, thus allowing us to satisfy the customers’ needs.
+Understanding the customer is vital to creating a good product, however as developers, we may not always understand the customers’ point of view since we are the ones designing the program. As a countermeasure to this, we have ensured that we have done plenty of research into our audience, including the creation of a questionnaire for simple feedback, and having a focus group for more in depth feedback from a group of people that are unrelated to the development of the app. It is important to get clear and concise feedback where possible as this means that there is less to be misunderstood by the developers, thus allowing us to satisfy the customers’ needs.
 
-Furthermore, maintenance post development is important for the system to succeed in the long term.  In the event that the app is not maintained after release, then there is a high likelihood of one of the music streaming services updating their services such as their API, this would lead to our app being incompatible with the streaming service, which would lead to a loss of customers.  As a result, in order to keep up with rapidly evolving and updating applications, we too must keep pace, and update our system as necessary so that it will be able to function as intended as much as possible.
+Furthermore, maintenance post development is important for the system to succeed in the long term. In the event that the app is not maintained after release, then there is a high likelihood of one of the music streaming services updating their services such as their API, this would lead to our app being incompatible with the streaming service, which would lead to a loss of customers. As a result, in order to keep up with rapidly evolving and updating applications, we too must keep pace, and update our system as necessary so that it will be able to function as intended as much as possible.
 
-The threat of coronavirus is something that must be considered.  As not only could it potentially incapacitate a member of our group, but it can also lead to the quarantine of the university.  This would lead to us being unable to meet up in person and could make working together challenging.  One way we could work around this is through using online messaging apps, which we already do, but in place of in person meetings, we would need to use the support of social networking apps such as WhatsApp, Microsoft Teams, or Discord.  As WhatsApp has a limit of four people in a video call, using Microsoft Teams or Discord would be ideal; it is not required that we see each other’s faces when in call however, so this is of little importance.  Coronavirus would not only affect our group’s members but would also affect our potential audience.  This may lead to a change in the types of music that users would listen to, as well as potentially change how much they listen to said music.  
+The threat of coronavirus is something that must be considered. As not only could it potentially put a member of our group out of action, but it can also lead to the quarantine of the university. This would lead to us being unable to meet up in person and could make working together challenging. One way we could work around this is through using online messaging apps, which we already do, but in place of in person meetings, we would need to use the support of social networking apps such as WhatsApp, Microsoft Teams, or Discord. As WhatsApp has a limit of four people in a video call, using Microsoft Teams or Discord would be ideal; it is not required that we see each other’s faces when in call however, so this is of little importance.
 
-Following on from the risk of group members being unable to work, there are an infinite number of scenarios that could result in a member being unable to participate.  Whether this is because they are unconscious or are simply unable to work.  Outside of generally taking care of ourselves and ensuring our health is in good shape, there is not much else that can be done about this.
+Following on from the risk of group members being unable to work, there are an infinite number of scenarios that could result in a member being unable to participate. Whether this is because they are unconscious or are simply unable to work. Outside of generally taking care of ourselves and ensuring our health is in good shape, there is not much else that can be done about this.
+The Scrum methodology which we will be using throughout this project has many techniques which will help us overcome any issues which may impact our group, depending on the severity. The flexibility of the methodology allows us to go over and rethink multiple aspects of the software and its documentation letting us get the highest quality project possible. 
 
+\begin{longtable}{| p{5cm} | p{2.5cm} | p{2cm} |  p{5.5cm} |}
+\hline
+\textbf{Risk} & \textbf{Likelihood} & \textbf{Impact} & \textbf{Measures} \\
+\hline
+\endfirsthead
+
+\endlastfoot
+
+\multicolumn{2}{c}{\textit{Continued from last page}}
+\endhead
+
+\multicolumn{2}{c}{\textit{Continued on next page}}
+\endfoot
+
+The time required to develop the software is underestimated. & 
+High & 
+Serious & 
+Focus on the key features and the main requirements of the system, if there is spare time we can add additional features. \\ 
+\hline
+Complexity of the software may be too hard for us to create.&
+Moderate&
+Serious&
+Before we start anything we must be sure of what we plan to do and make sure it is possible for us to do with our skillset.\\
+\hline
+
+A key person in the project may become ill due to a number of reasons, this would delay the project as no one else would be able to do that job.&
+Moderate&
+Serious&
+Split up workload into groups of more than two instead of relying on just one individual.\\
+\hline
+
+
+The database cannot process as many transactions as expected.& 
+Moderate&
+Serious&
+Gather information on a number of database systems that could be used and work out which one could work with our requirements.\\
+\hline
+
+The specification is not well defined.& 
+Moderate&
+Minor&
+Any issues with the specification we will bring up with tutors and lecturers so we can get a clearer picture.\\
+\hline
+
+
+Requirements are not well defined.& 
+Moderate&
+Minor&
+We can read through and go over different requirements to see  if they are relevant and make sense to the project.\\
+\hline
+
+When writing documentation, people may conflict with what they are doing as responsibilities may be unclear resulting in two or more people doing the same job.& 
+Moderate&
+Minor&
+Make sure our communication channels are efficient and before we do work we know what everyone is doing.\\
+\hline
+
+Everyone in the group become seriously ill from the coronavirus leaving no one able to do anything toward the project.&
+Moderate&
+Catastrophic&
+Follow any guidelines the government set for us to stay safe.\\
+\hline
+
+The specification could change for what is required in this project.& 
+Low&
+Minor&
+Allow enough time in or after the sprints in order to make changes where necessary.\\
+\hline
+
+A member of the group could drop out of the university leaving us with less people to work with.& 
+Low&
+Minor&
+Be sure that the person is communicating with us to allow us time to adjust to less people in the group.\\
+\hline
+
+
+\end{longtable}
 
 \chapter{Requirements}
 
