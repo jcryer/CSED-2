@@ -45,12 +45,13 @@ $(document).ready(function() {
         //Gets data from server
         //Does this have to be AJAX?
         //CHANGE THIS FOR PROD OR I WILL HURT YOU
-        $.get("api/yesterdayMood", function(data, status) {
+        $.get("/api/recentmoods", function(data, status) {
             //probably this
             //I'm not sure tbh
             datain = JSON.parse(data);
+        })
 
-                    //Creates array for data
+        //Creates array for data
         var data = new Array(25);
         data[0] = ['Time', 'Happy', 'Calm', 'Lively', 'Sad']
         //Iterate through hours, adding all to the array
@@ -79,20 +80,17 @@ $(document).ready(function() {
         //Jqueryise this???
         var chart = new google.visualization.AreaChart(document.getElementById('listening-yesterday'));
         chart.draw(google.visualization.arrayToDataTable(data), options);
-        });
-
-
     }
 
     function drawMonth() {
        //tmp for testin
-       var datain = JSON.parse('[{"day":10,"mood":0},{"day":12,"mood":4},{"day":9,"mood":2},{"day":11,"mood":7},{"day":9,"mood":0},{"day":10,"mood":0},{"day":11,"mood":10},{"day":10,"mood":4},{"day":5,"mood":10},{"day":9,"mood":10},{"day":11,"mood":10},{"day":9,"mood":0},{"day":11,"mood":0},{"day":12,"mood":4},{"day":10,"mood":10},{"day":10,"mood":4},{"day":11,"mood":1},{"day":10,"mood":4},{"day":11,"mood":4},{"day":9,"mood":0},{"day":12,"mood":0},{"day":11,"mood":10},{"day":12,"mood":2},{"day":10,"mood":10},{"day":9,"mood":4},{"day":12,"mood":10},{"day":10,"mood":4},{"day":12,"mood":0},{"day":14,"mood":4},{"day":14,"mood":5},{"day":18,"mood":4},{"day":16,"mood":6},{"day":16,"mood":0},{"day":14,"mood":4},{"day":15,"mood":0},{"day":15,"mood":2},{"day":15,"mood":0},{"day":16,"mood":0},{"day":14,"mood":4},{"day":16,"mood":4},{"day":20,"mood":5},{"day":20,"mood":4},{"day":20,"mood":10},{"day":20,"mood":0},{"day":20,"mood":4},{"day":21,"mood":4}]');
+       var datain = JSON.parse('[{"hour":10,"mood":0},{"hour":12,"mood":4},{"hour":9,"mood":2},{"hour":11,"mood":7},{"hour":9,"mood":0},{"hour":10,"mood":0},{"hour":11,"mood":10},{"hour":10,"mood":4},{"hour":5,"mood":10},{"hour":9,"mood":10},{"hour":11,"mood":10},{"hour":9,"mood":0},{"hour":11,"mood":0},{"hour":12,"mood":4},{"hour":10,"mood":10},{"hour":10,"mood":4},{"hour":11,"mood":1},{"hour":10,"mood":4},{"hour":11,"mood":4},{"hour":9,"mood":0},{"hour":12,"mood":0},{"hour":11,"mood":10},{"hour":12,"mood":2},{"hour":10,"mood":10},{"hour":9,"mood":4},{"hour":12,"mood":10},{"hour":10,"mood":4},{"hour":12,"mood":0},{"hour":14,"mood":4},{"hour":14,"mood":5},{"hour":18,"mood":4},{"hour":16,"mood":6},{"hour":16,"mood":0},{"hour":14,"mood":4},{"hour":15,"mood":0},{"hour":15,"mood":2},{"hour":15,"mood":0},{"hour":16,"mood":0},{"hour":14,"mood":4},{"hour":16,"mood":4},{"hour":20,"mood":5},{"hour":20,"mood":4},{"hour":20,"mood":10},{"hour":20,"mood":0},{"hour":20,"mood":4},{"hour":21,"mood":4}]');
 
        //Gets data from server
        //Does this have to be AJAX?
        //CHANGE THIS FOR PROD OR I WILL HURT YOU
        //THIS will have to change for the month view as well
-       $.get("api/monthMood", function(data, status) {
+       $.get("/api/recentmoods", function(data, status) {
            console.log(data);
        })
 
@@ -109,7 +107,7 @@ $(document).ready(function() {
        //iterates over all songs
        datain.forEach(function(song) {
            //values have to be incremented as headers are in pos 0
-           data[/*obv this has to be changed*/ song.day + 1][MOOD_LOOKUP[song.mood] + 1] ++;
+           data[/*obv this has to be changed*/ song.hour + 1][MOOD_LOOKUP[song.mood] + 1] ++;
        });
 
        var options = {

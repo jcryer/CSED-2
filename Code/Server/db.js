@@ -14,9 +14,17 @@ var UserSchema = new Schema({
   username: String,
   password: String,
   auth_key: String,
+  refresh_token: String,
 });
 
+var ListenSchema = new Schema({
+    userid: String,
+    songid: String,
+    played: String,
+  });
+
 var Users = mongoose.model('Users', UserSchema );
+var Listens = mongoose.model('Listens', ListenSchema );
 
 function generateToken(res, id, firstname) {
     return new Promise(function(resolve, reject) {
@@ -24,7 +32,6 @@ function generateToken(res, id, firstname) {
         var token = jwt.sign({ id, firstname }, process.env.JWT_SECRET, {
             expiresIn: process.env.DB_ENV === 'testing' ? '1d' : '7d',
         });
-        console.log(token);
         resolve(token);
         resolve(res.cookie('token', token, {
             expires: new Date(Date.now() + expiration),
@@ -34,10 +41,56 @@ function generateToken(res, id, firstname) {
     });
 }
 
+function addListenInfo(data, userid) {
+    data.forEach(function(item) {
+        Listens.count({'songid': item.track.id, 'played': item.played_at}, function (err, count){ 
+            if(count == 0) {
+                Listens.create({'userid': userid, 'songid': item.track.id, 'played': item.played_at}, function (err, instance) {
+                    if (err) return handleError(err);
+                });
+            }
+        }); 
+    });
+}
+
+
+function getListenInfo(userid) {
+    return new Promise(function(resolve, reject) {
+        Listens.find({'userid': userid}, function(err, listens) {
+
+            var listenMap = [];
+            listens.forEach(function(listen) {
+                listenMap.push(listen);
+            });
+            resolve(listenMap);
+        });
+    });
+}
+
+function getYesterdayListenInfo(userid) {
+    return new Promise(function(resolve, reject) {
+        Listens.find({'userid': userid}, function(err, listens) {
+            var yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
+
+            var listenMap = [];
+            listens.forEach(function(listen) {
+                var date = new Date(listen.played);
+                if (date.getDate() == yesterday.getDate() && date.getMonth() == yesterday.getMonth() && date.getFullYear() == yesterday.getFullYear()) {
+                    listenMap.push(listen);
+                }
+            });
+            resolve(listenMap);
+        });
+    });
+}
+
 function addUser(username, password) {
-    argon2.hash(password).then((hash) => {
-        Users.create({'username': username, 'password': hash, 'auth_key': makeid(48)}, function (err, instance) {
-            if (err) return handleError(err);
+    return new Promise(function(resolve, reject) {
+        argon2.hash(password).then((hash) => {
+            Users.create({'username': username, 'password': hash, 'auth_key': makeid(48)}, function (err, instance) {
+                if (err) return handleError(err);
+                resolve(instance._id);
+            });
         });
     });
 }
@@ -45,10 +98,10 @@ function addUser(username, password) {
 function getUsers() {
     return new Promise(function(resolve, reject) {
         Users.find({}, function(err, users) {
-            var userMap = {};
+            var userMap = [];
         
             users.forEach(function(user) {
-                userMap[user._id] = user;
+                userMap.push(user);
             });
 
             resolve(userMap);
@@ -76,9 +129,19 @@ function getAuthToken(username) {
     });
 }
 
-function updateUserAuthKey(tempKey, newKey) {
+function getRefreshToken(username) {
     return new Promise(function(resolve, reject) {
-        Users.findOneAndUpdate({'auth_key': tempKey }, { 'auth_key': newKey }, (err) => {
+        Users.findOne({'username': username }, function(err, userData){            
+            if(userData){
+                resolve(userData.refresh_token);
+            }
+        });
+    });
+}
+
+function updateAuthInfo(tempKey, newKey, refreshToken) {
+    return new Promise(function(resolve, reject) {
+        Users.findOneAndUpdate({'auth_key': tempKey }, { 'auth_key': newKey, 'refresh_token': refreshToken }, (err) => {
             if (err) {
                 resolve(false);
             }
@@ -119,18 +182,19 @@ function checkIfUserExists(username) {
     });
 }
 
-/*
-Users.find({ username: 'test', auth_key: '2r345y6trejh' }, 'username password', function (err, users) {
-    if (err) return handleError(err);
-    console.log(users);
-});*/
+
 module.exports.generateToken = generateToken;
 
+module.exports.getListenInfo = getListenInfo;
+module.exports.getYesterdayListenInfo = getYesterdayListenInfo;
 module.exports.addUser = addUser;
+module.exports.addListenInfo = addListenInfo;
+
 module.exports.checkIfUserExists = checkIfUserExists;
 module.exports.getUsers = getUsers;
+module.exports.getRefreshToken = getRefreshToken;
 module.exports.checkLoginDetails = checkLoginDetails;
-module.exports.updateUserAuthKey = updateUserAuthKey;
+module.exports.updateAuthInfo = updateAuthInfo;
 module.exports.getAuthToken = getAuthToken;
 
 /*var MongoClient = require('mongodb').MongoClient;
