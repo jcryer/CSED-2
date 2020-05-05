@@ -46,8 +46,10 @@ const MOOD_LOOKUP = [
     "For Concentration",
     "Motivational"]
 
-//Used to track the total number of elements loaded in
-var tableLoaded = 0;
+//Last day the listens table got data for
+var listensDateReceived = new Date();
+//Sets day to tomorrow
+listensDateReceived.setDate(listensDateReceived.getDate() + 1);
 
 $(document).ready(function() {
 
@@ -382,8 +384,12 @@ $(document).ready(function() {
         //I would recommend send all of the last week or so
         //As the day headings will get recreated otherwise
 
+        //Sets recieved day
+        listensDateReceived = new Date(datain[0].time);
+        console.log(listensDateReceived);
+
         //Converts to format
-        //{dateobj : [["time as string", "album artwork path", "song url", "song info"], ["time 2 as string", "album artwork path", "song info"]]}
+        //{"date as str" : [["time as string", "album artwork path", "song url", "song info"], ["time 2 as string", "album artwork path", "song info"]]}
         var unordered = {};
 
         for (let song of datain) {
@@ -402,7 +408,6 @@ $(document).ready(function() {
         }
 
         //Sort formatted data
-
         //Sorts days by time
         for (let date in unordered) {
             unordered[date].sort(function(a, b) {
@@ -425,7 +430,6 @@ $(document).ready(function() {
             
             //Add each song to table
             for (let song of formatted[date]) {
-                tableLoaded ++;
                 table.append("<tr><td>" + song[0].substring(0, 5) + 
                     "</td><td><img src='" + song[1] + "' style=\"width:50px;\"></td><td><a href=\"" + 
                     song[2] + "\">" + song[3]);
