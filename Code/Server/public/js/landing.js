@@ -294,6 +294,7 @@ $(document).ready(function() {
             "artist" : "The Stone Roses",
             "mood" : 0,
             "time" : "2020-05-04T14:28:30.779Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"},
             
             {"track" : "She Bangs the Drums",
@@ -301,6 +302,7 @@ $(document).ready(function() {
             "artist" : "The Stone Roses",
             "mood" : 1,
             "time" : "2020-05-04T14:29:34.989Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"},
             
             {"track" : "Waterfall",
@@ -308,6 +310,7 @@ $(document).ready(function() {
             "artist" : "The Stone Roses",
             "mood" : 2,
             "time" : "2020-05-04T14:30:34.989Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"},
             
             {"track" : "Don't Stop",
@@ -315,6 +318,7 @@ $(document).ready(function() {
             "artist" : "The Stone Roses",
             "mood" : 3,
             "time" : "2020-05-04T14:31:34.989Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"},
             
             {"track" : "Bye Bye Bad Man",
@@ -322,6 +326,7 @@ $(document).ready(function() {
             "artist" : "The Stone Roses",
             "mood" : 4,
             "time" : "2020-05-04T14:32:34.989Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"},
             
             {"track" : "Elizabeth My Dear",
@@ -329,6 +334,7 @@ $(document).ready(function() {
             "artist" : "The Stone Roses",
             "mood" : 5,
             "time" : "2020-05-04T14:33:34.989Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"},
             
             {"track" : "Sugar Spun Sister",
@@ -336,6 +342,7 @@ $(document).ready(function() {
             "artist" : "The Stone Roses",
             "mood" : 6,
             "time" : "2020-05-04T14:34:34.989Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"},
             
             {"track" : "Made of Stone",
@@ -343,6 +350,7 @@ $(document).ready(function() {
             "artist" : "The Stone Roses",
             "mood" : 7,
             "time" : "2020-05-04T14:35:34.989Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"},
             
             {"track" : "Shoot You Down",
@@ -350,13 +358,15 @@ $(document).ready(function() {
             "artist" : "The Stone Roses",
             "mood" : 8,
             "time" : "2020-05-04T14:36:34.989Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"},
             
             {"track" : "This is the One",
             "album" : "The Stone Roses",
             "artist" : "The Stone Roses",
             "mood" : 9,
-            "time" : "2020-05-04T14:37:34.989Z",
+            "time" : "2020-05-04T04:37:34.989Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"},
             
             {"track" : "I am the Resurrection",
@@ -364,6 +374,7 @@ $(document).ready(function() {
             "artist" : "The Stone Roses",
             "mood" : 10,
             "time" : "2020-05-04T14:38:34.989Z",
+            "url": "127.0.0.1",
             "artwork": "https://www.clashmusic.com/sites/default/files/field/image/R-156092-1534078946-7723.jpeg.jpg"}
         ]`);
 
@@ -372,7 +383,7 @@ $(document).ready(function() {
         //As the day headings will get recreated otherwise
 
         //Converts to format
-        //{"date as string" : [["time as string", "album artwork path", "song info"], ["time 2 as string", "album artwork path", "song info"]]}
+        //{"date as string" : [["time as string", "album artwork path", "song url", "song info"], ["time 2 as string", "album artwork path", "song info"]]}
         var formatted = {};
 
         for (let song of datain) {
@@ -386,7 +397,7 @@ $(document).ready(function() {
             let songObj = new Object();
 
             //Add song to formatted data
-            formatted[date.toDateString()].push([date.toLocaleTimeString(), song.artwork,
+            formatted[date.toDateString()].push([date.toLocaleTimeString(), song.artwork, song.url,
                 song.track + " - " + song.album + " - " + song.artist + " - " + MOOD_LOOKUP[song.mood]]);
         }
 
@@ -400,7 +411,9 @@ $(document).ready(function() {
             //Add each song to table
             for (let song of formatted[date]) {
                 tableLoaded ++;
-                table.append("<tr><td>" + song[0] + "</td><td><img src='" + song[1] + "' style=\"width:50px;\"></td><td>" + song[2]);
+                table.append("<tr><td>" + song[0].substring(0, 5) + 
+                    "</td><td><img src='" + song[1] + "' style=\"width:50px;\"></td><td><a href=\"" + 
+                    song[2] + "\">" + song[3]);
             }
         }
     }
