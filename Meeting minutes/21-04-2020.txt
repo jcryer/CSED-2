@@ -1,0 +1,16 @@
+Minutes 21/04/2020
+Attendance:
+- Adam
+- Eddy
+- Sandra
+- Teo
+- Fraser
+- Sam D
+- Joe
+
+Key points:
+- Retested the code for new features like daily tracking.
+- Checked in to see where everyone currently is.
+
+- Made minor changes to the documentation.
+- Continue devloping the code.

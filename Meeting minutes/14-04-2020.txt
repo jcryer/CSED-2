@@ -1,0 +1,14 @@
+Minutes 14/04/2020
+Attendance:
+- Adam
+- Eddy
+- Fraser
+- Sam D
+- Sandra
+- Joe
+
+Key points:
+- Tested the current code, see if it would work with multiple accounts.
+- Checked in on everyones progress, continue current jobs.
+
+- Code is somewhat accurate in gathering the mood of a song.

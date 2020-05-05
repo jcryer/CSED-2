@@ -1,0 +1,18 @@
+Minutes 16/04/2020
+Attendance:
+- Adam
+- Joe
+- Sam D
+- Eddy
+- Teo
+- Sandra
+
+Key points:
+- Discussed where we could improve.
+- Discussed what was to be done in the 3rd sprint.
+- Everyone must have something to do as this is the last sprint.
+
+- Abstract
+- Conclusion
+- Minor details we have to change in the documentation.
+- Finish code.

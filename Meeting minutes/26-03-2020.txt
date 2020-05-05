@@ -1,0 +1,13 @@
+Minutes 26/03/2020
+Attendance:
+- Adam
+- Joe
+- Eddy
+- Sam F
+- Sam D
+- Fraser
+- Sandra
+
+Key points:
+- Created a document which we will throw all final versions of write ups to add to the LaTex document.
+- Discussed where we are currently and we had to do before the end of the sprint.

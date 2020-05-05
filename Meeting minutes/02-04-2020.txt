@@ -1,0 +1,17 @@
+Minutes 02/04/2020
+Attendance:
+- Teo
+- Sandra
+- Eddy
+- Joe
+- Sam D
+- Adam
+
+Key points:
+- Reviewed what we did in sprint 1.
+- Plan what must be done in sprint 2.
+- Make minor adjustments to current documentation.
+
+- Ethics
+- Design
+- Continue research on moods for the code.

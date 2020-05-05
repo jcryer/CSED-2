@@ -1,0 +1,14 @@
+Minutes 28/04/2020
+Attendance:
+- Sandra
+- Joe
+- Adam
+- Eddy
+- Teo
+- Fraser
+
+Key points:
+- Small meeting to check in on the progress.
+- Might need to extend the sprint to make time for minor details of the document and the code.
+
+- Continue doing current tasks.
