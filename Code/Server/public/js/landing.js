@@ -46,6 +46,9 @@ const MOOD_LOOKUP = [
     "For Concentration",
     "Motivational"]
 
+//Used to track the total number of elements loaded in
+var tableLoaded = 0;
+
 $(document).ready(function() {
 
     //Loads google charts
@@ -57,6 +60,13 @@ $(document).ready(function() {
         drawLibraryPie();
         drawLibraryList();
         populateRecentTable();
+    })
+
+    //Gets more data on scroll to bottom of div
+    $("#recent-div").scroll(function () {
+        if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+            populateRecentTable();
+        }
     })
 
     /*function drawYesterday() {
@@ -113,9 +123,9 @@ $(document).ready(function() {
        //Does this have to be AJAX?
        //CHANGE THIS FOR PROD OR I WILL HURT YOU
        //THIS will have to change for the month view as well
-       $.get("api/monthMood", function(data, status) {
-           console.log(data);
-       })
+       //$.get("api/monthMood", function(data, status) {
+       //    console.log(data);
+       //})
 
        //Creates array for data
        var data = new Array(31);
@@ -274,8 +284,6 @@ $(document).ready(function() {
         var table = new google.visualization.Table($("#library-table")[0])
 
         table.draw(data, {width:"100%", height:"100%"});
-
-        console.log(data);
     }
 
     function populateRecentTable () {
@@ -348,9 +356,12 @@ $(document).ready(function() {
             "time" : "2020-05-04T14:38:34.989Z"}
         ]`);
 
+        //Don't forget to send off loaded with get request
+        //I would recommend send all of the last week or so
+        //As the day headings will get recreated otherwise
+
         //Converts to format
         //{"date as string" : [["time as string", "song info"], ["time 2 as string", "song info"]]}
-        
         var formatted = {};
 
         for (let song of datain) {
@@ -377,6 +388,7 @@ $(document).ready(function() {
             
             //Add each song to table
             for (let song of formatted[date]) {
+                tableLoaded ++;
                 table.append("<tr><td>" + song[0] + "</td><td>" + song[1]);
             }
         }
