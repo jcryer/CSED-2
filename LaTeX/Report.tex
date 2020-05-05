@@ -3,12 +3,21 @@
 \usepackage{titlesec}
 \usepackage[hyphens]{url}
 \usepackage{verbatim}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{subcaption}
 %Sets the margins 
 \usepackage[margin=2.5cm]{geometry}
-\usepackage{longtable}
+
+%Sets the assets path
+\graphicspath{{assets/}}
+
 
 %Removes 'Chapter x' at the start of each section
 \titleformat{\chapter}[display] {\normalfont\bfseries}{}{0pt}{\Large}
+%Decreases space after subsubsections
+\titlespacing{\subsubsection}{0pt}{0\baselineskip}{0\baselineskip}
+
 
 \title{CSED Coursework 2}
 \author{
@@ -123,8 +132,7 @@ So when considering the ethical concerns for storing and analysis of data, there
 
 This resesarch was performed during the production of the product, in order to assertain the relationship between characteristics of songs and their moods.\newline
 
-SANDRA PLEASE DO THIS
-LOVE YOU XXX
+The Mood Table was created based on Thayer’s mood mode, Figure \ref{fig:thayermoodmodel}, which considers the energy and the valence of a song to determine basic moods. “In most existing methods of music mood classification, the moods of songs are divided according to psychologist Robert Thayer’s traditional model of mood. The model divides songs along the lines of energy and stress, from happy to sad and calm to energetic, respectively (Bhat et al 359). The eight categories created by Thayer’s model include the extremes of the two lines as well as each of the possible intersections of the lines (e.g. happy-energetic or sad-calm). [...]” \cite{Nuzzolo2015}. The mood table makes use of this information by working with data provided by Spotify, the energy and the valence. The model has been refined by taking into consideration another 3 variables, acousticness, instrumentalness and danceability. These are considered attributes that create subsets of the already existing moods, making them more specific and detailed. High acousticness and instrumentalness can be used to determine a song is motivational or good for concentration, while danceability can help determine how lively a song is. 
 
 This led us to the following matrix, here all values must align with the required values for a song to be catergorised as a certain mood.
 Required values:
@@ -134,6 +142,7 @@ Required values:
 \item '-' - Negative - Value must be below 0.4
 \item '/' - None dependant - Value does not matter
 \end{itemize} 
+
 
 \begin{longtable}{| p{5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} |  p{2.5cm} |}
 \hline
@@ -166,6 +175,29 @@ For Concerntraion	&n&-&+&/\\
 Motivational		&n&+&+&/\\
 \hline
 \end{longtable}
+
+\section{Questionnaire - SC}
+A questionnaire has been used to gather data about the correlation between people’s moods and their music listening habits. Of our 24 repsonses we found out that around 90\% of people agree with the statement “My listening habits change based on my mood” while 40\% out of them strongly agree. Furthermore, 70\% of people state that music plays a big role in their lives, while 60\% of them think the music they listen to helps them understand themselves more. Most people stated that they listen to music at least 4 days a week, while a big part of them (65\%) listen to music daily. Generally, people listen to music a couple of hours a day, while some listen to music all the time, or less than an hour a day. Music seems to help people deal with their emotions \ref{fig:question-moods} and most people seem to use Spotify as their main music app \ref{fig:question-format}. We have also asked if there were any features they wished music apps included. A couple of responses addressed the way songs are recommended to them and organised, stating that they wished the recommended songs would fit the way they are feeling at the time more, and that they would like to be able to have direct access to songs they listened to before. Other responses talked about displaying lyrics and tools to help the user recognise songs more easily. This information has strengthened the ideas our research provided and has helped us gain a better understanding of how music affects people’s moods. It has prompted us to create an app that helps people track their moods based on what they listen to on Spotify.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.5\textwidth}
+	\centering	
+	\includegraphics[width=0.9\linewidth]{question-moods.png}
+	\caption{Do moods help you express or cope with different emotions and moods?}
+	\label{fig:question-moods}
+\end{subfigure}%This Removes the space after these
+\begin{subfigure}{0.5\textwidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{question-format.png}
+	\caption{What music application do you prefer?}
+	\label{fig:question-format}
+\end{subfigure}
+
+\caption{Reponses to the questionnaire}
+\label{fig:question}
+
+\end{figure}
 
 
 \chapter{Risk Assessment - LG \& SD}
@@ -268,6 +300,22 @@ Moreover, we held a focus group. During this focus group, several requirements t
 
 Finally, we also sent out a questionnaire. We received X RESPONSES, from which we were able to gather additional requirements. From the focus group, a mass of information was yielded which showed us a lot of perspectives we hadn’t necessarily put a lot of thought into. It also provided many niche requirements which if we have time to get to would really enrich our system and take it a step above where we were aiming before.
 
+\section{Specific Domain -  FD}
+
+“…music informatics simply involves research in areas such as the automatic transcription of music, chords, and chord progressions; key detection; and music classification.” \cite{Paas2013}. This simply means that music informatics is the analysis of music by means of the fundamental sounds that construct the music. In terms of Personal Informatics, this analysis can illustrate trends in qualities such as moods and behaviours. This is possible by analysing musical attributes such as “[…] melody extraction, chord recognition, beat tracking, tempo estimation, [..] and mood prediction” \cite{Humphrey2013}.
+Moreover, in a forever growing music industry with apps such as Apple Music, Spotify and YouTube Music, there’s an increase in the interest people are taking in their own music tastes. This is becoming increasingly popular with features such as Obscurify or Spotify Wrapped “which reveals users’ favourite music from the past year, [2019], has been released to [Spotify’s] 243 million users” \cite{Izzard2019}.
+
+Finally, due to other qualities which can be associated with the type of music that you listen to, such as “instrument identification, music similarity, genre classification, […]” \cite{Humphrey2013}, it is also possible to recommend songs similar to those that you already listen to. An increasingly smart analysis of these trends is much requested in order to get more accurate song recommendations. It is evident that there is the need for more research into this growing area of personal informatics which is shown in the research that’s been carried out over the last decade which has revealed “chord recognition, genre recognition, and mood estimation—are each converging to performance plateaus below satisfactory levels”\cite{Humphrey2013}.
+
+\section{Users in this Domain - FD}
+
+There are several different types of users in our problem domain. Everyone who uses a music streaming service such as Spotify, Apple Music, and Deezer. According to a study taken in 2019, “89\% [of the 34,000 participants], listen to music through on-demand streaming.” \cite{IFPI2019}. This evidently shows the large audience of stakeholders regarding music streaming services who would be interested in knowing more about their music interests and discovering similar songs to the ones they are already listening to. It is the majority of music listeners who would benefit from using a system like the one we are developing, novice and experienced users alike.
+
+The more experienced music listeners stand to gain a deeper understanding of why they like the music they do, for example by seeing strong correlation between beats per minute and music danceability perhaps. A less experienced music listener may not appreciate this sort of information as much as the more avid music streamer, however, both types of users would benefit from discovering more songs that they might like through song recommendations based on mood, tempo, genre, etc… This is because many people would describe it as being difficult when it comes to finding new music that they actually like.
+
+All types of users may feel concerns regarding the ethics to a server listening constantly to the user’s phone / streaming device. There are some clear ethical implications here such as security and privacy. This may stunt the amount of potential stakeholders, but by using hashing and salting of user passwords and storing only the necessary user data on a secure server may convince people to use our music informatic tracking tool. There also may be concerns about selling personal data to third parties or it being stolen, however, in order for our system to be functional, we only need to collect minimal personal data and it would never be sold to third parties. Many users would see that the ethical concerns aren’t too major and that the consequences are minimal in the rarity of anything happening.
+
+
 \section{Priorities - FD}
 
 Upon reviewing all the data we had gathered to compile our list of requirements, we labelled all of our requirements with priorities and dependencies. The dependencies really highlighted how crucial some requirements were and which of our requirements were more of the additional extras which would be nice to include if time allows. We considered the necessity of each requirement and its dependencies for the priority of any given requirement.
@@ -275,6 +323,15 @@ Upon reviewing all the data we had gathered to compile our list of requirements,
 \section{Conflicts - FD}
 
 When we had created our list of requirements, we were careful to avoid any conflicting requirements. These could have arisen from varying opinions from different stake holders. In order to avoid including conflicting requirements, we considered all the data that we had collected and then prioritised the one with the highest interest. Finally, we split all of our requirements into a structured indexed list to help illustrate dependencies and also to avoid repetition or conflict between requirements.
+
+\section{Cutbacks - ED}
+
+The COVID-19 pandemic hit roughly half just after our first sprint had ended and caused large amounts of disruption to our project. All our team members were displaced during the duration of the project causing man hours to be lost and the physical distance caused strains in communication as we adapted to the changing circumstances.
+
+For these reasons we decided that the initial scope of our project was too large and would have to be scaled back. We decided to focus on scaling back parts which had little time already invested in them and that were less necessary to the function of the system. This was not too difficult for us as most of the first sprint focused on the backend, collecting data from Spotify and storing it in in our own database, which is an essential part of our project and could not have been scaled back anyway.
+
+Our final product focuses on tracking what the user is listening to and the mood of those songs, the outcome of this analysis is then displayed to the user. However, in earlier versions we also planned to use this to determine trends in user moods and then recommend songs based on these trends and the other songs the user listens to. This part of the project would have been dependant on almost all of the other parts of the project, and would have required additional research into how to dictate trends how then to recommend songs based on this, which would have been quite a large undertaking and most likely would have required an entire additional sprint, for these reasons it seemed natural that this part of the project would have to be scaled back and we instead decided to display the data directly to the user. We do not believe this will end up being much less useful to our users, as with time remaining it seems unlikely that we would be able to develop algorithms which would offer more insight than what the user could draw from the data itself. This caused the focuses of sprint 3 to move towards smart methods of displaying user data rather than laying the groundwork for more advanced data analysis.
+
 
 \section{Functional}
 
@@ -340,6 +397,189 @@ The web app must be able to request data from the server for whatever process it
 
 \end{center}
 
+\chapter{Design}
+
+\section{High Level Architecture Diagram}
+
+TODO
+
+\section{Project Outline - JC}
+
+\subsection{Classes}
+
+
+\subsubsection{Server:}
+
+\hrulefill
+
+\subsubsection{Spotify}
+The Spotify class contains all methods for interacting with the Spotify API. This is used in a variety of situations, such as the monitor thread that constantly gets updated information on users or the methods to retrieve the mood information about tracks. 
+
+\subsubsection{Processing}
+The Processing class contains all methods for processing the data either saved in the database or pulled from the Spotify API. This processed data is usually then passed to the API and given to the client.
+
+\subsubsection{Database}
+The Database class contains all methods and data structures for the database. It includes the data structure for each table within the database, the connection code to the online MongoDB database we are using, and all methods to get and put data to and from the database as needed.
+
+\subsubsection{API}
+The API class handles all requests from the client for data. It ensures security using web tokens and sessions, and only allows access to sensitive data when the user connecting successfully authenticates themselves.  
+
+
+\leavevmode \\
+
+\subsubsection{Client:}
+
+\hrulefill
+
+\subsubsection{GUI}
+The GUI will be responsible for displaying the data sent from the server side. It will provide the interface for the user to interact with. The Google Charts API will be used to display the data received from the server as useful, graphically pleasing metrics.
+
+\subsubsection{API}
+The API methods will be responsible for interfacing with the server side REST API, both passing data to the server and requesting data from the server.
+
+\subsection{Methods}
+
+\subsubsection{Spotify:}
+
+\hrulefill
+
+\subsubsection{FinaliseAuth}
+FinaliseAuth passes the user specific authorisation code to the Spotify API, upon which an access token and a refresh token should be received and returned.
+
+\subsubsection{GetTracksInfo}
+GetTracksInfo is a method for getting information (track name, artists, link) from the Spotify API about a list of tracks from their IDs.
+
+\subsubsection{GetAudioFeatures}
+GetAudioFeatures is a method for getting audio information (valence, energy, acousticness, instrumentalness, danceability) from the Spotify API about a list of tracks from their IDs.
+
+\subsubsection{GetAccessToken}
+GetAccessToken is a method that checks if the access token is still valid. If it is, it simply returns the access token. Otherwise, it uses the refresh token to generate a new access token, and then returns that token.
+
+\subsubsection{DataListener}
+The DataListener method runs on a timer from when the server starts running, and every thirty minutes requests all recent tracks that each user in the database has listened to. It then passes these to the database functions to save them into the database.
+
+\subsubsection{GetAllTracks}
+GetAllTracks is a method that returns a list of track IDs that contain every song in every playlist the user has, as well as all of their liked songs.
+
+\leavevmode \\
+
+\subsubsection{Database:}
+
+\hrulefill
+
+\subsubsection{AddListenInfo}
+AddListenInfo adds a new “listen” to the “Listens” table - it adds a record for each track that a user has recently listened to, including the track’s ID and the user’s ID.
+
+\subsubsection{GetListenInfo}
+GetListenInfo gets all tracks that a user has listened to within a specified time period.
+
+\subsubsection{AddUser}
+AddUser adds a user to the “Users” table.
+
+\subsubsection{GetUsers}
+GetUsers gets all users from the “Users” table.
+
+\subsubsection{GetAuthToken}
+GetAuthToken gets the Spotify API auth token for a given user.
+
+\subsubsection{GetRefreshToken}
+GetRefreshToken gets the Spotify API refresh token for a given user.
+
+\subsubsection{UpdateAuthToken}
+UpdateAuthToken modifies the Spotify API auth token for a given user.
+
+\subsubsection{CheckLoginDetails}
+CheckLoginDetails checks that, given a username, such a user exists in the “Users” table, and given a hashed password, a hash exists in that user record that is the same.
+
+\subsubsection{CheckIfUserExists}
+CheckIfUserExists checks if a given username already exists in the database.
+
+
+
+\leavevmode \\
+
+\subsubsection{Processor:}
+
+\hrulefill
+
+\subsubsection{SortUserSongs}
+The SortUserSongs method uses the GetAllTracks method to get all of a user’s tracks, before using the GetTracksInfo method to get those tracks’ names and artists, and then the GetAudioFeatures method to get those tracks’ audio features. Each track is then classified as a specific mood using the Classify method, and is returned through an API call.
+
+\subsubsection{ProcessRecentTracks}
+ProcessRecentTracks uses the GetListenInfo method from the database to get all recently listened to tracks, before using the GetTracksInfo method to get those tracks’ names and artists, and then the GetAudioFeatures method to get those tracks’ audio features. Each track is then classified as a specific mood using the Classify method, and is returned through an API call.
+
+\subsubsection{Classify}
+The Classify method looks at the audio features of a song and classifies it as a specific mood using a mood defining algorithm.
+
+
+\leavevmode \\
+
+\subsubsection{API:}
+
+\hrulefill
+
+\subsubsection{Login}
+The Login API endpoint is given a username and password from the client, and uses the CheckLoginDetails method in the database to confirm that a user is valid. If it is, a web token is generated and sent as a cookie to the user, creating a login session for the client.
+
+\subsubsection{Register}
+The Login API endpoint is given a username and password from the client, and uses the CheckIfUserExists method in the database to confirm that no user exists with that name. If they do, “false” is sent back, alerting the client that a user already exists with that username. Otherwise, the AddUser method in the database is ran, with the username and password given.
+
+\subsubsection{YesterdayMood}
+The YesterdayMood API endpoint uses the ProcessRecentSongs method to get a list of songs that the user listened to in the last day, information about each song and a mood classification for each song.
+
+\subsubsection{MonthMood}
+The MonthMood API endpoint uses the ProcessRecentSongs method to get a list of songs that the user listened to in the last month, information about each song and a mood classification for each song.
+
+\subsubsection{Callback}
+The Callback API endpoint is used exclusively for Spotify to return an authorisation code for a given user after that user connects their Spotify account to our system. It then uses the UpdateAuthToken method in the database.
+
+\subsubsection{GetTracks}
+The GetTracks API endpoint uses the GetAllTracks method and returns that data, for use with the timeline on the front end.
+
+\subsubsection{MoodClassification}
+The MoodClassification API endpoint uses the SortUserSongs method and returns that data, for use with the mood charts on the front end.
+
+
+\section{Design Sketches}
+
+Omit Earlier Sketches
+TODO?
+
+\section{Class Diagram}
+
+Needs updating
+
+\section{Use Case Diagrams - FD}
+
+There are not a large number of use cases for our program. All of the data enrtry is automatic so there are no use cases that allow for the user to edit their data. This means we end up with a small number of use case scenarios, which helps to simplify user experience design
+
+\ref{fig:usecase1} shows the typical path a user would take when logging in, should they not have an account then they would have to follow \ref{fig:usecase2} to create one first and then they can view their data, following \ref{fig:usecase3}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.5\textwidth}
+	\centering	
+	\includegraphics[width=0.9\linewidth]{usecase1.png}
+	\caption{Use Case Scenario 1}
+	\label{fig:usecase1}
+\end{subfigure}%This Removes the space after these
+\begin{subfigure}{0.5\textwidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{usecase2.png}
+	\caption{Use Case Scenario 2}
+	\label{fig:usecase2}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+	\includegraphics[width=0.9\linewidth]{usecase3.png}
+	\caption{Use Case Scenario 3}
+	\label{fig:usecase3}
+\end{subfigure}
+
+\caption{Different Use Case Scenarios}
+\label{fig:usecase}
+
+\end{figure}
+
 \chapter{Testing}
 
 
@@ -367,26 +607,162 @@ The web app must be able to request data from the server for whatever process it
 \hline
 \multicolumn{5}{|l|}{\textbf{\textit{Acquiring data from Spotify}}} \\
 \hline
-Authorise Spotify user account&Program should be able to request access to a user’s Spotify account and store the returned access token for later use&Valid Spotify username / password combination&&Valid Spotify access Token\\
+Authorise Spotify user account&
+Program should be able to request access to a user’s Spotify account and store the returned access token for later use&
+Valid Spotify username / password combination&&
+Valid Spotify access Token\\
 \hline
-Data successfully obtained from Spotify&Show that data collection from Spotify functions correctly, this does not include the account authorisation stage, but rather that the server can obtain data form Spotify, what data does not matter as long as it is the same as requested&Valid access token and API query&&Spotify returns specified data\\
+Data successfully obtained from Spotify&
+Show that data collection from Spotify functions correctly, this does not include the account authorisation stage, but rather that the server can obtain data form Spotify, what data does not matter as long as it is the same as requested&
+Valid access token and API query&&
+Spotify returns specified data\\
 \hline
 \multicolumn{5}{|l|}{\textbf{\textit{Login Pages}}} \\
 \hline
-Login and Create Account pages&Login and Create Account pages are sent to the user and are visually functional when the user requests them using http&Page URLS&&Server should send the pages through http\\
+Login and Create Account pages&
+Login and Create Account pages are sent to the user and are visually functional when the user requests them using http&
+Page URLS&&
+Server should send the pages through http\\
 \hline
-Create Account successfully creates account when valid account data is provided&Create Account page successfully sends correct data to the server, allowing it to correctly create accounts, this must also contain all of the necessary data, and return a correct Account Creation page and message, when all the data sent is valid&Valid and not already used user data&&Server should send a success message or send the user to an account created page\\
+Create Account successfully creates account when valid account data is provided&
+Create Account page successfully sends correct data to the server, allowing it to correctly create accounts, this must also contain all of the necessary data, and return a correct Account Creation page and message, when all the data sent is valid&
+Valid and not already used user data&&
+Server should send a success message or send the user to an account created page\\
 \hline
-Create Account correctly displays error message when invalid account data is provided&Create Account page throws an error when the user enters data which is not valid or uses data which has been already used and does not overwrite or data the already existing data&Invalid or already used user data&&Server should stay on page and send an error message to the user, telling them what caused the error\\
+Create Account correctly displays error message when invalid account data is provided&
+Create Account page throws an error when the user enters data which is not valid or uses data which has been already used and does not overwrite or data the already existing data&Invalid or already used user data&&
+Server should stay on page and send an error message to the user, telling them what caused the error\\
 \hline
-Login is successful when correct account credentials are entered&Login page should log the user in when they enter the correct username / password pair&Valid username / password combination&&The user is logged in, redirecting to a landing page\\
+Login is successful when correct account credentials are entered&
+Login page should log the user in when they enter the correct username / password pair&
+Valid username / password combination&&
+The user is logged in, redirecting to a landing page\\
 \hline
-Login is unsuccessful when incorrect credentials are entered&Login should fail when the user enters credentials which are not valid, the page, should not give away whether an account exists with the given username / email but rather a generic failed message in order to comply with security best practises&Invalid username / password combination&&The user is not logged, however is left on the log in page with a generic error message\\
+Login is unsuccessful when incorrect credentials are entered&
+Login should fail when the user enters credentials which are not valid, the page, should not give away whether an account exists with the given username / email but rather a generic failed message in order to comply with security best practises&
+Invalid username / password combination&&
+The user is not logged, however is left on the log in page with a generic error message\\
 \hline
+\multicolumn{5}{|c|}{\textbf{Sprint 2}} \\
+\hline
+\multicolumn{5}{|l|}{\textbf{\textit{Security}}} \\
+\hline
+Passwords are hashed and stored&
+Passwords are hashed and stored as outlined in password storage guidelines (Research: 3.3): Salted and hashed (argon2 was recommended), with only these stored in databased&
+Register account with valid credentials, check database to ensure plaintext password not stored&
+N/A - Can be checked on database&
+Password stored in database will be hashed, stored alongside the salt\\
+\hline
+Hash salts should be safely generated&
+Password salts should be generated in such a way which makes them hard to guess (ex. Not generated based on other account info, or using Cs generator without a seed)&Register account with valid credentials, check database to show&
+N/A - Can be checked on database&
+List of randomly generated salts, (Note that even easy to guess salts will appear random, so code review is best to established this has been met)\\
+\hline
+\multicolumn{5}{|l|}{\textbf{\textit{Security}}} \\
+\hline
+Server is able to retrieve song characteristics from Spotify&
+Server can gather characteristics on a song using the Spotify API, these can then be used in order to classify the songs mood&
+Song ID passed to Spotify&
+https://api.spotify.com/v1/audio-analysis/51xPLClVr9DDGwrtnFc6DF&
+Relevant data for song (Sally Cinnamon, The Stone Roses)\\
+\hline
+Server is able to characterise songs&
+Server can characterise any given song based on the statistics provided by the Spotify API&
+Song data provided by Spotify&
+N/A - can be checked through API&
+All songs users have in library should be categorised\\
+\hline
+Server tracks users listening habits&
+Server periodically checks to see what the client has listened to and then and adds these to the database&
+Check through API (See API Section)&
+N/A - can be checked through API&
+Users listened to songs should appear\\
+\hline
+Server tracks contents of user’s library&
+Server gathers user’s library of songs from the playlists they have&
+Check through API (See API section)&
+N/A - can be checked through API&
+All songs in a user’s playlists should appear\\
+\hline
+Server characterises user listening habits&
+Server should characterise songs the user has listened into moods based on the characteristics of those songs as outlined in mood table (Research: 3.5)&
+Check through API (See API section)&
+N/A - can be checked through API&
+Mood should appear alongside listened songs, these do not have to be perfect but should give a good representation\\
+\hline
+\multicolumn{5}{|l|}{\textbf{\textit{API}}} \\
+\hline
+API should show no data if the user is not logged in&
+Requests made without a valid auth token should either be turned away or ignored&
+Test API pages before logging in&
+Try: JOE CORRECT URL PLZ without auth token&
+No data will be displayed\\
+\hline
+API allows for access to categorisation of user songs&
+API should provide a method of viewing user data of library (note that this does not have to be the final page with a user facing interface)&
+API page link&
+JOE CORRECT URL PLZ&
+All user data for library and its characterisation should be displayed\\
+\hline
+\multicolumn{5}{|c|}{\textbf{Sprint 3}} \\
+\hline
+\multicolumn{5}{|l|}{\textbf{\textit{Frontend Navigtion}}} \\
+\hline
+Frontend navigation functions correctly&
+User can navigate to all of the different pages of the frontend using just the buttons provided&
+Website&
+<Insert landing page here>&
+Page should appear as per design and should be easy to navigate with on-site tools (no manual entering of URLs should be required)\\
+\hline
+Frontend redirects user if not logged in&
+Frontend redirects the user should they try and access pages they do not have access to&
+Website&
+<Insert landing page here>&
+User will be redirected to the login / create account page should they try and access any page which requires account credentials \\
+\hline
+\multicolumn{5}{|l|}{\textbf{\textit{Security}}} \\
+\hline
+User should not be able to view / access other users’ data&
+Frontend should not expose any user data unless the user is logged into that user account with valid credentials&
+Website&
+<Insert landing page here>&
+User will be shown no data if they do not have valid credentials and should be redirected (see above) \\
+\hline
+\multicolumn{5}{|l|}{\textbf{\textit{Data Representations}}} \\
+\hline
+User should be able to view all songs in their library&
+Webpage should provide a method for the user to view all the items in their library along with moods and view counts&
+Website&
+<Insert landing page here>&
+User library should be displayed if user has correct login credentials \\
+\hline
+User should be able to view a timeline of their recently listened to songs&
+Webpage should provide a method for the user to view all their recently listened to track in a timeline format&
+Website&
+<Insert landing page here>&
+Timeline of user listens should be displayed if user has correct login credentials \\
+\hline
+User should be able view statistics on the makeup of their library and listening habits&
+Webpage should provide a method for the user to view statistics such as the mood makeup of their library and last day of listening&
+Website&
+<Insert landing page here>&
+Statistics on library and listen makeup should be displayed on page if the user has correct login credentials \\
+\hline
+
 
 \end{longtable}
 
 \end{center}
+
+\chapter{Appendix}
+
+\section{Figures}
+
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{thayer-mood-model.png}
+	\caption{Thayer Mood Model}
+	\label{fig:thayermoodmodel}
+\end{figure}
 
 %Loads bibliography
 \bibliography{ref}{}

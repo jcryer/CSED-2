@@ -190,6 +190,34 @@
   url    = {https://www.nytimes.com/2018/11/06/technology/cambridge-analytica-arron-banks.html},
 }
 
+@TechReport{Nuzzolo2015,
+  author      = {Michael Nuzzolo},
+  institution = {Tufts University},
+  title       = {{Music Mood Classification}},
+  year        = {2015},
+  url         = {https://sites.tufts.edu/eeseniordesignhandbook/2015/music-mood-classification/},
+}
+
+@Unpublished{Paas2013,
+  author = {Anita Paas and Angúl Castro},
+  title  = {{Music Informatics: A Modern Approach to Studying Music}},
+  year   = {2013},
+  url    = {https://musicmindandbrain.wordpress.com/2013/01/27/music-informatics-a-modern-approach-to-studying-music/},
+}
+
+@Article{Humphrey2013,
+  author    = {Eric J. Humphrey and Juan P. Bello and Yann LeCun},
+  journal   = {Journal of Intelligent Information Systems},
+  title     = {Feature learning and deep architectures: new directions for music informatics},
+  year      = {2013},
+  month     = {jul},
+  number    = {3},
+  pages     = {461--481},
+  volume    = {41},
+  doi       = {10.1007/s10844-013-0248-5},
+  publisher = {Springer Science and Business Media {LLC}},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
