@@ -383,26 +383,41 @@ $(document).ready(function() {
         //As the day headings will get recreated otherwise
 
         //Converts to format
-        //{"date as string" : [["time as string", "album artwork path", "song url", "song info"], ["time 2 as string", "album artwork path", "song info"]]}
-        var formatted = {};
+        //{dateobj : [["time as string", "album artwork path", "song url", "song info"], ["time 2 as string", "album artwork path", "song info"]]}
+        var unordered = {};
 
         for (let song of datain) {
             let date = new Date(song.time);
 
             //Check if date already in formatted data
-            if (! (date.toDateString() in formatted)) {
-                formatted[date.toDateString()] = [];
+            if (! (date.toDateString() in unordered)) {
+                unordered[date.toDateString()] = [];
             }
 
             let songObj = new Object();
 
             //Add song to formatted data
-            formatted[date.toDateString()].push([date.toLocaleTimeString(), song.artwork, song.url,
+            unordered[date.toDateString()].push([date.toLocaleTimeString(), song.artwork, song.url,
                 song.track + " - " + song.album + " - " + song.artist + " - " + MOOD_LOOKUP[song.mood]]);
         }
 
+        //Sort formatted data
+
+        //Sorts days by time
+        for (let date in unordered) {
+            unordered[date].sort(function(a, b) {
+                return a[0].localeCompare(b[0]);
+            })
+        }
+
+        //Sorts days
+        var formatted = {};
+        Object.keys(unordered).sort().forEach(function(key) {
+          formatted[key] = unordered[key];
+        });
+
         //Add to table
-        var table = $("#recent-table")
+        var table = $("#recent-table");
 
         for (let date in formatted) {
             //Add date header to table
