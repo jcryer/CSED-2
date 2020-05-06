@@ -1,0 +1,19 @@
+Meeting Minutes 17:00 12/3/20
+
+Attendence:
+- Joe
+- Fraser 
+- Sandra
+- Adam
+- Sam F
+
+What was done:
+- More hashing research 
+- Hashing was implemented
+- Test plan was altered
+- Sprint review carried out
+- Added more tasks to product backlog in preparation for second sprint
+
+Before next meeting:
+- Choose your own task from the product backlog and try complete before next sprint
+- Next sprint starting monday 16-3-20

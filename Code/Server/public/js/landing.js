@@ -386,7 +386,6 @@ $(document).ready(function() {
 
         //Sets recieved day
         listensDateReceived = new Date(datain[0].time);
-        console.log(listensDateReceived);
 
         //Converts to format
         //{"date as str" : [["time as string", "album artwork path", "song url", "song info"], ["time 2 as string", "album artwork path", "song info"]]}

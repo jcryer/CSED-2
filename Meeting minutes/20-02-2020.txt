@@ -9,6 +9,7 @@ Attendance:
 - Fraser
 - Teo
 - Joe
+
 Minutes: 12.15pm – 13.05pm
 Key Points
 -	Music Tracking, looking into a different users patterns.

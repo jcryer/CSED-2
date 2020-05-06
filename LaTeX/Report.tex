@@ -6,6 +6,15 @@
 \usepackage{longtable}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{breakcites}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  %postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
 %Sets the margins 
 \usepackage[margin=2.5cm]{geometry}
 
@@ -15,6 +24,7 @@
 
 %Removes 'Chapter x' at the start of each section
 \titleformat{\chapter}[display] {\normalfont\bfseries}{}{0pt}{\Large}
+\titlespacing*{\chapter}{0pt}{-25pt}{40pt}
 %Decreases space after subsubsections
 \titlespacing{\subsubsection}{0pt}{0\baselineskip}{0\baselineskip}
 
@@ -83,7 +93,7 @@ We managed the development of our requirements through thorough test plans and f
 
 Initially, we planned to have three, two-week sprints in our project. Alongside this, we planned to meet up on Mondays for a meeting and Thursdays for another. Once we had started planning our project, we realised that this wasn’t enough time per week in order to complete all the work necessary. To increase our contact time, we then decided to go to the lab session allocated to our group on Thursdays as well. Once COVID-19 prevented us from meeting in person, we still continued to have the same timetable of meetings, however, all contact was done online. Whilst this seemed to make proper collaboration more difficult at first, we then took advantage of the fact that each member of the group had a computer in front of them. This meant we were able to all see more clearly what we were referring to during discussions as everyone could access the materials more easily.
 
-
+Proof of our use of agile can be seen in Appendix, section \ref{sec:agileapp}
 
 \chapter{Research}
 
@@ -100,7 +110,7 @@ The idea of trust in a system is an important concept; a user’s trust in the s
 
 \cite{Li2010} mentions five steps for developing personal informatics software being: preparation, collection, integration, reflection, and action.  It should be a conscious decision to integrate these steps into our software as it will enable the users to not only flit back and forth between these stages with ease. This will also allow us to make as much of the program software driven in order to make it more reliable and through reducing the amount that the user must do/understand will help the user to monitor their own data with minimal effort.
 
-\section{Security Ethics - ?}
+\section{Security Ethics - AG}
 
 This research was performed during the production of the product, in order to assertain ethcal guidelines for users to developers to follow when securing user data.\newline
 
@@ -181,13 +191,13 @@ A questionnaire has been used to gather data about the correlation between peopl
 
 \begin{figure}[h]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{\textwidth}
 	\centering	
 	\includegraphics[width=0.9\linewidth]{question-moods.png}
 	\caption{Do moods help you express or cope with different emotions and moods?}
 	\label{fig:question-moods}
-\end{subfigure}%This Removes the space after these
-\begin{subfigure}{0.5\textwidth}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
 	\centering
 	\includegraphics[width=0.9\linewidth]{question-format.png}
 	\caption{What music application do you prefer?}
@@ -212,7 +222,7 @@ The threat of coronavirus is something that must be considered. As not only coul
 Following on from the risk of group members being unable to work, there are an infinite number of scenarios that could result in a member being unable to participate. Whether this is because they are unconscious or are simply unable to work. Outside of generally taking care of ourselves and ensuring our health is in good shape, there is not much else that can be done about this.
 The Scrum methodology which we will be using throughout this project has many techniques which will help us overcome any issues which may impact our group, depending on the severity. The flexibility of the methodology allows us to go over and rethink multiple aspects of the software and its documentation letting us get the highest quality project possible. 
 
-\begin{longtable}{| p{5cm} | p{2.5cm} | p{2cm} |  p{5.5cm} |}
+\begin{longtable}{| p{5.5cm} | p{2cm} | p{2cm} |  p{5.5cm} |}
 \hline
 \textbf{Risk} & \textbf{Likelihood} & \textbf{Impact} & \textbf{Measures} \\
 \hline
@@ -298,7 +308,7 @@ In order to make our system as useful as possible, we decided to collect our req
 
 Moreover, we held a focus group. During this focus group, several requirements that we had missed were made apparent. By having a semi-structured conversation with potential stake holders, we were able to see roughly what a large proportion of people would want from a system like the one that we are developing. In addition to this, the focus group allowed us to quickly and efficiently gather data from people who most greatly reflect the audience we are aiming for. This meant that we had more time to work on constructing the system as opposed to researching for more requirements.
 
-Finally, we also sent out a questionnaire. We received X RESPONSES, from which we were able to gather additional requirements. From the focus group, a mass of information was yielded which showed us a lot of perspectives we hadn’t necessarily put a lot of thought into. It also provided many niche requirements which if we have time to get to would really enrich our system and take it a step above where we were aiming before.
+Finally, we also sent out a questionnaire. We received 24 reponses, from which we were able to gather additional requirements. From the focus group, a mass of information was yielded which showed us a lot of perspectives we hadn’t necessarily put a lot of thought into. It also provided many niche requirements which if we have time to get to would really enrich our system and take it a step above where we were aiming before.
 
 \section{Specific Domain -  FD}
 
@@ -333,7 +343,7 @@ For these reasons we decided that the initial scope of our project was too large
 Our final product focuses on tracking what the user is listening to and the mood of those songs, the outcome of this analysis is then displayed to the user. However, in earlier versions we also planned to use this to determine trends in user moods and then recommend songs based on these trends and the other songs the user listens to. This part of the project would have been dependant on almost all of the other parts of the project, and would have required additional research into how to dictate trends how then to recommend songs based on this, which would have been quite a large undertaking and most likely would have required an entire additional sprint, for these reasons it seemed natural that this part of the project would have to be scaled back and we instead decided to display the data directly to the user. We do not believe this will end up being much less useful to our users, as with time remaining it seems unlikely that we would be able to develop algorithms which would offer more insight than what the user could draw from the data itself. This caused the focuses of sprint 3 to move towards smart methods of displaying user data rather than laying the groundwork for more advanced data analysis.
 
 
-\section{Functional}
+\section{Functional Requirements}
 
 \begin{center}
 
@@ -352,50 +362,214 @@ Our final product focuses on tracking what the user is listening to and the mood
 \hline
 \textbf{1.1 - Send data to client when requested} & \textbf{Author: SD} \\
 \hline
-The web app must attempt to send data to the client when requested. This data could be specified so it needs to be able to handle the specific request. The web app will then deal with the data it is given. & Priority: HIGH Dependencies: 2.1 \\
+The web app must attempt to send data to the client when requested. This data could be specified so it needs to be able to handle the specific request. The web app will then deal with the data it is given. & 
+Priority: HIGH Dependencies: 2.1, 2.2, 3.1, 3.2\\
 \hline
+\textbf{1.2 - Check for valid username and password} & \textbf{Author: SC} \\
+\hline
+The server must check is the supplied username and password are valid. This will be done by checking if the username exists (see 1.3) and then comparing the given password with the corresponding stored hash. The server will either return an error or a confirmation that the details are correct. &
+Priority: HIGH Dependencies: 1.3, 4.3\\
+\hline
+\textbf{1.3 - Check if username alreay exists} & \textbf{Author: SC} \\
+\hline
+The server must be able to check if a supplied username exists. It will be compared with a list of existing usernames and it will either return an error or a confirmation &
+Priority: HIGH Dependencies: 4.1\\
+\hline
+\textbf{1.4 - Add new user information to the users list} & \textbf{Author: SC} \\
+\hline
+Once the user has successfully requested a new account, the server must add the new user’s information to the users list (the username and the hashed password (see 1.5)). &
+Priority: HIGH Dependencies: 4.1\\
+\hline
+\textbf{1.5 - Hash the passwords before storing them} & \textbf{Author: SC} \\
+\hline
+The server must be able to hash a supplied password. Upon research, this will be done using Argon2 as the hashing algorithm. The passwords will not be stored anywhere, only their hashes.&
+Priority: HIGH Dependencies: 1.4\\
+\hline
+
 \multicolumn{2}{|l|}{\textbf{\textit{2 - Data Collection}}} \\
 \hline
-\textbf{2.1 - Get data from Spotify} & \textbf{Author: JC} \\
+\textbf{2.1 - Gain access to data from Spotify} & \textbf{Author: JC} \\
 \hline
-The server must be able to request data from Spotify’s public web API for a user. This can only happen once this user has connected to Spotify through our system successfully. Our system must send a message to the Spotify web API containing the authorisation token for that user (see 'Connect to Spotify'). On success, Spotify's web API will return an access token that can then be used to make requests to the API for a certain amount of time. & Priority: HIGH Dependencies: None \\
+The server must be able to request data from Spotify’s public web API for a user. This can only happen once this user has connected to Spotify through our system successfully.
+Our system must send a message to the Spotify web API containing the authorisation token for that user (see 'Connect to Spotify'). On success, Spotify's web API will return an access token that can then be used to make requests to the API for a certain amount of time.& Priority: HIGH Dependencies: None \\
 \hline
+\textbf{2.2 - Collect information} & \textbf{Author: FD} \\
+\hline
+The server must be able to collect song information from the Spotify API. Once granted the authorisation token (see 2.1), the server must be able to request and receive data regarding a given song such as BPM, genre, artist, etc.&Priority: HIGH Dependencies: 2.1 \\
+\hline
+
 \multicolumn{2}{|l|}{\textbf{\textit{3 - Data Storage and Processing}}} \\
 \hline
-\textbf{3.1 - Get data from Spotify} & \textbf{Author: TD} \\
+\textbf{3.1 - Store data from Spotify for each user} & \textbf{Author: TD} \\
 \hline
-The server must process the data received from the Spotify API and take all the data that will be used and put it into a database in an efficient intermediate format keeping only the data we need and not storing any redundant data which offers little to no value to our client. & Priority: HIGH Dependencies: 2.1 \\
+The server must process the data received from the Spotify API and store it on the online server. It will take all the data and put it into a database in an efficient intermediate format keeping only the data we need. It will not be storing any redundant data, which offers little to no value to our client. The system will request all data on each song within the users song library and when they listen to a song, all information on that song is collected as well. All this must be stored for each of the users. & Priority: HIGH Dependencies: 2.1 \\
 \hline
-\textbf{3.2 - Recommend songs based on trends} & \textbf{Author: FD} \\
+\textbf{3.2 - Determine the mood of a song} & \textbf{Author: SC} \\
 \hline
-The system should be able to recommend songs to the user based off of mood patterns or based off of genre that the user likes to listen to. & Priority: MED Dependencies: None \\
+The server must be able to use the songs data of the user to determine the mood of the song. This will be done by considering 5 variables: valency, energy, acousticness, instrumentalness, danceability. Check the mood table heading for more details. &  Priority: HIGH Dependencies: 2.1, 2.2, 3.1\\
 \hline
+\textbf{3.3 - Create mood playlists} & \textbf{Author: SC} \\
+\hline
+The server must store the mood of each song and be able to sort through them in order to create playlists of songs with the same mood. &  Priority: MED Dependencies: 3.1, 3.2\\
+\hline
+\textbf{3.4 - Recommend songs based on trends} & \textbf{Author: FD} \\
+\hline
+The system should be able to recommend songs to the user based on mood patterns. The server should determine the current mood of the user based on the songs they are listening to or past mood patterns. Once the mood is determined, the generated playlist of that mood (see 3.3) will be used with the Spotify API to suggest new songs of the same type. &  Priority: MED Dependencies: 2.2, 2.3\\
+\hline
+\textbf{3.5 - Continuously collect song data} & \textbf{Author: SC} \\
+\hline
+The system must be able to collect song data continuously. This will retrieve the information about a track which is collected and then processed to return a mood. There will be a delay before the next command to collect data on the song, this may be every 15 seconds or so. &  Priority: HIGH Dependencies: 2.1, 2.2\\
+\hline
+
+
 \multicolumn{2}{|l|}{\textbf{\textit{4 - Client}}} \\
 \hline
 \textbf{4.1 - Create a new account} & \textbf{Author: SC} \\
 \hline
-The server must allow the user to create a new account. The user will be required to enter a username and a password when creating an account. The information will be sent to the server which will check it against the existing users’ usernames. If the username they entered already exists, the user will receive an error asking them to enter another username. If the username they entered is valid, a new account will be created by adding the new user’s information to the users list (the username and the hashed password). A new file will be created and linked to the user in which future data will be stored. The user will receive a message saying that their account has been created. & Priority: HIGH Dependencies: 3.1 \\
+The user must be able to create a new account. The user will be required to enter a username and a password when creating an account. The information will be sent to the server which will check the username (see 1.3). If the server confirms that the username they entered already exists, the user will receive an error asking them to enter another username. If the username they entered is valid, the user will receive a message that their account has been created (see 1.4) and they will be directed to their new account. & Priority: HIGH Dependencies: 3.1 \\
 \hline
 \textbf{4.2 - Connect to Spotify} & \textbf{Author: JC} \\
 \hline
-The client must request that the user connects their account to their Spotify account. The user will be redirected to a Spotify webpage showing the data that is being requested by our system, and will be asked to first login to Spotify, and then authorise our system to use the relevant data. If successful, a 'success' callback message will be sent to the server containing an authorisation code, meaning our system can now make requests to the Spotify web API to request that user's music data. If unsuccessful, a 'fail' callback message will be sent to the server. & Priority: HIGH Dependencies: None \\
+The client must request that the user connects their account to their Spotify account. The user will be redirected to a Spotify webpage showing the data that is being requested by our system, and will be asked to first login to Spotify, and then authorise our system to use the relevant data. If successful, a 'success' callback message will be sent to the server containing an authorisation code, meaning our system can now make requests to the Spotify web API to request that user's music data. If unsuccessful, a 'fail' callback message will be sent to the server.& Priority: HIGH Dependencies: None \\
 \hline
 \textbf{4.3 - Login to the Server} & \textbf{Author: SC} \\
 \hline
-The server must allow users to log into their accounts. The user will need to enter their username and password. The server will then try to find the given username in the usernames list. If it is not found the user will receive an error. If it is found, then the supplied password will be hashed and compared with the stored hash. If the password is correct the user will be logged in and will have access to his data, otherwise the user will receive an error. &  Priority: HIGH Dependencies: 1.1, 3.1, 4.1 \\
+The users must be able to log into their accounts. The user will need to enter their username and password. This information will be sent to the server awaiting a response (see 1.2). The message from the server will then be displayed. If the username does not exist, the user will receive an error. If the password is correct the user will be logged in and will have access to his data, otherwise the user will receive an error. &  Priority: HIGH Dependencies: 1.1, 3.1, 4.1 \\
 \hline
 \textbf{4.4 - Display data to the user} & \textbf{Author: TD} \\
 \hline
-Reformat data into a set of interesting visual representations which can be displayed to the user, data for these visual representations should be provided only when they are actually requested by the user so as to save the user bandwidth and reduce server load, these should also follow the guidelines for visual data as set out in the research and each should have a specific aim such that they provide the user with understandable and usable data &  Priority: HIGH Dependencies: 1.1, 3.1, 4.1, 4.2, 4.3 \\
+Reformat data into a set of interesting visual representations which can be displayed to the user, data for these visual representations should be provided only when they are actually requested by the user so as to save the user bandwidth and reduce server load, these should also follow the guidelines for visual data as set out in the research and each should have a specific aim such that they provide the user with understandable and usable data. &  Priority: HIGH Dependencies: 1.1, 3.1, 4.1, 4.2, 4.3 \\
 \hline
-\textbf{4.5 - Request data from server} & \textbf{Author: SD} \\
+\textbf{4.5 - Display how a user’s mood has changed over the last 24 hours} & \textbf{Author: SD} \\
 \hline
-The web app must be able to request data from the server for whatever process it would like the data for. This data should be able to be requested for specific data, for example, song details, song name or even everything in a database, etc. This is useful as it can restrict the amount of data to be sent over to the network. & Priority: HIGH Dependencies: 2.1, 4.3 \\
+Moods must be able to be displayed in a graph. This will show the user the  moods they were in at certain times throughout the day in the last 24 hours. This must be visually appealing to the user and intuitive to read off. Once data has been collected it will be processed and displayed in this format. & Priority: HIGH Dependencies: 3.1, 3.2, 4.4, 4.9\\
+\hline
+\textbf{4.6 - Display all songs mood within a user’s library within a pie chart.} & \textbf{Author: SD} \\
+\hline
+Moods of each song within a user’s library should be able to be displayed in a pie chart using the Google Charts API. This will show the user what percentages of the library is a certain mood. One by one each song will be processed and finally displayed to the user in this format.&  Priority: HIGH Dependencies: 3.1, 3.2, 4.4, 4.9\\
+\hline
+\textbf{4.7 - Display recently listened to songs.} & \textbf{Author: SD} \\
+\hline
+The system must be able to show the user their previously listened to songs on that day and at what time. This will display in a list with the following data; time they listened to the song, the album artwork for the album, the title of the song, album, artist, and the mood. This will request a lot of data however, this should be stored when the data for the track is collected to be processed.& Priority: HIGH Dependencies: 3.1, 4.4, 4.9\\
+\hline
+\textbf{4.8 - Display all songs mood within a user’s library within a table along with other details.} & \textbf{Author: SD} \\
+\hline
+Moods of each song will be displayed in a table format along with the song title, album title, artist and the number of listens for that song. Similar to the previous (see 4.7), each song is processed and displayed, however, this requires more data as it is also displaying additional information, not just the mood of the song.&  Priority: HIGH Dependencies: 3.1, 3.2, 4.4, 4.9\\
+\hline
+\textbf{4.9 -  Request data from server} & \textbf{Author: SD} \\
+\hline
+The web app must be able to request specific data from the server, to be used for different processes. The exact data needed must be specified, for example, song details, song name or even everything in a database, etc. This is useful as it can restrict the amount of data to be sent over to the network.& Priority: HIGH Dependencies: 2.1,4.3\\
 \hline
 
 \end{longtable}
 
 \end{center}
+
+\section{Non-Functional Requirements}
+
+\begin{center}
+
+\begin{longtable}{| p{13cm} | p{3cm} |}
+\endfirsthead
+\endlastfoot
+
+\multicolumn{2}{c}{\textit{Continued from last page}}
+\endhead
+
+\multicolumn{2}{c}{\textit{Continued on next page}}
+\endfoot
+
+\hline
+\multicolumn{2}{|l|}{\textbf{\textit{1 - Software Development Process}}} \\
+\hline
+\textbf{1.1 - We must use the Scrum method in order to develop our project} & \textbf{Author: FD} \\
+\hline
+We must use the agile development technique called ‘Scrum’. This involves regular ‘Sprint Meetings’, following sprint backlogs, and sprint reviews in order to gauge sprint progress. This development technique works well for obtaining rapid feedback. This is vital in a project like the one we are producing since our goals are forever changing with elements being implemented and tested and then potentially removed or altered.&Priority: HIGH Dependencies: 1.2, 1.3, 1.4\\
+\hline
+\textbf{1.2 - We must have at least 3 sprints} & \textbf{Author: FD} \\
+\hline
+In order for our project to be successful, having many sprint meetings will be vital. Sprints allow us to have target focussed goals allowing for increased productivity. These sprints will also present developments in terms of what needs to be done in the next sprint by throwing up new issues which can be added to the product backlog and dealt with in the next sprint.&Priority: HIGH Dependencies: 1.3\\
+\hline
+\textbf{1.3 - Sprint duration must be between 1 and 3 weeks} & \textbf{Author: FD} \\
+\hline
+The time we have been allocated for our project allows us between 1 and 3 weeks for a given sprint in order to fit in 3 sprints before the deadline. We must have at least 3 sprints as this allows us to review and make changes to any given approach we may be taking.&Priority: HIGH Dependencies: 1.2\\
+\hline
+\textbf{1.4 - We must regularly review our functional requirements} & \textbf{Author: FD} \\
+\hline
+We must regularly review our list of functional requirements after each sprint. This is important since each sprint will reveal changes that need to be made to our list for one reason or another such as software/hardware limitations, time restrictions, etc.&Priority: HIGH Dependencies: None\\
+\hline
+\textbf{1.5 - We will incorporate risk management into our software process} & \textbf{Author: FD} \\
+\hline
+We will be using risk management assessments in order to ensure our project is following a maintainable development design. For example, we will avoid at any cost to develop a server in a language only one person knows in case that person happens to fall ill. This would be a very big setback to the project and would halt progression massively.&Priority: MEDIUM Dependencies: None\\
+\hline
+
+\multicolumn{2}{|l|}{\textbf{\textit{2 - Altering Requirements}}} \\
+\hline
+\textbf{2.1 - After researching, we will add to our requirements} & \textbf{Author: FD} \\
+\hline
+Throughout the process, we will be researching our chosen area of personal informatics. Due to this, we will gain more knowledge around our specific area of PI. We will use this continually growing understanding around our area of PI and use it to adapt and add to our list of initial requirements.&Priority: MEDIUM Dependencies: None\\
+\hline
+
+\multicolumn{2}{|l|}{\textbf{\textit{3 - Background Research}}} \\
+\hline
+\textbf{3.1 - We will read and cite at least four core articles in the area of PI} & \textbf{Author: FD} \\
+\hline
+We will read and use at least four core articles in the area of PI in our project. This is so our project is well informed and knowledgeable surrounding the area of PI. This will also aid our project in terms of what to aim for what our project should and shouldn’t do.&Priority: MEDIUM Dependencies: None\\
+\hline
+
+\multicolumn{2}{|l|}{\textbf{\textit{4 - Ethical Issues}}} \\
+\hline
+\textbf{4.1 - Must use users’ data for allowed purposes only} & \textbf{Author: FD} \\
+\hline
+We must only allow for the user’s data to be used for the intended purpose. Their data will not be distributed to third parties and it won’t be used without the user’s consent.&Priority: HIGH Dependencies: None\\
+\hline
+\textbf{4.2 - Data must be kept securely} & \textbf{Author: FD} \\
+\hline
+The user’s stored data will be kept secure by encrypting it and securing it on our server. Only authorised persons will be allowed to access it to prevent data being stolen or edited.&Priority: HIGH Dependencies: None\\
+\hline
+\textbf{4.3 - The user must have given permission for their data to be collected} & \textbf{Author: FD} \\
+\hline
+The user must agree for any of their data to be collected and stored before it is recorded. The user must also be given permission to restrict the data that is collected about them.&Priority: HIGH Dependencies: None\\
+\hline
+
+\multicolumn{2}{|l|}{\textbf{\textit{5 - Usability}}} \\
+\hline
+\textbf{5.1 - The software system must be easy to navigate and obvious to use.} & \textbf{Author: FD} \\
+\hline
+This is to maximise the use each user gets out of using the software. By making  the system easy to use, users will be able to access its full potential.&Priority: HIGH Dependencies: None\\
+\hline
+\textbf{4.2 - Data must be kept securely} & \textbf{Author: FD} \\
+\hline
+The user’s stored data will be kept secure by encrypting it and securing it on our server. Only authorised persons will be allowed to access it to prevent data being stolen or edited.&Priority: HIGH Dependencies: None\\
+\hline
+
+\multicolumn{2}{|l|}{\textbf{\textit{6 - Testing}}} \\
+\hline
+\textbf{6.1 - The system must pass a series of test plans} & \textbf{Author: FD} \\
+\hline
+The system produced must undergo a series of test plans since test-driven development is a great way to find unexpected outputs and bugs which otherwise may go undetected. Evidence of this must be provided.&Priority: HIGH Dependencies: None\\
+\hline
+\textbf{6.2 - Our hypotheses must connect claims found in research to observable behaviours in the finished system} & \textbf{Author: FD} \\
+\hline
+In order for our project to be successful, having many sprint meetings will be vital. Sprints allow us to have target focussed goals allowing for increased productivity. These sprints will also present developments in terms of what needs to be done in the next sprint by throwing up new issues which can be added to the product backlog and dealt with in the next sprint.&Priority: HIGH Dependencies: None\\
+\hline
+\textbf{6.3 - We must analyse the data generated from users using our finished system.} & \textbf{Author: FD} \\
+\hline
+We must analyse data generated by our system using valid statistical methods to discover any trends or patterns within our collected data.&Priority: HIGH Dependencies: None\\
+\hline
+\textbf{6.4 - The system must generate error reports upon crashing} & \textbf{Author: FD} \\
+\hline
+The system must generate user friendly error messages to users depending on the reason as to why the system failed. The system should also send detailed error reports back to the developers so that corrections can be made to the system if necessary.&Priority: HIGH Dependencies: None\\
+\hline
+\textbf{6.5 - The user interface must be tested thoroughly} & \textbf{Author: FD} \\
+\hline
+The user interface must be thoroughly tested against things such as invalid user input and error handling to minimise system failures.&Priority: HIGH Dependencies: None\\
+\hline
+\end{longtable}
+
+\end{center}
+
+
 
 \chapter{Design}
 
@@ -539,38 +713,42 @@ The GetTracks API endpoint uses the GetAllTracks method and returns that data, f
 \subsubsection{MoodClassification}
 The MoodClassification API endpoint uses the SortUserSongs method and returns that data, for use with the mood charts on the front end.
 
+\section{Class Diagram - AG}
 
-\section{Design Sketches}
+See figure \ref{fig:classdia} for the complete class diagram
 
-Omit Earlier Sketches
-TODO?
-
-\section{Class Diagram}
-
-Needs updating
+\begin{figure}[h]
+	\centering
+	\makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{classdia.png}}%
+	\caption{Complete Class Diagram for our system}
+	\label{fig:classdia}
+\end{figure}
 
 \section{Use Case Diagrams - FD}
 
 There are not a large number of use cases for our program. All of the data enrtry is automatic so there are no use cases that allow for the user to edit their data. This means we end up with a small number of use case scenarios, which helps to simplify user experience design
 
-\ref{fig:usecase1} shows the typical path a user would take when logging in, should they not have an account then they would have to follow \ref{fig:usecase2} to create one first and then they can view their data, following \ref{fig:usecase3}
+Figure \ref{fig:usecase1} shows the typical path a user would take when logging in, should they not have an account then they would have to follow figure \ref{fig:usecase2} to create one first and then they can view their data, following figure \ref{fig:usecase3}
+
+Both figures \ref{fig:usecase1} and \ref{fig:usecase2} have corresponding state machine model which can be seen in the next section
 
 \begin{figure}[h]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{\textwidth}
 	\centering	
-	\includegraphics[width=0.9\linewidth]{usecase1.png}
+	\includegraphics[width=0.6\linewidth]{usecase1.png}
 	\caption{Use Case Scenario 1}
 	\label{fig:usecase1}
-\end{subfigure}%This Removes the space after these
-\begin{subfigure}{0.5\textwidth}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
 	\centering
-	\includegraphics[width=0.9\linewidth]{usecase2.png}
+	\includegraphics[width=0.6\linewidth]{usecase2.png}
 	\caption{Use Case Scenario 2}
 	\label{fig:usecase2}
 \end{subfigure}
-\begin{subfigure}{0.5\textwidth}
-	\includegraphics[width=0.9\linewidth]{usecase3.png}
+\begin{subfigure}{\textwidth}
+	\centering
+	\includegraphics[width=0.6\linewidth]{usecase3.png}
 	\caption{Use Case Scenario 3}
 	\label{fig:usecase3}
 \end{subfigure}
@@ -580,8 +758,33 @@ There are not a large number of use cases for our program. All of the data enrtr
 
 \end{figure}
 
-\chapter{Testing}
+\section{State Machine Diagrams}
 
+The State Machine Model shows the different states the system will go through during different use cases, we decided to exclude a state machine model for figure \ref{fig:usecase3} as it was so simple. Figure \ref{fig:statemach1} shows the state of the system for figure \ref{fig:usecase1} and \ref{fig:statemach2} for \ref{fig:usecase2}.
+
+\begin{figure}[h]
+\centering
+\makebox[\textwidth][c]{
+\begin{subfigure}{0.6\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{statemach1.png}
+	\caption{State Machine Model for \ref{fig:usecase1}}
+	\label{fig:statemach1}
+\end{subfigure}%This Removes the space after these
+\begin{subfigure}{0.6\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{statemach2.png}
+	\caption{State Machine Model for \ref{fig:usecase2}}
+	\label{fig:statemach2}
+\end{subfigure}
+}
+
+\caption{State Machine Models for different Scenarios}
+\label{fig:statemach}
+
+\end{figure}
+
+\chapter{Testing}
 
 \section{Testing Plans}
 
@@ -754,6 +957,29 @@ Statistics on library and listen makeup should be displayed on page if the user 
 
 \end{center}
 
+\chapter{Consulsion  - SC}
+
+‘Title’ has been a great learning experience for our team and, overall, a success. The final version of our project has met our expectations and the journey of creating it has taught us about organisation, teamwork, self-learning and utilising our sets of skills. ‘Title’ is a personal informatics software, which, upon research and development, helps the user understand and classify the songs they listen to, based on the mood the music conveys. It takes raw data from the user’s Spotify account which is then processed into something they can easily understand and reflect upon by the use of graphs and intuitive user interface. 
+
+As any major project, ‘Title’ has its strengths and weaknesses. It started as a fun project idea, which took contour in the first weeks of the semester. Upon reflection, the planning stage of our project was vague, our idea not being well-defined. If something could have been done differently about this, assessing everyone’s skills and knowledge at the beginning of the project would have helped assure that everyone would be able to contribute in equal amounts. This would have also been a better guide about what our team was able to create in the most efficient way. 
+On the other hand, an advantage was that our set of requirements was constructed in a clear and concise way, which was useful when building the software as well as tracking our progress. The requirements were updated regularly if any change occurred and this helped make sure there were no misunderstandings. The testing plan was created before developing the software which was really useful because we knew exactly what the software was supposed to do. For one of our testing plans, upon feedback of our tutor, we had to break down some of our tests and 
+make minor changes, but this did not cause any problems in the end. 
+Our design was also successful, giving us an idea of what the user interface was supposed to look like. Drawing diagrams to illustrate this before creating it helped us make sure we would not implement something that we were not happy with. The Class Diagrams, State Machine Diagrams and Use Case Diagrams were useful during the development of the software. They are detailed and clear, making them a great guide to how the software is supposed to function. 
+
+Regarding research, we found plenty of useful articles to base our software on. Although our research was useful, we have created and distributed our questionnaire too late in our development process, therefore we discarded it and we had a low amount of responses. It would have been better If we would have prioritised it in the beginning of our project. In this way we could have used it as a tool to guide us and suggest ways of making our project better and more useful to the target audience. 
+The organisation of the team was good, even though there were more people in this semester’s project compared to the project we made in the first semester, the Scrum method helped us greatly. It was a good way of us keeping track of our progress and our meetings. In the first semester we did not use GitHub and did not have a product backlog, which made us far less organised and less adaptable to change. It was hard to keep track of what everyone was doing, and it was hard to estimate the amount of time needed to complete the work, leaving us with a lot of work due before the deadline. 
+
+In this semester, iterative development was a good way of observing the project at different stages. This offered us more freedom and ability to change by reflecting on the previous sprints and thinking about where the project was going along the way. For example, we were able to decide to have a longer sprint during difficult times, so that the work could be finished. The scrum methodology helped us have a better attitude towards our responsibilities as everyone was able to pick a task they wanted to do, and they were supposed to complete it in the time of the sprint. We had deadlines that motivated us to get work done, and we helped each other as a team by reviewing each other’s progress and suggesting improvements in our meetings. 
+We learnt to help each other in case someone had questions about their task and to be understanding yet prompt. Because of the workload that needed to be done we also had to pick tasks we were not initially comfortable with, which have helped us with self development and with the help of our teammates and self-learning, broadening our sets of skills. The two projects helped us understand what working in a team is like and develop our attitude towards working with other people that have a common goal, as well as the advantages of using an agile method. 
+We have developed our attitudes towards trying to get involved in new topics and dealing with difficult situations. We had to deal with some of our teammates not being able to participate because of personal issues as well as working remotely. Our original risk assessment helped us as we were prepared and anticipated these situations. To be able to keep working normally even during the Covid19 pandemic, we had online meetings using Teams, used Google Documents for our report so everyone could edit it, GitHub to upload our work and keep track of our progress, and WhatsApp to plan our meetings and communicate outside of them when needed. 
+
+After completing both the projects and being able to compare and reflect on them, we learnt that organisation is a highly important aspect when working in a team or tackling a big project. We were able to observe the advantages of using Scrum, as well as good communication and planning. Completing the two projects was a learning experience that will help us along the way while working in a software developing team.
+
+
+%Loads bibliography
+\bibliography{ref}{}
+\bibliographystyle{bathx}
+
 \chapter{Appendix}
 
 \section{Figures}
@@ -764,8 +990,701 @@ Statistics on library and listen makeup should be displayed on page if the user 
 	\label{fig:thayermoodmodel}
 \end{figure}
 
-%Loads bibliography
-\bibliography{ref}{}
-\bibliographystyle{bathx}
+\newpage
+\section{Group Contribution Form}
+
+The Group Contribution is at follows:
+\begin{itemize}
+\item Adam George			06
+\item Edward Dunton		10
+\item Fraser Dwyer			10
+\item Joseph Cryer			10
+\item Lance Garcia			02
+\item Sam Davidson			06
+\item Sam Freeman 			04
+\item Sandra-Maria Corradi	08
+\item Teodora Dinca    		06
+\end{itemize}
+
+Our Group Contribution Form can be seen in figure \ref{fig:gcf}
+
+Lance and Sam Freeman ended up getting lower scores as both were barely seen after sprint 1, and neither contributed any work towards the project after that point, Sam did however contribute more to the project during the period he was around and therefore has been given a higher score
+
+Eddy and Joe contributed the majority of the code and for that reason have been given higher scores, Fraser contributed a large amount towards the the contents of the report
+
+As the team was unable to meet due to COVID-19 we were unable to sign it and instead had to approve it via teams. As neither Lance nor Sam Freeman were around to communciate during sprint 2 and 3 we were unable to get their approval.
+
+\newpage
+
+\begin{figure}[!h]
+	\includegraphics{gcf.png}
+	\caption{Group Contribution Form as seen on MS Teams}
+	\label{fig:gcf}
+\end{figure}
+
+\newpage
+
+\section{Evidence of Agile Approach}
+\label{sec:agileapp}
+
+\subsection{Sprint 1}
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-report-1-before.png}
+	\caption{GitHub Report project board before sprint 1}
+	\label{fig:agileapp-rb1}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-report-1-after.png}
+	\caption{GitHub Report project board after sprint 1}
+	\label{fig:agileapp-ra1}
+\end{subfigure}
+
+\caption{GitHub report project boards for sprint 1}
+
+\end{figure}
+
+\newpage
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-code-1-before.png}
+	\caption{GitHub Code project board before sprint 1}
+	\label{fig:agileapp-cb1}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-code-1-after.png}
+	\caption{GitHub Code project board after sprint 1}
+	\label{fig:agileapp-ca1}
+\end{subfigure}
+
+\caption{GitHub code project boards for sprint 1}
+
+\end{figure}
+
+\newpage
+\subsection{Sprint 2}
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-report-2-before.png}
+	\caption{GitHub Report project board before sprint 2}
+	\label{fig:agileapp-rb2}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-report-2-after.png}
+	\caption{GitHub Report project board after sprint 2}
+	\label{fig:agileapp-ra2}
+\end{subfigure}
+
+\caption{GitHub report project boards for sprint 2}
+
+\end{figure}
+
+\newpage
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-code-2-before.png}
+	\caption{GitHub Code project board before sprint 2}
+	\label{fig:agileapp-cb2}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-code-2-after.png}
+	\caption{GitHub Code project board after sprint 2}
+	\label{fig:agileapp-ca2}
+\end{subfigure}
+
+\caption{GitHub code project boards for sprint 2}
+
+\end{figure}
+\newpage
+\subsection{Sprint 3}
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-report-3-before.png}
+	\caption{GitHub Report project board before sprint 3}
+	\label{fig:agileapp-rb3}
+\end{subfigure}
+
+\caption{GitHub report project boards for sprint 3}
+
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-code-3-before.png}
+	\caption{GitHub Code project board before sprint 3}
+	\label{fig:agileapp-cb3}
+\end{subfigure}
+
+\caption{GitHub code project boards for sprint 3}
+
+\end{figure}
+\newpage
+
+
+\section{Meeting Minutes}
+
+Exact meeting minutes as they were recorded can be found below\\
+
+\subsubsection{13th Feburary 2020}
+
+\begin{lstlisting}
+Minutes 13/02/2020
+
+Attendance:
+Sandra-maria
+Joseph
+Sam D
+Eddy
+Sam F
+Lance
+
+- Made a group chat
+- Making list of things that could go wrong
+- Decided to meet on Mondays 11:15 - 12:00 1 West CS Lab
+
+Goals for next meeting (Monday):
+- Get GitHub
+- Read through spec
+- Actually come to meetings
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{17th Feburary 2020}
+
+\begin{lstlisting}
+Minutes 17/02/2020
+
+Attending:
+- Teo
+- Sam 1 + 2
+- Lance
+- Eddy
+- Sandra
+- Adam
+- Joe
+- Fraser
+
+Minutes:
+
+Key points on spec: 
+	code quality not important
+	data can be fake
+
+Ideas for project:
+	Dietting tracking
+	Music tracking
+
+Decided on music tracking
+
+Personal projects dealt out:
+
+Fraser:
+A description of the problem area (Personal Informatics) supported by references to goodquality contemporary literature.
+
+Sam D:
+A clear statement of the main aim of your software system as a potential solution in theproblem area.
+
+Others:
+Gather articles for research and a short paragraph on what they're about
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{20th of Feburary, 2020}
+
+\begin{lstlisting}
+Minutes 20/02/2020
+Attendance:
+- Sam F
+- Sam D
+- Eddy
+- Lance
+- Sandra
+- Adam
+- Fraser
+- Teo
+- Joe
+
+Minutes: 12.15pm - 13.05pm
+Key Points
+-	Music Tracking, looking into a different users patterns.
+-	Mood assumptions based on the type of music they are listening to.
+-	Is the project ethical.
+Joe, Teo, Lance:
+-	Requirements.
+Sandra:
+-	Ethics
+Eddy, Sam F, Adam:
+-	Research, data collection and representation
+Eddy:
+-	Latex 
+
+By next meeting:
+-	Introduction
+-	Started requirements.
+-	Begin looking into ethics.
+-	Additional research.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{24th of Feburary, 2020}
+
+\begin{lstlisting}
+Minutes 24/02/2020
+Attendance:
+- Eddy
+- Teo
+- Sam D
+- Sandra
+- Adam
+- Sam F
+Minutes: 11.15am - 12pm
+Key Points
+-	Continue requirements and ethics.
+
+By next meeting:
+-	Finish requirements.
+-	Begin our first sprint.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{27th of Feburary, 2020}
+
+\begin{lstlisting}
+Minutes 27/02/2020
+Attendance:
+- Sam F
+- Sam D
+- Eddy
+- Sandra
+- Adam
+- Fraser
+- Joe
+
+Minutes: 12:15pm - 1:05pm
+
+Potential Features list:
+- Serverside listener 
+	- Listen = 30 seconds+
+	- Database
+		- Make an object class
+		- Setup tables
+	- Connect to Spotify Web API
+	- Setup Web API for client
+- Client
+	- UI
+	- Receive from server Web API	
+	- Good visualisation of data
+		- Timeline of your listening history
+		- Recommendations
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{2nd of March, 2020}
+
+\begin{lstlisting}
+02/03/20
+
+In Attendance
+-Eddy
+-Fraser
+-Joe
+-Sam
+-Sandra
+-Adam
+-Lance
+-Teo
+
+TODO:
+-Research password security
+-Ethics of security
+-Write sprint into GitHub
+-Add report requirements to GitHub
+
+Decided:
+-Languages: Front: JS, HTML, CSS; Back: Node and SQLite
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{5th of March, 2020}
+
+\begin{lstlisting}
+Minutes 05/03/2020
+Attendance:
+- Joe
+- Fraser
+- Sandra
+- Adam
+- Teo
+- Eddy
+- Sam D
+
+Key points:
+- Add a test plan for end of sprint.
+- Sprint is going to plan.
+- Everyone continue their sprint jobs.
+
+Eddy:
+- Test plan for sprint.
+
+Eddy, Fraser:
+- Work on UML Diagrams.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{10th of March, 2020}
+
+\begin{lstlisting}
+Minutes 10/03/2020
+Attendance:
+- Adam
+- Joe
+- Sandra
+- Fraser
+- Sam D
+
+Main points:
+
+- Catch up on where everyone is.
+- Allocated new jobs to people.
+- Checked for issues on the jobs in progress.
+
+For next meeting:
+
+- Finish jobs.
+- Put all work together, presented nicely.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{13th of March, 2020 at 12:00}
+
+\begin{lstlisting}
+Meeting Minutes 12:00 12/3/20
+
+Attendance:
+- Joe
+- Sam F
+- Fraser
+- Sandra
+- Lance
+
+What was Discussed:
+- Where we had all got up to with our previous tasks
+- What is still left to do before our sprint review
+
+Before next meeting:
+- Finish risk assessment before sprint review
+- Split up more tasks
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{13th of March, 2020 at 17:00}
+
+\begin{lstlisting}
+Meeting Minutes 17:00 12/3/20
+
+Attendence:
+- Joe
+- Fraser 
+- Sandra
+- Adam
+- Sam F
+
+What was done:
+- More hashing research 
+- Hashing was implemented
+- Test plan was altered
+- Sprint review carried out
+- Added more tasks to product backlog in preparation for second sprint
+
+Before next meeting:
+- Choose your own task from the product backlog and try complete before next sprint
+- Next sprint starting monday 16-3-20
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{16th of March, 2020}
+
+\begin{lstlisting}
+Meeting Minutes 16-03-20
+
+Attendance:
+- Fraser
+- Eddy
+- Sam F
+- Teo
+- Sam D
+
+What was done:
+- Talked about what had been done since sprint review
+- Sorted out what needed to be done for sprint 2
+- Split up work
+- Planned to start sprint 19-03-20
+
+Before next meeting:
+- Finish all work that needs to be done before next sprint
+- Sort out alternate comminication method due to Covid-19
+	- Microsoft Teams
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{19th of March, 2020}
+
+\begin{lstlisting}
+Meeting Minutes 19-03-20
+
+Attendance:
+- Sam D
+- Fraser
+- Sandra
+- Adam
+
+What was done: 
+- Discussed what had been done since last meeting
+- Tried to get everyone on our first Microsoft Teams meeting
+- Talked about where we were with the project
+	- What needs to be done by next meeting
+	- Rough time frame for the rest of the project
+
+Before Next meeting:
+- Carry on with work from last meeting
+	- Improve something that you had finished
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{23rd of March, 2020}
+
+\begin{lstlisting}
+Minutes 23/03/2020
+Attendance:
+- Fraser
+- Sam F
+- Sandra
+- Sam D
+
+Key points:
+- See where everyone is. 
+- Discussed the types of requirements we will need for the system.
+- Completed introduction.
+
+- Get in contact with the others and see if they are settled.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{26th of March, 2020}
+
+\begin{lstlisting}
+Minutes 26/03/2020
+Attendance:
+- Adam
+- Joe
+- Eddy
+- Sam F
+- Sam D
+- Fraser
+- Sandra
+
+Key points:
+- Created a document which we will throw all final versions of write ups to add to the LaTex document.
+- Discussed where we are currently and we had to do before the end of the sprint.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{30th of March, 2020}
+
+\begin{lstlisting}
+Minutes 30/03/2020
+Attendance:
+- Sam D
+- Eddy
+- Sandra
+- Fraser
+
+Key points:
+- Quick meeting as not everyone was there.
+- Seen if people in the meeting were on track and had something to do.
+
+- Meeting with the whole group next time.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{2nd of April, 2020}
+
+\begin{lstlisting}
+Minutes 02/04/2020
+Attendance:
+- Teo
+- Sandra
+- Eddy
+- Joe
+- Sam D
+- Adam
+
+Key points:
+- Reviewed what we did in sprint 1.
+- Plan what must be done in sprint 2.
+- Make minor adjustments to current documentation.
+
+- Ethics
+- Design
+- Continue research on moods for the code.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{9th of April, 2020}
+
+\begin{lstlisting}
+Minutes 09/04/2020
+Attendance:
+- Adam
+- Sam D
+- Joe
+- Eddy
+- Sandra
+
+Key points:
+- Making progress.
+- Checking in to see where everyone is.
+- Assigned more tasks to those who have finished current ones.
+
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{14th of April, 2020}
+
+\begin{lstlisting}
+Minutes 14/04/2020
+Attendance:
+- Adam
+- Eddy
+- Fraser
+- Sam D
+- Sandra
+- Joe
+
+Key points:
+- Tested the current code, see if it would work with multiple accounts.
+- Checked in on everyones progress, continue current jobs.
+- Code is somewhat accurate in gathering the mood of a song.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{16th of April, 2020}
+
+\begin{lstlisting}
+Minutes 16/04/2020
+Attendance:
+- Adam
+- Joe
+- Sam D
+- Eddy
+- Teo
+- Sandra
+
+Key points:
+- Discussed where we could improve.
+- Discussed what was to be done in the 3rd sprint.
+- Everyone must have something to do as this is the last sprint.
+
+- Abstract
+- Conclusion
+- Minor details we have to change in the documentation.
+- Finish code.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{21st of  April, 2020}
+
+\begin{lstlisting}
+Minutes 21/04/2020
+Attendance:
+- Adam
+- Eddy
+- Sandra
+- Teo
+- Fraser
+- Sam D
+- Joe
+
+Key points:
+- Retested the code for new features like daily tracking.
+- Checked in to see where everyone currently is.
+- Made minor changes to the documentation.
+- Continue devloping the code.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{23rd of April, 2020}
+
+\begin{lstlisting}
+Minutes 23/04/2020
+Attendance:
+- Sandra
+- Joe
+- Sam D
+- Adam
+- Eddy
+
+Key points:
+- Pushed for certain things to get done.
+- Nearing the end of the sprint so we laid out exactly what had to be done.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{28th of April, 2020}
+
+\begin{lstlisting}
+Minutes 28/04/2020
+Attendance:
+- Sandra
+- Joe
+- Adam
+- Eddy
+- Teo
+- Fraser
+
+Key points:
+- Small meeting to check in on the progress.
+- Might need to extend the sprint to make time for minor details of the document and the code.
+- Continue doing current tasks.
+\end{lstlisting}
+
+\leavevmode \\
+\subsubsection{30th of April, 2020}
+
+\begin{lstlisting}
+Minutes 30/04/2020
+Attendance:
+- Eddy
+- Adam
+- Sandra
+- Sam D
+- Teo
+
+Key points:
+- Assign everything that there is left to do to people.
+- Finish by Tuesday 5th May.
+- Documentation sprint cycle has been updated to show everyone what they have to do.
+\end{lstlisting}
 
 \end{document}

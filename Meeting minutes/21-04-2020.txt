@@ -11,6 +11,5 @@ Attendance:
 Key points:
 - Retested the code for new features like daily tracking.
 - Checked in to see where everyone currently is.
-
 - Made minor changes to the documentation.
 - Continue devloping the code.

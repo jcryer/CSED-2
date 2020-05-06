@@ -1,6 +1,5 @@
 Minutes 13/02/2020
 
-
 Attendance:
 Sandra-maria
 Joseph
@@ -9,12 +8,9 @@ Eddy
 Sam F
 Lance
 
-
-
 - Made a group chat
 - Making list of things that could go wrong
 - Decided to meet on Mondays 11:15 - 12:00 1 West CS Lab
-
 
 Goals for next meeting (Monday):
 - Get GitHub

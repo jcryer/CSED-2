@@ -9,8 +9,6 @@ Attendance:
 - Joe
 
 Minutes: 12:15pm - 1:05pm
-Key Points
-- 	
 
 Potential Features list:
 - Serverside listener 
@@ -26,10 +24,6 @@ Potential Features list:
 	- Good visualisation of data
 		- Timeline of your listening history
 		- Recommendations
-
-
-By next meeting:
-- 	
 
 
 

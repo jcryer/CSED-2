@@ -10,5 +10,4 @@ Attendance:
 Key points:
 - Small meeting to check in on the progress.
 - Might need to extend the sprint to make time for minor details of the document and the code.
-
 - Continue doing current tasks.
