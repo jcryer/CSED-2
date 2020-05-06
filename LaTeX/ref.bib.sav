@@ -1,0 +1,241 @@
+% Encoding: UTF-8
+
+@Unpublished{Swant,
+  author = {Marty Swant},
+  title  = {{Spotify Rolls Out New {'Wrapped'} Campaign To Help Users Remember Their Decade Of Music}},
+  note   = {Introduction},
+  year   = {2019},
+  url    = {https://www.forbes.com/sites/martyswant/2019/12/17/spotify-rolls-out-new-wrapped-campaign-help-users-remember-their-decade-of-music/},
+}
+
+@Unpublished{Somerville,
+  author = {Ewan Somerville},
+  title  = {{Spotify Wrapped 2019: here's how to see your most played song statistics for the year and decade}},
+  note   = {Introduction},
+  year   = {2019},
+  url    = {https://inews.co.uk/culture/spotify-wrapped-2019-when-date-statistics-year-decade-review-top-songs-most-played-1330397},
+}
+
+@Manual{WebAPI,
+  title = {{Spotify WebAPI Documentation}},
+  year  = {2020},
+  note  = {Introduction},
+  url   = {https://developer.spotify.com/documentation/web-api/},
+}
+
+@Article{Nauert2018,
+  author  = {Rick Nauert},
+  title   = {{Upbeat Music Helps Improve Mood}},
+  journal = {The Journal of Positive Psychology},
+  year    = {2018},
+  note    = {Introduction},
+  url     = {https://psychcentral.com/news/2013/05/16/upbeat-music-helps-improve-mood/54898.html},
+}
+
+@Article{Eerola2016,
+  author  = {Tuomas Eerola and Henna-Riikka Peltola},
+  title   = {{Memorable Experiences with Sad Music—Reasons, Reactions and Mechanisms of Three Types of Experiences}},
+  journal = {Plos One},
+  year    = {2016},
+  note    = {Introduction},
+  url     = {https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0157444},
+}
+
+@InCollection{Rapp2014a,
+  author    = {Amon Rapp and Federica Cena},
+  booktitle = {Universal Access in Human-Computer Interaction. Design for All and Accessibility Practice},
+  publisher = {Springer International Publishing},
+  title     = {Self-monitoring and Technology: Challenges and Open Issues in Personal Informatics},
+  year      = {2014},
+  pages     = {613--622},
+  doi       = {10.1007/978-3-319-07509-9_58},
+  groups    = {other:6},
+  url       = {https://www.researchgate.net/publication/264522564_Self-monitoring_and_Technology_Challenges_and_Open_Issues_in_Personal_Informatics},
+}
+
+@Article{Rapp2016,
+  author    = {Amon Rapp and Federica Cena},
+  title     = {Personal informatics for everyday life: How users without prior self-tracking experience engage with personal data},
+  journal   = {International Journal of Human-Computer Studies},
+  year      = {2016},
+  volume    = {94},
+  pages     = {1--17},
+  month     = {oct},
+  doi       = {10.1016/j.ijhcs.2016.05.006},
+  publisher = {Elsevier {BV}},
+  url       = {https://www.sciencedirect.com/science/article/pii/S107158191630060X},
+}
+
+@InProceedings{Fritz2014,
+  author    = {Thomas Fritz and Elaine M. Huang and Gail C. Murphy and Thomas Zimmermann},
+  booktitle = {Proceedings of the 32nd annual {ACM} conference on Human factors in computing systems - {CHI} {\textquotesingle}14},
+  title     = {Persuasive technology in the real world},
+  year      = {2014},
+  publisher = {{ACM} Press},
+  doi       = {10.1145/2556288.2557383},
+}
+
+@InCollection{Jaimes2013,
+  author    = {Luis G. Jaimes and Tylar Murray and Andrew Raij},
+  booktitle = {Design, User Experience, and Usability. User Experience in Novel Technological Environments},
+  publisher = {Springer Berlin Heidelberg},
+  title     = {Increasing Trust in Personal Informatics Tools},
+  year      = {2013},
+  pages     = {520--529},
+  doi       = {10.1007/978-3-642-39238-2_57},
+}
+
+@InProceedings{Li2010,
+  author    = {Ian Li and Anind Dey and Jodi Forlizzi},
+  booktitle = {Proceedings of the 28th international conference on Human factors in computing systems - {CHI} {\textquotesingle}10},
+  title     = {A stage-based model of personal informatics systems},
+  year      = {2010},
+  publisher = {{ACM} Press},
+  doi       = {10.1145/1753326.1753409},
+}
+
+@Article{2010a,
+  journal   = {Nature},
+  title     = {Security ethics},
+  year      = {2010},
+  month     = {jan},
+  number    = {7278},
+  pages     = {136--136},
+  volume    = {463},
+  doi       = {10.1038/463136a},
+  publisher = {Springer Science and Business Media {LLC}},
+}
+
+@Book{Kizza2016,
+  author    = {Kizza, Joseph},
+  publisher = {Springer},
+  title     = {Ethics in computing : a concise module},
+  year      = {2016},
+  address   = {Switzerland},
+  isbn      = {9783319291062},
+}
+
+@Unpublished{iSAFE2004,
+  author = {i-SAFE},
+  title  = {{Cyber Bullying: Statistics and Tips}},
+  year   = {2004},
+  url    = {https://auth.isafe.org/outreach/media/media_cyber_bullying},
+}
+
+@Unpublished{OWASP2020,
+  author = {OWASP},
+  title  = {Credential stuffing},
+  month  = feb,
+  year   = {2020},
+  url    = {https://owasp.org/www-community/attacks/Credential_stuffing},
+}
+
+@Article{Shannon1949,
+  author  = {C. E. Shannon},
+  journal = {Bell System Techinal Journal},
+  title   = {{Communication Theory of Secrecy Systems}},
+  year    = {1949},
+  volume  = {28},
+  url     = {https://archive.org/details/bstj28-4-656/mode/2up},
+}
+
+@Article{Tsudik1992,
+  author    = {Gene Tsudik},
+  journal   = {{ACM} {SIGCOMM} Computer Communication Review},
+  title     = {Message authentication with one-way hash functions},
+  year      = {1992},
+  month     = {oct},
+  number    = {5},
+  pages     = {29--38},
+  volume    = {22},
+  doi       = {10.1145/141809.141812},
+  publisher = {Association for Computing Machinery ({ACM})},
+}
+
+@InProceedings{Biryukov2016,
+  author    = {Alex Biryukov and Daniel Dinu and Dmitry Khovratovich},
+  booktitle = {2016 {IEEE} European Symposium on Security and Privacy ({EuroS}{\&}P)},
+  title     = {Argon2: New Generation of Memory-Hard Functions for Password Hashing and Other Applications},
+  year      = {2016},
+  month     = {mar},
+  publisher = {{IEEE}},
+  doi       = {10.1109/eurosp.2016.31},
+}
+
+@Unpublished{ComputingMachineryACM2018,
+  author = {{Association for Computing Machinery (ACM)}},
+  title  = {{ACM Code Of Ethics And Professional Conduct}},
+  year   = {2018},
+  url    = {https://www.acm.org/code-of-ethics},
+}
+
+@Unpublished{Horwitz2018,
+  author = {Josh Horwitz},
+  title  = {{Outside the US, the Philippines saw the most Facebook user data go to Cambridge Analytica}},
+  year   = {2018},
+  url    = {https://qz.com/1245355/outside-us-philippines-saw-most-facebook-user-data-go-to-cambridge-analytica/},
+}
+
+@Unpublished{Rathi2019,
+  author = {Rahul Rathi},
+  title  = {{Effect of Cambridge Analytica’s Facebook ads on the 2016 US Presidential Election}},
+  year   = {2019},
+  url    = {https://towardsdatascience.com/effect-of-cambridge-analyticas-facebook-ads-on-the-2016-us-presidential-election-dacb5462155d},
+}
+
+@Unpublished{ASNC2018,
+  author = {{Adam Satariano and Nicholas Confessore}},
+  title  = {{Cambridge Analytica’s Use of Facebook Data Broke British Law, Watchdog Finds}},
+  year   = {2018},
+  url    = {https://www.nytimes.com/2018/11/06/technology/cambridge-analytica-arron-banks.html},
+}
+
+@TechReport{Nuzzolo2015,
+  author      = {Michael Nuzzolo},
+  institution = {Tufts University},
+  title       = {{Music Mood Classification}},
+  year        = {2015},
+  url         = {https://sites.tufts.edu/eeseniordesignhandbook/2015/music-mood-classification/},
+}
+
+@Unpublished{Paas2013,
+  author = {Anita Paas and Angúl Castro},
+  title  = {{Music Informatics: A Modern Approach to Studying Music}},
+  year   = {2013},
+  url    = {https://musicmindandbrain.wordpress.com/2013/01/27/music-informatics-a-modern-approach-to-studying-music/},
+}
+
+@Article{Humphrey2013,
+  author    = {Eric J. Humphrey and Juan P. Bello and Yann LeCun},
+  journal   = {Journal of Intelligent Information Systems},
+  title     = {Feature learning and deep architectures: new directions for music informatics},
+  year      = {2013},
+  month     = {jul},
+  number    = {3},
+  pages     = {461--481},
+  volume    = {41},
+  doi       = {10.1007/s10844-013-0248-5},
+  publisher = {Springer Science and Business Media {LLC}},
+}
+
+@Unpublished{Izzard2019,
+  author = {Hannah Izzard},
+  title  = {https://www.theguardian.com/culture/2019/dec/06/spotify-wrapped-users-alarmed-by-their-own-listening-habits},
+  year   = {2019},
+  url    = {https://www.theguardian.com/culture/2019/dec/06/spotify-wrapped-users-alarmed-by-their-own-listening-habits},
+}
+
+@Unpublished{IFPI2019,
+  author = {IFPI},
+  title  = {{Music Listening 2019: A look at how recorded music is enjoyed around the world}},
+  year   = {2019},
+  url    = {https://www.ifpi.org/downloads/Music-Listening-2019.pdf},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
+
+@Comment{jabref-meta: grouping:
+0 AllEntriesGroup:;
+1 StaticGroup:Markings\;2\;1\;\;\;\;;
+2 StaticGroup:other:6\;2\;1\;\;\;\;;
+}

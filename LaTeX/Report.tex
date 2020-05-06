@@ -1,4 +1,4 @@
-\documentclass[11pt]{report}
+\documentclass[10pt]{report}
 %\usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage[hyphens]{url}
@@ -7,6 +7,13 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{breakcites}
+
+\usepackage{makecell}
+
+\renewcommand\cellalign{tl}
+\renewcommand\cellgape{\Gape[1pt][0pt]}
+
+
 \usepackage{listings}
 \lstset{
   basicstyle=\ttfamily,
@@ -20,7 +27,6 @@
 
 %Sets the assets path
 \graphicspath{{assets/}}
-
 
 %Removes 'Chapter x' at the start of each section
 \titleformat{\chapter}[display] {\normalfont\bfseries}{}{0pt}{\Large}
@@ -84,14 +90,35 @@ There have been a number of articles related to studies conducted linking people
 
 \chapter{Agile Software Process Planning and Management - FD}
 
-With the timescale we had to complete our project, we planned our sprints to be 2 weeks long each and to have 3 sprints throughout the duration of the project. We thought this would be the most beneficial to us as we would have enough time between sprints to organise ourselves in order to prepare for the next sprint, whilst still allowing us to have enough time during each sprint to get a sizable chunk of the project done.
+\section{The Scrum Methodology}
 
-Before the start of any sprint, we, as a group, addressed all the tasks we wanted to have completed by the end of the sprint and wrote them down on our sprint backlog. By doing so, it allowed us to easily hand out tasks and to clearly see what jobs still needed to be done. During each meeting during the sprints, we discussed if the work done had thrown up any new tasks to be added either to the product backlog or the sprint backlog depending upon its urgency and dependencies.
+Agile methodology is a development method in which requirements and solutions evolve through collaborative effort. It is based on iterative development which encourages frequent inspection of the software and its stages. It is reliable when it comes to adaptation to change and developing high quality software as a team. The scrum is a largely popular agile framework which has at its core the sprint. A sprint is based on short periods of development followed by reviews and changes. Scrum meetings are held regularly to ensure clear communication and collaboration.
 
-We tracked our sprints by using GitHub. GitHub allowed us to create an easy to use sprint progress tracker in the form of ordered lists. This includes a product backlog, sprint backlog, in progress, in review columns and more. Within these columns, we had tasks which were at varying stages of completion and allowed us to easily and visually track each sprint’s progress.
-We managed the development of our requirements through thorough test plans and frequent checking over our list of requirements to see if we had met all the ones we had planned over the course of the relevant sprint.  In our Scrum meetings, we addressed project risks and evaluated if any new risks had presented themselves. Our largest project risk developed during the project in the form of COVID-19. Due to the risk of any member of the team catching the virus, and due to the University going online mid-way through our project, we had to take all our meetings online. Whilst this made meetings less convenient and harder to communicate, we managed to make the most of the group face call feature of Microsoft Teams in order to continue our meetings as previously arranged. We managed to discuss our other risks and how we were able to reduce their impact if unfortunately, they were to occur.
+\section{How We Planned and Tracked Our Sprints}
 
-Initially, we planned to have three, two-week sprints in our project. Alongside this, we planned to meet up on Mondays for a meeting and Thursdays for another. Once we had started planning our project, we realised that this wasn’t enough time per week in order to complete all the work necessary. To increase our contact time, we then decided to go to the lab session allocated to our group on Thursdays as well. Once COVID-19 prevented us from meeting in person, we still continued to have the same timetable of meetings, however, all contact was done online. Whilst this seemed to make proper collaboration more difficult at first, we then took advantage of the fact that each member of the group had a computer in front of them. This meant we were able to all see more clearly what we were referring to during discussions as everyone could access the materials more easily.
+We have developed our project using the Scrum methodology and we have benefitted from doing so by being able to adapt to change and keep track of our progress. Once our ideas were clear and we knew in what direction we were heading with our project, we started creating a list of requirements for creating the basic functionality. Based on our set of requirements we decided our first sprint would be 2 weeks. We used GitHub to track our sprint progress. We made use of a Product Backlog where all new requirements went, a Sprint Backlog where we kept the requirements that had to be done in the current sprint, an In Progress column used to suggest someone is currently working on those requirements, a Blocked column that contained requirements that were dependent on other requirements being completed first, an In review column in which the work was awaiting reviewing from the team, and a Done column in which completed work was listed.
+With the timescale we had to complete our project, we planned our sprints to be 2 weeks long each and to have 3 sprints throughout the duration of the project. We thought this would be the most beneficial to us as we would have enough time between sprints to organise ourselves in order to prepare for the next sprint, whilst still allowing us to have enough time during each sprint to get a sizeable chunk of the project done. 
+
+Our team decided to have meetings twice a week and these were held on Mondays and Thursdays, giving us time to progress in between the meetings. The meetings consisted of reviewing done work, keeping track of our requirements, and making any changes, and combining our set of skills and knowledge to help each other complete the assigned tasks. On the side, documentation was being created to help with the progress and planning of our project. However, we soon realised that this wasn’t enough time per week in order to complete all the work necessary. To increase our contact time, before the country was put into lockdown, we decided to go to the lab session allocated to our group on Thursdays as well.
+Management and Development of Requirements
+
+Before the start of any sprint, we, as a group, addressed all the tasks we wanted to have completed by the end of the sprint and wrote them down on our sprint backlog. This included addressing all of our requirements for each sprint. By doing so, it allowed us to easily hand out tasks and to clearly see what jobs still needed to be done. During each meeting during the sprints, we discussed if the work done had thrown up any new tasks to be added either to the product backlog or the sprint backlog depending upon its urgency and dependencies.
+
+\section{How Scrum Meetings Addressed Project Risks}
+
+We managed the development of our requirements through thorough test plans and frequent checking over our list of requirements to see if we had met all the ones we had planned over the course of the relevant sprint.  In our Scrum meetings, we addressed project risks and evaluated if any new risks had presented themselves. Our largest project risk developed during the project in the form of COVID-19. Due to the risk of any member of the team catching the virus, and due to the University going online mid-way through our project, we had to take all our meetings online. 
+
+During our second sprint, our team was faced with the difficulty of the Coronavirus pandemic, which had grown to become a much larger obstacle than first anticipated. Once it was clear that we would be unable to meet in person, we discussed the options we had. The risk assessment we had previously created helped us be prepared for the situation. We decided to have online calls and use Teams for our regular meetings on the same days as before. Work was consistently uploaded on GitHub and reviewed in the meeting by sharing our screens. The situation has proved difficult, as many of our team members had personal issues created by the pandemic, and it has caused distress for our team. In the beginning people could not attend the meetings as often but we kept communicating through WhatsApp. This slowed down our process and we decided to have a longer sprint than originally planned to be able to complete the work. An extension for the completion of our project was given and we allocated one more week to our second sprint. After a week almost everyone was able to participate in our planned meetings, which we still had twice a week.
+
+\section{How Our Early Plans Evolved}
+
+Our first sprint consisted of creating login and registration systems for our product, checking credentials, connecting to Spotify and obtaining an authorisation token from them and working on the backend by creating a database using MongoDB and node.js. A testing plan was also created and changed during our sprint. This has helped the developers have a clear understanding of what the software had to accomplish in the end.
+
+The first sprint went as planned with no major changes to the requirements, we finished everything we wanted in the 2 weeks of time allocated. At the end of the sprint our testing plan was containing input output tests for our login and registration system, as well as other tests for the functionality of our product. Our tutor helped us go through and test our software and has told us our first sprint was a success. The documentation made in the first sprint helped us decide where our product was heading and shortly after the first sprint had finished, we had a new set of requirements ready to be completed in the second sprint.
+
+Our second sprint consisted of securing our software by using password hashing and getting data about songs from Spotify. Upon research we decided on a way of classifying the songs based on their attributes. We worked on the algorithms for deciding the mood of a song and implemented it. We have also dealt with user sessions and creating diagrams and charts based on their data for the user to reflect on. We did our sprint review in a Teams meeting by sharing our screens and showing our tutor our testing plan, sprint backlog and how our software worked. The second sprint taught us how important organisation was when trying to coordinate our team from afar.
+
+Our third sprint lasted 2 weeks and we planned it so that we would have 1 week to review and make any last changes to our project. Our third sprint mostly consisted of frontend development. We dealt with the UI and navigating through pages as well as the charts displayed to the user. As for the backend we created a way of working with the data to obtain useful information that will be displayed to the user. 
 
 Proof of our use of agile can be seen in Appendix, section \ref{sec:agileapp}
 
@@ -99,6 +126,7 @@ Proof of our use of agile can be seen in Appendix, section \ref{sec:agileapp}
 
 
 \section{Prior Research - LG}
+\label{res:prior}
 
 This research was performed before the final solution was decided, it was performed by various members then collated by Lance Garcia.\newline
 
@@ -111,6 +139,7 @@ The idea of trust in a system is an important concept; a user’s trust in the s
 \cite{Li2010} mentions five steps for developing personal informatics software being: preparation, collection, integration, reflection, and action.  It should be a conscious decision to integrate these steps into our software as it will enable the users to not only flit back and forth between these stages with ease. This will also allow us to make as much of the program software driven in order to make it more reliable and through reducing the amount that the user must do/understand will help the user to monitor their own data with minimal effort.
 
 \section{Security Ethics - AG}
+\label{res:secehtics}
 
 This research was performed during the production of the product, in order to assertain ethcal guidelines for users to developers to follow when securing user data.\newline
 
@@ -120,6 +149,7 @@ A growing ethical concern is the phenomenon of social networks.  With the group 
 
 
 \section{Hashing and Password Storage - AG}
+\label{res:passsec}
 
 This research was performed during the production of the product, in order to assertain security guidelines for the storing of passwords.\newline
 
@@ -130,6 +160,7 @@ A common principle to follow in system security is Shannon's Maxim: "one ought t
 For this reason salts are used, which are randomly generated strings added to the password before hashing when the password is created, the salt is stored in the database alongside the password. This helps prevent against these pre-calculated hash tables because the hacker has to then recalculate these tables for each user they wish to hack into as they will have their own unique salt with them which makes these attacks more costly. Brute force attacks can never be fully stopped but using a modern hashing alogrithm can make it more expensive for the attcker, as these focus less on speed, but instead flexiblity, for exmaple, argon2 has parameters such as memory size, iteration count, parallelism and salt length which can be adjusted to make the hash more (or less) complex making it more expensive to brute force as more resources can be required to perform a hash \cite{Biryukov2016}. For these reasons we recommened the use of Argon2 over other modern algorithms such as the SHA family or Bcrypt.
 
 \section{Ethics of Data Storage - SD}
+\label{res:datastor}
 
 This research was performed during the production of the product, in order to assertain guidelines for the storage and usage of user data.\newline
 
@@ -139,6 +170,7 @@ So when considering the ethical concerns for storing and analysis of data, there
 
 
 \section{Song attributes and mood - SC}
+\label{res:mood}
 
 This resesarch was performed during the production of the product, in order to assertain the relationship between characteristics of songs and their moods.\newline
 
@@ -162,10 +194,10 @@ Required values:
 
 \endlastfoot
 
-\multicolumn{2}{c}{\textit{Continued from last page}}
+\multicolumn{5}{c}{\textit{Continued from last page}}
 \endhead
 
-\multicolumn{2}{c}{\textit{Continued on next page}}
+\multicolumn{5}{c}{\textit{Continued on next page}}
 \endfoot
 
 Neutral		&n&n&/&/\\
@@ -187,28 +219,8 @@ Motivational		&n&+&+&/\\
 \end{longtable}
 
 \section{Questionnaire - SC}
+\label{res:quest}
 A questionnaire has been used to gather data about the correlation between people’s moods and their music listening habits. Of our 24 repsonses we found out that around 90\% of people agree with the statement “My listening habits change based on my mood” while 40\% out of them strongly agree. Furthermore, 70\% of people state that music plays a big role in their lives, while 60\% of them think the music they listen to helps them understand themselves more. Most people stated that they listen to music at least 4 days a week, while a big part of them (65\%) listen to music daily. Generally, people listen to music a couple of hours a day, while some listen to music all the time, or less than an hour a day. Music seems to help people deal with their emotions \ref{fig:question-moods} and most people seem to use Spotify as their main music app \ref{fig:question-format}. We have also asked if there were any features they wished music apps included. A couple of responses addressed the way songs are recommended to them and organised, stating that they wished the recommended songs would fit the way they are feeling at the time more, and that they would like to be able to have direct access to songs they listened to before. Other responses talked about displaying lyrics and tools to help the user recognise songs more easily. This information has strengthened the ideas our research provided and has helped us gain a better understanding of how music affects people’s moods. It has prompted us to create an app that helps people track their moods based on what they listen to on Spotify.
-
-\begin{figure}[h]
-\centering
-\begin{subfigure}{\textwidth}
-	\centering	
-	\includegraphics[width=0.9\linewidth]{question-moods.png}
-	\caption{Do moods help you express or cope with different emotions and moods?}
-	\label{fig:question-moods}
-\end{subfigure}
-\begin{subfigure}{\textwidth}
-	\centering
-	\includegraphics[width=0.9\linewidth]{question-format.png}
-	\caption{What music application do you prefer?}
-	\label{fig:question-format}
-\end{subfigure}
-
-\caption{Reponses to the questionnaire}
-\label{fig:question}
-
-\end{figure}
-
 
 \chapter{Risk Assessment - LG \& SD}
 Personal informatics applications already exist within a market, with many apps surrounding the tracking of music, such as Spotify Wrapped, and Last.fm. As a result, one risk we must consider is how our app is going to break into the market, with big music app owners already tracking their own data and sharing it with their customers. A potential solution to this is to have our app cover various music apps and for it to combine the statistics for all the apps. This would allow us to cover a larger audience than other apps would as many users only use one specific app to listen to music due to premium memberships in apps like Apple Music and Spotify. In addition to this, it would enable us to cater to users that use multiple apps as all their stats would be available in a single app rather than having them use various apps for several music streaming services.
@@ -222,83 +234,7 @@ The threat of coronavirus is something that must be considered. As not only coul
 Following on from the risk of group members being unable to work, there are an infinite number of scenarios that could result in a member being unable to participate. Whether this is because they are unconscious or are simply unable to work. Outside of generally taking care of ourselves and ensuring our health is in good shape, there is not much else that can be done about this.
 The Scrum methodology which we will be using throughout this project has many techniques which will help us overcome any issues which may impact our group, depending on the severity. The flexibility of the methodology allows us to go over and rethink multiple aspects of the software and its documentation letting us get the highest quality project possible. 
 
-\begin{longtable}{| p{5.5cm} | p{2cm} | p{2cm} |  p{5.5cm} |}
-\hline
-\textbf{Risk} & \textbf{Likelihood} & \textbf{Impact} & \textbf{Measures} \\
-\hline
-\endfirsthead
-
-\endlastfoot
-
-\multicolumn{2}{c}{\textit{Continued from last page}}
-\endhead
-
-\multicolumn{2}{c}{\textit{Continued on next page}}
-\endfoot
-
-The time required to develop the software is underestimated. & 
-High & 
-Serious & 
-Focus on the key features and the main requirements of the system, if there is spare time we can add additional features. \\ 
-\hline
-Complexity of the software may be too hard for us to create.&
-Moderate&
-Serious&
-Before we start anything we must be sure of what we plan to do and make sure it is possible for us to do with our skillset.\\
-\hline
-
-A key person in the project may become ill due to a number of reasons, this would delay the project as no one else would be able to do that job.&
-Moderate&
-Serious&
-Split up workload into groups of more than two instead of relying on just one individual.\\
-\hline
-
-
-The database cannot process as many transactions as expected.& 
-Moderate&
-Serious&
-Gather information on a number of database systems that could be used and work out which one could work with our requirements.\\
-\hline
-
-The specification is not well defined.& 
-Moderate&
-Minor&
-Any issues with the specification we will bring up with tutors and lecturers so we can get a clearer picture.\\
-\hline
-
-
-Requirements are not well defined.& 
-Moderate&
-Minor&
-We can read through and go over different requirements to see  if they are relevant and make sense to the project.\\
-\hline
-
-When writing documentation, people may conflict with what they are doing as responsibilities may be unclear resulting in two or more people doing the same job.& 
-Moderate&
-Minor&
-Make sure our communication channels are efficient and before we do work we know what everyone is doing.\\
-\hline
-
-Everyone in the group become seriously ill from the coronavirus leaving no one able to do anything toward the project.&
-Moderate&
-Catastrophic&
-Follow any guidelines the government set for us to stay safe.\\
-\hline
-
-The specification could change for what is required in this project.& 
-Low&
-Minor&
-Allow enough time in or after the sprints in order to make changes where necessary.\\
-\hline
-
-A member of the group could drop out of the university leaving us with less people to work with.& 
-Low&
-Minor&
-Be sure that the person is communicating with us to allow us time to adjust to less people in the group.\\
-\hline
-
-
-\end{longtable}
+Full risk assessment table can be seen in appendix figure \ref{fig:risks}
 
 \chapter{Requirements}
 
@@ -345,6 +281,8 @@ Our final product focuses on tracking what the user is listening to and the mood
 
 \section{Functional Requirements}
 
+The source of each requirement is what orginally generated that requirement. Requirements that considered implict in the project are marked with Product Description (shortened to PD) and those which were necessitated by the Coursework Specification are marked with Coursework Specification (CWS)
+
 \begin{center}
 
 \begin{longtable}{| p{13cm} | p{3cm} |}
@@ -363,27 +301,27 @@ Our final product focuses on tracking what the user is listening to and the mood
 \textbf{1.1 - Send data to client when requested} & \textbf{Author: SD} \\
 \hline
 The web app must attempt to send data to the client when requested. This data could be specified so it needs to be able to handle the specific request. The web app will then deal with the data it is given. & 
-Priority: HIGH Dependencies: 2.1, 2.2, 3.1, 3.2\\
+\makecell{Priority: HIGH \\ Dependencies: 2.1, \\2.2, 3.1, 3.2 \\ Source: PD}\\
 \hline
 \textbf{1.2 - Check for valid username and password} & \textbf{Author: SC} \\
 \hline
 The server must check is the supplied username and password are valid. This will be done by checking if the username exists (see 1.3) and then comparing the given password with the corresponding stored hash. The server will either return an error or a confirmation that the details are correct. &
-Priority: HIGH Dependencies: 1.3, 4.3\\
+\makecell{Priority: HIGH \\ Dependencies: 1.3, \\4.3 \\Source: PD}\\
 \hline
 \textbf{1.3 - Check if username alreay exists} & \textbf{Author: SC} \\
 \hline
 The server must be able to check if a supplied username exists. It will be compared with a list of existing usernames and it will either return an error or a confirmation &
-Priority: HIGH Dependencies: 4.1\\
+\makecell{Priority: HIGH\\Dependencies: 4.1\\Source: PD}\\
 \hline
 \textbf{1.4 - Add new user information to the users list} & \textbf{Author: SC} \\
 \hline
 Once the user has successfully requested a new account, the server must add the new user’s information to the users list (the username and the hashed password (see 1.5)). &
-Priority: HIGH Dependencies: 4.1\\
+\makecell{Priority: HIGH\\Dependencies: 4.1\\Source: PD}\\
 \hline
 \textbf{1.5 - Hash the passwords before storing them} & \textbf{Author: SC} \\
 \hline
 The server must be able to hash a supplied password. Upon research, this will be done using Argon2 as the hashing algorithm. The passwords will not be stored anywhere, only their hashes.&
-Priority: HIGH Dependencies: 1.4\\
+\makecell{Priority: HIGH\\Dependencies: 1.4\\Source: Research,\\Password Storage}\\
 \hline
 
 \multicolumn{2}{|l|}{\textbf{\textit{2 - Data Collection}}} \\
@@ -391,34 +329,41 @@ Priority: HIGH Dependencies: 1.4\\
 \textbf{2.1 - Gain access to data from Spotify} & \textbf{Author: JC} \\
 \hline
 The server must be able to request data from Spotify’s public web API for a user. This can only happen once this user has connected to Spotify through our system successfully.
-Our system must send a message to the Spotify web API containing the authorisation token for that user (see 'Connect to Spotify'). On success, Spotify's web API will return an access token that can then be used to make requests to the API for a certain amount of time.& Priority: HIGH Dependencies: None \\
+Our system must send a message to the Spotify web API containing the authorisation token for that user (see 'Connect to Spotify'). On success, Spotify's web API will return an access token that can then be used to make requests to the API for a certain amount of time.& 
+\makecell{Priority: HIGH \\ Dependencies: None\\Source:PD} \\
 \hline
 \textbf{2.2 - Collect information} & \textbf{Author: FD} \\
 \hline
-The server must be able to collect song information from the Spotify API. Once granted the authorisation token (see 2.1), the server must be able to request and receive data regarding a given song such as BPM, genre, artist, etc.&Priority: HIGH Dependencies: 2.1 \\
+The server must be able to collect song information from the Spotify API. Once granted the authorisation token (see 2.1), the server must be able to request and receive data regarding a given song such as BPM, genre, artist, etc.&
+\makecell{Priority: HIGH\\Dependencies: 2.1\\Source: PD}\\
 \hline
 
 \multicolumn{2}{|l|}{\textbf{\textit{3 - Data Storage and Processing}}} \\
 \hline
 \textbf{3.1 - Store data from Spotify for each user} & \textbf{Author: TD} \\
 \hline
-The server must process the data received from the Spotify API and store it on the online server. It will take all the data and put it into a database in an efficient intermediate format keeping only the data we need. It will not be storing any redundant data, which offers little to no value to our client. The system will request all data on each song within the users song library and when they listen to a song, all information on that song is collected as well. All this must be stored for each of the users. & Priority: HIGH Dependencies: 2.1 \\
+The server must process the data received from the Spotify API and store it on the online server. It will take all the data and put it into a database in an efficient intermediate format keeping only the data we need. It will not be storing any redundant data, which offers little to no value to our client. The system will request all data on each song within the users song library and when they listen to a song, all information on that song is collected as well. All this must be stored for each of the users. &
+\makecell{Priority: HIGH\\Dependencies: 2.1\\Source: CWS} \\
 \hline
 \textbf{3.2 - Determine the mood of a song} & \textbf{Author: SC} \\
 \hline
-The server must be able to use the songs data of the user to determine the mood of the song. This will be done by considering 5 variables: valency, energy, acousticness, instrumentalness, danceability. Check the mood table heading for more details. &  Priority: HIGH Dependencies: 2.1, 2.2, 3.1\\
+The server must be able to use the songs data of the user to determine the mood of the song. This will be done by considering 5 variables: valency, energy, acousticness, instrumentalness, danceability. Check the mood table heading for more details. & 
+\makecell{Priority: HIGH\\Dependencies: 2.1,\\2.2, 3.1\\Source: Research,\\ Song attributes}\\
 \hline
 \textbf{3.3 - Create mood playlists} & \textbf{Author: SC} \\
 \hline
-The server must store the mood of each song and be able to sort through them in order to create playlists of songs with the same mood. &  Priority: MED Dependencies: 3.1, 3.2\\
+The server must store the mood of each song and be able to sort through them in order to create playlists of songs with the same mood. & 
+\makecell{Priority: MED\\Dependencies: 3.1,\\3.2\\Source: Research,\\ Song attributes}\\
 \hline
 \textbf{3.4 - Recommend songs based on trends} & \textbf{Author: FD} \\
 \hline
-The system should be able to recommend songs to the user based on mood patterns. The server should determine the current mood of the user based on the songs they are listening to or past mood patterns. Once the mood is determined, the generated playlist of that mood (see 3.3) will be used with the Spotify API to suggest new songs of the same type. &  Priority: MED Dependencies: 2.2, 2.3\\
+The system should be able to recommend songs to the user based on mood patterns. The server should determine the current mood of the user based on the songs they are listening to or past mood patterns. Once the mood is determined, the generated playlist of that mood (see 3.3) will be used with the Spotify API to suggest new songs of the same type. &  
+\makecell{Priority: MED\\Dependencies: 2.2,\\ 2.3\\Source: PD}\\
 \hline
 \textbf{3.5 - Continuously collect song data} & \textbf{Author: SC} \\
 \hline
-The system must be able to collect song data continuously. This will retrieve the information about a track which is collected and then processed to return a mood. There will be a delay before the next command to collect data on the song, this may be every 15 seconds or so. &  Priority: HIGH Dependencies: 2.1, 2.2\\
+The system must be able to collect song data continuously. This will retrieve the information about a track which is collected and then processed to return a mood. There will be a delay before the next command to collect data on the song, this may be every 15 seconds or so. & 
+\makecell{Priority: HIGH\\Dependencies: 2.1,\\2.2\\Source: PD}\\
 \hline
 
 
@@ -426,39 +371,43 @@ The system must be able to collect song data continuously. This will retrieve th
 \hline
 \textbf{4.1 - Create a new account} & \textbf{Author: SC} \\
 \hline
-The user must be able to create a new account. The user will be required to enter a username and a password when creating an account. The information will be sent to the server which will check the username (see 1.3). If the server confirms that the username they entered already exists, the user will receive an error asking them to enter another username. If the username they entered is valid, the user will receive a message that their account has been created (see 1.4) and they will be directed to their new account. & Priority: HIGH Dependencies: 3.1 \\
+The user must be able to create a new account. The user will be required to enter a username and a password when creating an account. The information will be sent to the server which will check the username (see 1.3). If the server confirms that the username they entered already exists, the user will receive an error asking them to enter another username. If the username they entered is valid, the user will receive a message that their account has been created (see 1.4) and they will be directed to their new account. & 
+\makecell{Priority: HIGH\\Dependencies: 3.1\\Source: PD} \\
 \hline
 \textbf{4.2 - Connect to Spotify} & \textbf{Author: JC} \\
 \hline
-The client must request that the user connects their account to their Spotify account. The user will be redirected to a Spotify webpage showing the data that is being requested by our system, and will be asked to first login to Spotify, and then authorise our system to use the relevant data. If successful, a 'success' callback message will be sent to the server containing an authorisation code, meaning our system can now make requests to the Spotify web API to request that user's music data. If unsuccessful, a 'fail' callback message will be sent to the server.& Priority: HIGH Dependencies: None \\
+The client must request that the user connects their account to their Spotify account. The user will be redirected to a Spotify webpage showing the data that is being requested by our system, and will be asked to first login to Spotify, and then authorise our system to use the relevant data. If successful, a 'success' callback message will be sent to the server containing an authorisation code, meaning our system can now make requests to the Spotify web API to request that user's music data. If unsuccessful, a 'fail' callback message will be sent to the server.& 
+\makecell{Priority: HIGH\\Dependencies: None\\Source: Research,\\Prior} \\
 \hline
 \textbf{4.3 - Login to the Server} & \textbf{Author: SC} \\
 \hline
-The users must be able to log into their accounts. The user will need to enter their username and password. This information will be sent to the server awaiting a response (see 1.2). The message from the server will then be displayed. If the username does not exist, the user will receive an error. If the password is correct the user will be logged in and will have access to his data, otherwise the user will receive an error. &  Priority: HIGH Dependencies: 1.1, 3.1, 4.1 \\
+The users must be able to log into their accounts. The user will need to enter their username and password. This information will be sent to the server awaiting a response (see 1.2). The message from the server will then be displayed. If the username does not exist, the user will receive an error. If the password is correct the user will be logged in and will have access to his data, otherwise the user will receive an error. &
+\makecell{Priority: HIGH\\Dependencies: 1.1,\\ 3.1, 4.1\\Source: PD}\\
 \hline
-\textbf{4.4 - Display data to the user} & \textbf{Author: TD} \\
+\textbf{4.4 - Display how a user’s mood has changed over the last 24 hours} & \textbf{Author: SD} \\
 \hline
-Reformat data into a set of interesting visual representations which can be displayed to the user, data for these visual representations should be provided only when they are actually requested by the user so as to save the user bandwidth and reduce server load, these should also follow the guidelines for visual data as set out in the research and each should have a specific aim such that they provide the user with understandable and usable data. &  Priority: HIGH Dependencies: 1.1, 3.1, 4.1, 4.2, 4.3 \\
+Moods must be able to be displayed in a graph. This will show the user the  moods they were in at certain times throughout the day in the last 24 hours. This must be visually appealing to the user and intuitive to read off. Once data has been collected it will be processed and displayed in this format. &
+\makecell{Priority: HIGH\\Dependencies: 3.1,\\3.2, 4.4, 4.9\\Source: CWS}\\
 \hline
-\textbf{4.5 - Display how a user’s mood has changed over the last 24 hours} & \textbf{Author: SD} \\
+\textbf{4.5 - Display all songs mood within a user’s library within a pie chart.} & \textbf{Author: SD} \\
 \hline
-Moods must be able to be displayed in a graph. This will show the user the  moods they were in at certain times throughout the day in the last 24 hours. This must be visually appealing to the user and intuitive to read off. Once data has been collected it will be processed and displayed in this format. & Priority: HIGH Dependencies: 3.1, 3.2, 4.4, 4.9\\
+Moods of each song within a user’s library should be able to be displayed in a pie chart using the Google Charts API. This will show the user what percentages of the library is a certain mood. One by one each song will be processed and finally displayed to the user in this format.& 
+\makecell{Priority: HIGH\\Dependencies: 3.1,\\3.2, 4.4, 4.9\\Source: CWS}\\
 \hline
-\textbf{4.6 - Display all songs mood within a user’s library within a pie chart.} & \textbf{Author: SD} \\
+\textbf{4.6 - Display recently listened to songs.} & \textbf{Author: SD} \\
 \hline
-Moods of each song within a user’s library should be able to be displayed in a pie chart using the Google Charts API. This will show the user what percentages of the library is a certain mood. One by one each song will be processed and finally displayed to the user in this format.&  Priority: HIGH Dependencies: 3.1, 3.2, 4.4, 4.9\\
+The system must be able to show the user their previously listened to songs on that day and at what time. This will display in a list with the following data; time they listened to the song, the album artwork for the album, the title of the song, album, artist, and the mood. This will request a lot of data however, this should be stored when the data for the track is collected to be processed.&
+\makecell{Priority: HIGH\\Dependencies: 3.1,\\4.4, 4.9\\Source: CWS}\\
 \hline
-\textbf{4.7 - Display recently listened to songs.} & \textbf{Author: SD} \\
+\textbf{4.7 - Display all songs mood within a user’s library within a table along with other details.} & \textbf{Author: SD} \\
 \hline
-The system must be able to show the user their previously listened to songs on that day and at what time. This will display in a list with the following data; time they listened to the song, the album artwork for the album, the title of the song, album, artist, and the mood. This will request a lot of data however, this should be stored when the data for the track is collected to be processed.& Priority: HIGH Dependencies: 3.1, 4.4, 4.9\\
+Moods of each song will be displayed in a table format along with the song title, album title, artist and the number of listens for that song. Similar to the previous (see 4.7), each song is processed and displayed, however, this requires more data as it is also displaying additional information, not just the mood of the song. & 
+\makecell{Priority: HIGH\\Dependencies: 3.1,\\3.2, 4.4, 4.9\\Source: Research,\\Prior \& CWS}\\
 \hline
-\textbf{4.8 - Display all songs mood within a user’s library within a table along with other details.} & \textbf{Author: SD} \\
+\textbf{4.8 -  Request data from server} & \textbf{Author: SD} \\
 \hline
-Moods of each song will be displayed in a table format along with the song title, album title, artist and the number of listens for that song. Similar to the previous (see 4.7), each song is processed and displayed, however, this requires more data as it is also displaying additional information, not just the mood of the song.&  Priority: HIGH Dependencies: 3.1, 3.2, 4.4, 4.9\\
-\hline
-\textbf{4.9 -  Request data from server} & \textbf{Author: SD} \\
-\hline
-The web app must be able to request specific data from the server, to be used for different processes. The exact data needed must be specified, for example, song details, song name or even everything in a database, etc. This is useful as it can restrict the amount of data to be sent over to the network.& Priority: HIGH Dependencies: 2.1,4.3\\
+The web app must be able to request specific data from the server, to be used for different processes. The exact data needed must be specified, for example, song details, song name or even everything in a database, etc. This is useful as it can restrict the amount of data to be sent over to the network.&
+\makecell{Priority: HIGH\\Dependencies: 2.1,\\4.3\\Source: CWS}\\
 \hline
 
 \end{longtable}
@@ -466,6 +415,8 @@ The web app must be able to request specific data from the server, to be used fo
 \end{center}
 
 \section{Non-Functional Requirements}
+
+See Functional Requirements for explaination of 'Source'
 
 \begin{center}
 
@@ -484,86 +435,98 @@ The web app must be able to request specific data from the server, to be used fo
 \hline
 \textbf{1.1 - We must use the Scrum method in order to develop our project} & \textbf{Author: FD} \\
 \hline
-We must use the agile development technique called ‘Scrum’. This involves regular ‘Sprint Meetings’, following sprint backlogs, and sprint reviews in order to gauge sprint progress. This development technique works well for obtaining rapid feedback. This is vital in a project like the one we are producing since our goals are forever changing with elements being implemented and tested and then potentially removed or altered.&Priority: HIGH Dependencies: 1.2, 1.3, 1.4\\
+We must use the agile development technique called ‘Scrum’. This involves regular ‘Sprint Meetings’, following sprint backlogs, and sprint reviews in order to gauge sprint progress. This development technique works well for obtaining rapid feedback. This is vital in a project like the one we are producing since our goals are forever changing with elements being implemented and tested and then potentially removed or altered.&
+\makecell{Priority: HIGH\\Dependencies: 1.2,\\1.3, 1.4\\Source: CWS}\\
 \hline
 \textbf{1.2 - We must have at least 3 sprints} & \textbf{Author: FD} \\
 \hline
-In order for our project to be successful, having many sprint meetings will be vital. Sprints allow us to have target focussed goals allowing for increased productivity. These sprints will also present developments in terms of what needs to be done in the next sprint by throwing up new issues which can be added to the product backlog and dealt with in the next sprint.&Priority: HIGH Dependencies: 1.3\\
+In order for our project to be successful, having many sprint meetings will be vital. Sprints allow us to have target focussed goals allowing for increased productivity. These sprints will also present developments in terms of what needs to be done in the next sprint by throwing up new issues which can be added to the product backlog and dealt with in the next sprint.&
+\makecell{Priority: HIGH\\Dependencies: 1.3\\Source: CWS} \\
 \hline
 \textbf{1.3 - Sprint duration must be between 1 and 3 weeks} & \textbf{Author: FD} \\
 \hline
-The time we have been allocated for our project allows us between 1 and 3 weeks for a given sprint in order to fit in 3 sprints before the deadline. We must have at least 3 sprints as this allows us to review and make changes to any given approach we may be taking.&Priority: HIGH Dependencies: 1.2\\
+The time we have been allocated for our project allows us between 1 and 3 weeks for a given sprint in order to fit in 3 sprints before the deadline. We must have at least 3 sprints as this allows us to review and make changes to any given approach we may be taking.&
+\makecell{Priority: HIGH\\Dependencies: 1.2\\Source: CWS} \\
 \hline
 \textbf{1.4 - We must regularly review our functional requirements} & \textbf{Author: FD} \\
 \hline
-We must regularly review our list of functional requirements after each sprint. This is important since each sprint will reveal changes that need to be made to our list for one reason or another such as software/hardware limitations, time restrictions, etc.&Priority: HIGH Dependencies: None\\
+We must regularly review our list of functional requirements after each sprint. This is important since each sprint will reveal changes that need to be made to our list for one reason or another such as software/hardware limitations, time restrictions, etc.&
+\makecell{Priority: HIGH\\Dependencies: None\\Source: CWS}\\
 \hline
 \textbf{1.5 - We will incorporate risk management into our software process} & \textbf{Author: FD} \\
 \hline
-We will be using risk management assessments in order to ensure our project is following a maintainable development design. For example, we will avoid at any cost to develop a server in a language only one person knows in case that person happens to fall ill. This would be a very big setback to the project and would halt progression massively.&Priority: MEDIUM Dependencies: None\\
+We will be using risk management assessments in order to ensure our project is following a maintainable development design. For example, we will avoid at any cost to develop a server in a language only one person knows in case that person happens to fall ill. This would be a very big setback to the project and would halt progression massively.&
+\makecell{Priority: MED\\Dependencies: None\\Source: CWS}\\
 \hline
 
 \multicolumn{2}{|l|}{\textbf{\textit{2 - Altering Requirements}}} \\
 \hline
 \textbf{2.1 - After researching, we will add to our requirements} & \textbf{Author: FD} \\
 \hline
-Throughout the process, we will be researching our chosen area of personal informatics. Due to this, we will gain more knowledge around our specific area of PI. We will use this continually growing understanding around our area of PI and use it to adapt and add to our list of initial requirements.&Priority: MEDIUM Dependencies: None\\
+Throughout the process, we will be researching our chosen area of personal informatics. Due to this, we will gain more knowledge around our specific area of PI. We will use this continually growing understanding around our area of PI and use it to adapt and add to our list of initial requirements.&
+\makecell{Priority: MED\\Dependencies: None\\Source: CWS}\\
 \hline
 
 \multicolumn{2}{|l|}{\textbf{\textit{3 - Background Research}}} \\
 \hline
 \textbf{3.1 - We will read and cite at least four core articles in the area of PI} & \textbf{Author: FD} \\
 \hline
-We will read and use at least four core articles in the area of PI in our project. This is so our project is well informed and knowledgeable surrounding the area of PI. This will also aid our project in terms of what to aim for what our project should and shouldn’t do.&Priority: MEDIUM Dependencies: None\\
+We will read and use at least four core articles in the area of PI in our project. This is so our project is well informed and knowledgeable surrounding the area of PI. This will also aid our project in terms of what to aim for what our project should and shouldn’t do.&
+\makecell{Priority: MED\\Dependencies: None\\Source: CWS}\\
 \hline
 
 \multicolumn{2}{|l|}{\textbf{\textit{4 - Ethical Issues}}} \\
 \hline
 \textbf{4.1 - Must use users’ data for allowed purposes only} & \textbf{Author: FD} \\
 \hline
-We must only allow for the user’s data to be used for the intended purpose. Their data will not be distributed to third parties and it won’t be used without the user’s consent.&Priority: HIGH Dependencies: None\\
+We must only allow for the user’s data to be used for the intended purpose. Their data will not be distributed to third parties and it won’t be used without the user’s consent.&
+\makecell{Priority: HIGH\\Dependencies: None\\Source: Research,\\Ethics of Data}\\
 \hline
 \textbf{4.2 - Data must be kept securely} & \textbf{Author: FD} \\
 \hline
-The user’s stored data will be kept secure by encrypting it and securing it on our server. Only authorised persons will be allowed to access it to prevent data being stolen or edited.&Priority: HIGH Dependencies: None\\
+The user’s stored data will be kept secure by encrypting it and securing it on our server. Only authorised persons will be allowed to access it to prevent data being stolen or edited.&
+\makecell{Priority: HIGH\\Dependencies: None\\Source: Research,\\Ethnics of Security}\\
 \hline
 \textbf{4.3 - The user must have given permission for their data to be collected} & \textbf{Author: FD} \\
 \hline
-The user must agree for any of their data to be collected and stored before it is recorded. The user must also be given permission to restrict the data that is collected about them.&Priority: HIGH Dependencies: None\\
+The user must agree for any of their data to be collected and stored before it is recorded. The user must also be given permission to restrict the data that is collected about them.&
+\makecell{Priority: HIGH\\Dependencies: None\\Source: Research,\\Ethics of Data}\\
 \hline
 
 \multicolumn{2}{|l|}{\textbf{\textit{5 - Usability}}} \\
 \hline
 \textbf{5.1 - The software system must be easy to navigate and obvious to use.} & \textbf{Author: FD} \\
 \hline
-This is to maximise the use each user gets out of using the software. By making  the system easy to use, users will be able to access its full potential.&Priority: HIGH Dependencies: None\\
-\hline
-\textbf{4.2 - Data must be kept securely} & \textbf{Author: FD} \\
-\hline
-The user’s stored data will be kept secure by encrypting it and securing it on our server. Only authorised persons will be allowed to access it to prevent data being stolen or edited.&Priority: HIGH Dependencies: None\\
+This is to maximise the use each user gets out of using the software. By making  the system easy to use, users will be able to access its full potential.&
+\makecell{Priority: HIGH\\Dependencies: None\\Source: Research,\\Prior}\\
 \hline
 
 \multicolumn{2}{|l|}{\textbf{\textit{6 - Testing}}} \\
 \hline
 \textbf{6.1 - The system must pass a series of test plans} & \textbf{Author: FD} \\
 \hline
-The system produced must undergo a series of test plans since test-driven development is a great way to find unexpected outputs and bugs which otherwise may go undetected. Evidence of this must be provided.&Priority: HIGH Dependencies: None\\
+The system produced must undergo a series of test plans since test-driven development is a great way to find unexpected outputs and bugs which otherwise may go undetected. Evidence of this must be provided.&
+\makecell{Priority: HIGH\\Dependencies: None\\Source: CWS}\\
 \hline
 \textbf{6.2 - Our hypotheses must connect claims found in research to observable behaviours in the finished system} & \textbf{Author: FD} \\
 \hline
-In order for our project to be successful, having many sprint meetings will be vital. Sprints allow us to have target focussed goals allowing for increased productivity. These sprints will also present developments in terms of what needs to be done in the next sprint by throwing up new issues which can be added to the product backlog and dealt with in the next sprint.&Priority: HIGH Dependencies: None\\
+In order for our project to be successful, having many sprint meetings will be vital. Sprints allow us to have target focussed goals allowing for increased productivity. These sprints will also present developments in terms of what needs to be done in the next sprint by throwing up new issues which can be added to the product backlog and dealt with in the next sprint.&
+\makecell{Priority: HIGH\\Dependencies: None\\Source: CWS}\\
 \hline
 \textbf{6.3 - We must analyse the data generated from users using our finished system.} & \textbf{Author: FD} \\
 \hline
-We must analyse data generated by our system using valid statistical methods to discover any trends or patterns within our collected data.&Priority: HIGH Dependencies: None\\
+We must analyse data generated by our system using valid statistical methods to discover any trends or patterns within our collected data.&
+\makecell{Priority: HIGH\\Dependencies: None\\Source: Prior}\\
 \hline
 \textbf{6.4 - The system must generate error reports upon crashing} & \textbf{Author: FD} \\
 \hline
-The system must generate user friendly error messages to users depending on the reason as to why the system failed. The system should also send detailed error reports back to the developers so that corrections can be made to the system if necessary.&Priority: HIGH Dependencies: None\\
+The system must generate user friendly error messages to users depending on the reason as to why the system failed. The system should also send detailed error reports back to the developers so that corrections can be made to the system if necessary.&
+\makecell{Priority: HIGH\\Dependencies: None\\Source: PD}\\
 \hline
 \textbf{6.5 - The user interface must be tested thoroughly} & \textbf{Author: FD} \\
 \hline
-The user interface must be thoroughly tested against things such as invalid user input and error handling to minimise system failures.&Priority: HIGH Dependencies: None\\
+The user interface must be thoroughly tested against things such as invalid user input and error handling to minimise system failures.&
+\makecell{Priority: HIGH\\Dependencies: None\\Source: Research,\\Prior}\\
 \hline
 \end{longtable}
 
@@ -573,9 +536,14 @@ The user interface must be thoroughly tested against things such as invalid user
 
 \chapter{Design}
 
-\section{High Level Architecture Diagram}
+\section{High Level Architecture Diagram - FD \& ED}
 
-TODO
+\begin{figure}[h]
+	\centering
+	\makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{hla.png}}%
+	\caption{High Level Architecture for our system}
+	\label{fig:hla}
+\end{figure}
 
 \section{Project Outline - JC}
 
@@ -715,7 +683,9 @@ The MoodClassification API endpoint uses the SortUserSongs method and returns th
 
 \section{Class Diagram - AG}
 
-See figure \ref{fig:classdia} for the complete class diagram
+See figure \ref{fig:classdia}
+
+The class diagram contains almost 2 separate sets of classes, Server and Client. The server classes handle things on the server side, such as storing and receiving from the database, accessing, retriving and processing spotify data. The client mostly contains the GUI which is responsible for formatting and displaying data in interesting ways for the user, showing their mood over a day, month etc. The connecting classes are ServerHandler and API and these handle the sending and receiving of data between client and server. So for example if user wishes to see their mood over the last day, the client passes a request to the server handler in which it passes it to the API which handles the request and calls the getListenInfo function and can return to the server handler in which returns it to the GUI. In reference to the relationships between the classes, the server only exists as one entity but will create new instances/threads of the other classes for each client connected. Therefore the server has a 1 to (possible many) relationship with the 4 server side classes. While the client has a 1 to 1 relationship with the GUI and ServerHandler.
 
 \begin{figure}[h]
 	\centering
@@ -760,18 +730,20 @@ Both figures \ref{fig:usecase1} and \ref{fig:usecase2} have corresponding state 
 
 \section{State Machine Diagrams}
 
-The State Machine Model shows the different states the system will go through during different use cases, we decided to exclude a state machine model for figure \ref{fig:usecase3} as it was so simple. Figure \ref{fig:statemach1} shows the state of the system for figure \ref{fig:usecase1} and \ref{fig:statemach2} for \ref{fig:usecase2}.
+Figure \ref{fig:statemach1} shows the login state diagram, for use case \ref{fig:usecase1}. The  user enters in username and password on client side and this is sent to the server which first checks if the username exists in the database, if so then prepends the salt stored in that record to the given password and hashes it. If the passwords match then access is granted and they have successfully logged in (See functional requirements 1.1, 1.2, 1.3, 1.5, 4.3 and non-functional 4.2). If the password or username don’t match then it prints an error and starts again at the login page.
+
+Figure \ref{fig:statemach2} shows the register state diagram, for use case \ref{fig:usecase2}. It requests a username and password, checks if the username exists and if it doesn’t then it prepends a uniquely randomated salt to the password then hashes it and adds the new user record with the username, salt and hashed password. If the username already exists then an error message is printed and it restarts at the register page (See functional requirements 1.1, 1.3, 1.4, 1.5, 4.1).
 
 \begin{figure}[h]
 \centering
 \makebox[\textwidth][c]{
-\begin{subfigure}{0.6\textwidth}
+\begin{subfigure}{0.5\textwidth}
 	\centering	
 	\includegraphics[width=1\linewidth]{statemach1.png}
 	\caption{State Machine Model for \ref{fig:usecase1}}
 	\label{fig:statemach1}
 \end{subfigure}%This Removes the space after these
-\begin{subfigure}{0.6\textwidth}
+\begin{subfigure}{0.5\textwidth}
 	\centering	
 	\includegraphics[width=1\linewidth]{statemach2.png}
 	\caption{State Machine Model for \ref{fig:usecase2}}
@@ -957,7 +929,7 @@ Statistics on library and listen makeup should be displayed on page if the user 
 
 \end{center}
 
-\chapter{Consulsion  - SC}
+\chapter{Conclusion  - SC}
 
 ‘Title’ has been a great learning experience for our team and, overall, a success. The final version of our project has met our expectations and the journey of creating it has taught us about organisation, teamwork, self-learning and utilising our sets of skills. ‘Title’ is a personal informatics software, which, upon research and development, helps the user understand and classify the songs they listen to, based on the mood the music conveys. It takes raw data from the user’s Spotify account which is then processed into something they can easily understand and reflect upon by the use of graphs and intuitive user interface. 
 
@@ -982,15 +954,6 @@ After completing both the projects and being able to compare and reflect on them
 
 \chapter{Appendix}
 
-\section{Figures}
-
-\begin{figure}[h]
-	\includegraphics[width=\linewidth]{thayer-mood-model.png}
-	\caption{Thayer Mood Model}
-	\label{fig:thayermoodmodel}
-\end{figure}
-
-\newpage
 \section{Group Contribution Form}
 
 The Group Contribution is at follows:
@@ -1020,6 +983,125 @@ As the team was unable to meet due to COVID-19 we were unable to sign it and ins
 	\includegraphics{gcf.png}
 	\caption{Group Contribution Form as seen on MS Teams}
 	\label{fig:gcf}
+\end{figure}
+
+\newpage
+
+\section{Figures}
+
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{thayer-mood-model.png}
+	\caption{Thayer Mood Model}
+	\label{fig:thayermoodmodel}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=0.9\linewidth]{question-moods.png}
+	\caption{Do moods help you express or cope with different emotions and moods?}
+	\label{fig:question-moods}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{question-format.png}
+	\caption{What music application do you prefer?}
+	\label{fig:question-format}
+\end{subfigure}
+
+\caption{Reponses to the questionnaire}
+\label{fig:question}
+
+\end{figure}
+
+\newpage
+
+\begin{figure}[!h]
+
+\begin{longtable}{| p{5.5cm} | p{2cm} | p{2cm} |  p{5.5cm} |}
+\hline
+\textbf{Risk} & \textbf{Likelihood} & \textbf{Impact} & \textbf{Measures} \\
+\hline
+\endfirsthead
+
+\endlastfoot
+
+\multicolumn{4}{c}{\textit{Continued from last page}}
+\endhead
+
+\multicolumn{4}{c}{\textit{Continued on next page}}
+\endfoot
+
+The time required to develop the software is underestimated. & 
+High & 
+Serious & 
+Focus on the key features and the main requirements of the system, if there is spare time we can add additional features. \\ 
+\hline
+Complexity of the software may be too hard for us to create.&
+Moderate&
+Serious&
+Before we start anything we must be sure of what we plan to do and make sure it is possible for us to do with our skillset.\\
+\hline
+
+A key person in the project may become ill due to a number of reasons, this would delay the project as no one else would be able to do that job.&
+Moderate&
+Serious&
+Split up workload into groups of more than two instead of relying on just one individual.\\
+\hline
+
+
+The database cannot process as many transactions as expected.& 
+Moderate&
+Serious&
+Gather information on a number of database systems that could be used and work out which one could work with our requirements.\\
+\hline
+
+The specification is not well defined.& 
+Moderate&
+Minor&
+Any issues with the specification we will bring up with tutors and lecturers so we can get a clearer picture.\\
+\hline
+
+
+Requirements are not well defined.& 
+Moderate&
+Minor&
+We can read through and go over different requirements to see  if they are relevant and make sense to the project.\\
+\hline
+
+When writing documentation, people may conflict with what they are doing as responsibilities may be unclear resulting in two or more people doing the same job.& 
+Moderate&
+Minor&
+Make sure our communication channels are efficient and before we do work we know what everyone is doing.\\
+\hline
+
+Everyone in the group become seriously ill from the coronavirus leaving no one able to do anything toward the project.&
+Moderate&
+Catastrophic&
+Follow any guidelines the government set for us to stay safe.\\
+\hline
+
+The specification could change for what is required in this project.& 
+Low&
+Minor&
+Allow enough time in or after the sprints in order to make changes where necessary.\\
+\hline
+
+A member of the group could drop out of the university leaving us with less people to work with.& 
+Low&
+Minor&
+Be sure that the person is communicating with us to allow us time to adjust to less people in the group.\\
+\hline
+
+
+\end{longtable}
+
+\caption{Full Risk Assessment table}
+\label{fig:risks}
+
 \end{figure}
 
 \newpage
