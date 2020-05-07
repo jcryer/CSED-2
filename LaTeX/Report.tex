@@ -1,4 +1,4 @@
-\documentclass[10pt]{report}
+\documentclass[10pt, notitlepage]{report}
 %\usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage[hyphens]{url}
@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{breakcites}
-
+\usepackage{titling}
 \usepackage{makecell}
 
 \renewcommand\cellalign{tl}
@@ -35,31 +35,78 @@
 \titlespacing{\subsubsection}{0pt}{0\baselineskip}{0\baselineskip}
 
 
-\title{CSED Coursework 2}
+\title{\leavevmode \\\leavevmode \\SpotiMy\\\leavevmode \\}
 \author{
-	Adam George
+	Sandra-Maria Comradi
+	\and
+	Joseph Cryer
+	\and
+	Sam Davidson
+	\and
+	Teodora Dinca
 	\and
 	Eddy Dunton
 	\and
 	Fraser Dwyer
-	\and	
-	Lance Garcia
-	\and
-	Sam Davidson
 	\and
 	Sam Freeman
 	\and
-	Sandra-Maria Comradi
+	Lance Garcia
 	\and
-	Teodora Dinca
+	Adam George\\\leavevmode \\
 }	
-\date{Semester 2,  2019-2020}
+%\date{\leavevmode\\Semester 2,  2019-2020}
 
 \begin{document}
 
-\begin{titlepage}
+\pagebreak
+\hspace{0pt}
+\vfill
+
+\thispagestyle{empty}
+\section*{\centering CM10251}
+\section*{\centering SpotiMy}
+\section*{\centering Group 5}
+\section*{\centering Semester 2,  2019-2020}
+
+\leavevmode \\
+\leavevmode \\
+\begin{table}[h]
+\centering
+\begin{tabular}{p{4cm} p{3cm} p{8cm}}
+\textbf{Group Member}&\textbf{Username}&\textbf{Degree Course}\\
+\hline
+S. Corradi&smc202&MComp Computer Science and Maths, Year 1\\
+J. Cryer&jjc82&BSc Comptuter Science, Year 1\\
+S. Davidson&sd2122&BSc Computer Science, Year 1\\
+T. Dinca&td598&BSc Computer Science, Year 1\\
+E. Dunton&eed34&MComp Computer Science, Year 1\\
+F. Dwyer&fd383&BSc Computer Science, Year 1\\
+S. Freeman&sf789&MComp Computer Science, Year 1\\
+L. Garcia&lg826&BSc Computer Science, Year 1\\
+A. George&ad2479&MComp Computer Science, Year 1\\
+
+\end{tabular}
+\end{table}
+
+\vfill
+\hspace{0pt}
+\pagebreak
+
+\begin{titlingpage}
+
 \maketitle
-\end{titlepage}
+
+\leavevmode \\
+\leavevmode \\
+
+\begin{abstract}
+
+We have designed and built a web application which has a principal focus in the area of Music Informatics, a branch of Personal Informatics. Personal Informatics is the study of data collection tools and the ways in which self-monitoring data can be beneficial. The main problem we set out to overcome was to illustrate the moods of the songs that the user listens in a meaningful way. Music plays a large part in many peoples lives, however, not many people are aware of the composition of the moods that make up the songs they listen to. By knowing the moods associated with the songs that the users are listening to, can help them decide what music would be best for a given scenario. For example, songs with high levels of exuberance and motivation might be best suited for study sessions. This can help users reflect upon their moods, which is made especially easy with our timeline feature which shows users their levels of certain moods over the course of the previous week. Our solution utilises the Spotify API to collect and process information from the user’s Spotify account. This makes our solution widely available and easily accessible since anyone with an internet connection and a Spotify account can use it.
+
+\end{abstract}
+
+\end{titlingpage}
 
 \tableofcontents
 
@@ -124,103 +171,39 @@ Proof of our use of agile can be seen in Appendix, section \ref{sec:agileapp}
 
 \chapter{Research}
 
+We did a large amount of research for our project, the conclusions of our research can be found below, the full writeups can be found in Appendix \ref{res:res}
 
-\section{Prior Research - LG}
-\label{res:prior}
+\leavevmode \\
+\textbf{Prior Research - LG - Appendix \ref{res:prior}}
 
-This research was performed before the final solution was decided, it was performed by various members then collated by Lance Garcia.\newline
+We often came across a theme of tracking data and understanding how to best make use of a system given to a user. From this research we should be able to increase the effectiveness of the user monitoring their own data. Tracking devices have been known to give a short-term improvement to the health of users who have used tracking devices like Nike’s “FuelBand”. In a way, being able to track what kind of music makes a user happier or focused could provide a benefit to them in the long run. For this to happen though the user must have trust in the system as that could impact motivation. A loss of trust will result in a loss of interest within the system. This requires us to create a software system which is intuitive to help monitor their own data with minimal effort.
 
-A recurring theme throughout our research into personal informatics is the idea that the user must want to track their data, as well understand how to best make use of the system given to them. \cite{Rapp2014a} suggests that “common users” with little prior experience can suffer from problems with familiarity and motivation with the tracking of their personal data. They go on to suggest factors that affect self-monitoring such as “motivation for change” and “goal-setting feedback and reinforcement” should be kept in mind during the development of the program in order to maximise user interaction with the app. Through the factors given in this article, we should be able to increase the effectiveness of the user monitoring their own data, as well as collect accurate and important data.
+\leavevmode \\
+\textbf{Security Ethics - AG - Appendix \ref{res:secethics}}
 
-This is supported by \cite{Fritz2014} who studied the long-term effects of using personal informatics tracking devices such as Nike’s “FuelBand” which discovered many users experienced a short-term improvement to their health. This was due to the encouragement that users receive on such devices. This highlights the potential for long term health benefits to users that are motivated enough to continue monitoring their data over longer period. While this is not directly applicable to our proposed solution, it provides insight to the effects of personal informatics in the long and short-term. In a similar manner, being able to track what kinds of music make the user happier or focused may provide benefits to them in the long run as they listen to more of that type of music.
+To prevent a loss of trust in a system, companies must align themselves with the idea of responsible disclosure which is simply when a security flaw in a system doesn’t go public until it’s patched. This is a “community accepted” protocol.
 
-The idea of trust in a system is an important concept; a user’s trust in the system is important as that will affect their motivation, and their likelihood of continued use of the system. In the case that the program produces a result that either the user disagrees with or dislikes, this can lead to a loss in trust, and as a result, a loss of interest in the system. To increase this sense of trust, the user should be shown how the data is collected, and to provide them with an understanding of what the data means. In addition to this, meaningful data visualisation and explanation will help to provide this understanding to the user. \cite{Jaimes2013}
+\leavevmode \\
+\textbf{Hashing and Password Research - AG - Appendix \ref{res:passsec}}
 
-\cite{Li2010} mentions five steps for developing personal informatics software being: preparation, collection, integration, reflection, and action.  It should be a conscious decision to integrate these steps into our software as it will enable the users to not only flit back and forth between these stages with ease. This will also allow us to make as much of the program software driven in order to make it more reliable and through reducing the amount that the user must do/understand will help the user to monitor their own data with minimal effort.
+Without hashing or protection a database breach could lead to attacks to obtain usernames and passwords in plaintext, allowing access to accounts and other services using the same 
+credentials. A common principle to follow in security is Shannon’s Maxim, “one ought to design systems under the assumption an enemy will immediately gain full familiarity with them”. This means obscurity isn’t secure enough as algorithms will be known quickly. For this reason, parameters such as salts (a random string added to the data before encryption), memory size, iteration count, parallelism and salt length are added to make attacks more expensive for an attacker.
 
-\section{Security Ethics - AG}
-\label{res:secehtics}
+\leavevmode \\
+\textbf{Ethics of Data Storage - SD - Appendix \ref{res:datastor}}
 
-This research was performed during the production of the product, in order to assertain ethcal guidelines for users to developers to follow when securing user data.\newline
+When using the data and storing it for the right reason then there are generally no ethical issues. As long as the law is being followed, ie. GDPR, and the user is informed of what data is being collected and why then there should be no issues. The users put their trust into an organisation to hold their data and use it responsibly, if they do not then this can be a violation of a users safety and privacy.
 
-The idea of responsible disclosure is highlighted by \cite{2010a} which describe it as: “researchers who uncover a flaw don't go public until the system's developer has had a chance to fix it”.  This is of note as this not only provides the developer’s with time to patch their system, but also to prevent the public from losing trust in said system.  Responsible disclosure is a “community accepted” protocol, so while it may not be mandatory for researchers and developers to follow through, it is in the best interest of most companies to align themselves by it.
+\leavevmode \\
+\textbf{Song Attributes and Mood - SC - Appendix \ref{res:mood}}
 
-A growing ethical concern is the phenomenon of social networks.  With the group project being involved with music apps, which are commonly linked to users’ social media accounts, this is of important note.  The issue comes in the place of a lack of “central command” which is compounded by anonymity, as well as virtual/multiple personalities.  This brings in a wide range or social and ethical issues with the use of social networking, examples of this being cyberbullying, cyberstalking, and cyber-harassment.  According to a survey taken by i-SAFE, more than 53\% of children admit to having been abusive over the internet, with 42\% having admitted to being victims of said abuse \cite{iSAFE2004}. In addition to this, the use of social networking has led to internet addiction being a clinical disorder.  Users that are extroverted/unselfconscious, shy, or narcissistic \cite{Kizza2016} tend to have higher usages of social networking applications.  
+The mood table which has been created was based on Thayer’s mood mode which considers the energy and valence of a song to determine basic moods. In addition to these factors, in order to refine the table and give more moods, acousticness, instrumentalness and danceability have been added to create subsets of the basic moods, which will give the user a more specific and detailed interpretation. Details on the values which we will be using can be found in the appendix.
 
+\leavevmode \\
+\textbf{Questionnaire - SC - Appendix \ref{res:quest}}
 
-\section{Hashing and Password Storage - AG}
-\label{res:passsec}
+From our responses, 90\% agree that listening habits change based on a person's mood, 70\% of responses say moods help express or cope with different emotions most of the time or definitely and 65\% of responses say they use Spotify, which has prompted us to create our system.
 
-This research was performed during the production of the product, in order to assertain security guidelines for the storing of passwords.\newline
-
-Without any sort of hashing or protection a database breach could lead attacks to obtaining users usernames and passwords in plaintext, allowing them to access users accounts on this or any other service which they used the same credientials for in a credential stuffing attack, one of the most common styles of cyber attacks \cite{OWASP2020}. Hasing turns a plaintext password into a random string of characters which cannot be unhashed, instead, when a user enters their password it is hashed and the 2 hashes are comapred.
-
-A common principle to follow in system security is Shannon's Maxim: "one ought to design systems under the assumption that the enemy will immediately gain full familiarity with them" \cite{Shannon1949}.This essentially means that a system shouldn’t be secure through obscurity, i.e even if the attackers know the algorithms/protocols that encrypt the data, they still shouldn’t be able to break the security. In theory hashing can be brute forced with current technology, however, the necessary computing power is not readily available at this moment, but, this may change in the near future. Another common approach to breaking hashes is to use a lookup table which stores the most commonly used passwords along with their hashes, which makes these passwords trivial to break. For this reason hashing alone is insufficient for password security. \cite{Tsudik1992}
-
-For this reason salts are used, which are randomly generated strings added to the password before hashing when the password is created, the salt is stored in the database alongside the password. This helps prevent against these pre-calculated hash tables because the hacker has to then recalculate these tables for each user they wish to hack into as they will have their own unique salt with them which makes these attacks more costly. Brute force attacks can never be fully stopped but using a modern hashing alogrithm can make it more expensive for the attcker, as these focus less on speed, but instead flexiblity, for exmaple, argon2 has parameters such as memory size, iteration count, parallelism and salt length which can be adjusted to make the hash more (or less) complex making it more expensive to brute force as more resources can be required to perform a hash \cite{Biryukov2016}. For these reasons we recommened the use of Argon2 over other modern algorithms such as the SHA family or Bcrypt.
-
-\section{Ethics of Data Storage - SD}
-\label{res:datastor}
-
-This research was performed during the production of the product, in order to assertain guidelines for the storage and usage of user data.\newline
-
-Data today is something that is a key asset to companies and the day to day operations in the world. Behind it, there are many legal and ethical aspects which are important to the privacy and safety of the users who give up their data. To understand what the responsibilities are we would look into the Association of Computing  Machinery’s Code of Ethics and Professional Conduct. In section 1.2 it is considered a general ethical principle to “avoid harm”, harm meaning any negative or unfair and significant consequences \cite{ComputingMachineryACM2018}. In terms of the data that we hold, if we pass on or give up the data to anyone else other than just for our program then we would potentially be harming the user, who have put their trust in us using their data. One example of a large company misusing information is the Facebook-Cambridge Analytica scandal in 2018. This is when Facebook allowed enough data for the political consulting company Cambridge Analytica to create psychological profiles on 70.6 million US citizens during the US presidential election in 2016 \cite{Horwitz2018}. They used this collected data to create political regressive models on users for advertisement purposes, this led to predicting users personalities which were then presented with adverts which promoted certain political agendas, influencing voters through micro-targeted advertisements \cite{Rathi2019}. This incident was considered illegal and unethical as they broke the British law, harvesting almost all data without explicit consent \cite{ASNC2018}. As we are dealing with personal information as well, it is very possible that the data we collect could create psychological profiles. This must be avoided and data collected will be deleted after its intended use.
-
-So when considering the ethical concerns for storing and analysis of data, there is none when the user has given their expressed consent where they are informed fully of what the data will be used for. Additionally, with accordance to the GDPR, which looks for fairness and transparency, if a user wishes to retract their information from being used then we must return or delete the data. We must also only use the data we collect for the use we have clearly said to the user
-
-
-\section{Song attributes and mood - SC}
-\label{res:mood}
-
-This resesarch was performed during the production of the product, in order to assertain the relationship between characteristics of songs and their moods.\newline
-
-The Mood Table was created based on Thayer’s mood mode, Figure \ref{fig:thayermoodmodel}, which considers the energy and the valence of a song to determine basic moods. “In most existing methods of music mood classification, the moods of songs are divided according to psychologist Robert Thayer’s traditional model of mood. The model divides songs along the lines of energy and stress, from happy to sad and calm to energetic, respectively (Bhat et al 359). The eight categories created by Thayer’s model include the extremes of the two lines as well as each of the possible intersections of the lines (e.g. happy-energetic or sad-calm). [...]” \cite{Nuzzolo2015}. The mood table makes use of this information by working with data provided by Spotify, the energy and the valence. The model has been refined by taking into consideration another 3 variables, acousticness, instrumentalness and danceability. These are considered attributes that create subsets of the already existing moods, making them more specific and detailed. High acousticness and instrumentalness can be used to determine a song is motivational or good for concentration, while danceability can help determine how lively a song is. 
-
-This led us to the following matrix, here all values must align with the required values for a song to be catergorised as a certain mood.
-Required values:
-\begin{itemize}
-\item 'n' - Neutral - Value must be between 0.4 and 0.6
-\item '+' - Positive - Value must be above 0.6
-\item '-' - Negative - Value must be below 0.4
-\item '/' - None dependant - Value does not matter
-\end{itemize} 
-
-
-\begin{longtable}{| p{5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} |  p{2.5cm} |}
-\hline
-\textbf{Mood} & \textbf{Valency} & \textbf{Energy} & \textbf{Acoutstic} & \textbf{Danceability} \\
-\hline
-\endfirsthead
-
-\endlastfoot
-
-\multicolumn{5}{c}{\textit{Continued from last page}}
-\endhead
-
-\multicolumn{5}{c}{\textit{Continued on next page}}
-\endfoot
-
-Neutral		&n&n&/&/\\
-Happy			&+&n&/&/\\
-Sad			&-&n&/&/\\
-Calm			&n&-&/&/\\
-Energetic		&n&+&/&/\\
-Exuberance		&+&+&/&/\\
-Lively			&+&+&/&+\\
-Joyful			&+&n&/&+\\
-Contentment		&+&-&/&/\\
-Relaxation		&+&-&/&/\\
-Frantic		&-&+&/&/\\
-Depressing		&-&-&/&/\\
-Melancholic		&-&-&+&/\\
-For Concerntraion	&n&-&+&/\\
-Motivational		&n&+&+&/\\
-\hline
-\end{longtable}
-
-\section{Questionnaire - SC}
-\label{res:quest}
-A questionnaire has been used to gather data about the correlation between people’s moods and their music listening habits. Of our 24 repsonses we found out that around 90\% of people agree with the statement “My listening habits change based on my mood” while 40\% out of them strongly agree. Furthermore, 70\% of people state that music plays a big role in their lives, while 60\% of them think the music they listen to helps them understand themselves more. Most people stated that they listen to music at least 4 days a week, while a big part of them (65\%) listen to music daily. Generally, people listen to music a couple of hours a day, while some listen to music all the time, or less than an hour a day. Music seems to help people deal with their emotions \ref{fig:question-moods} and most people seem to use Spotify as their main music app \ref{fig:question-format}. We have also asked if there were any features they wished music apps included. A couple of responses addressed the way songs are recommended to them and organised, stating that they wished the recommended songs would fit the way they are feeling at the time more, and that they would like to be able to have direct access to songs they listened to before. Other responses talked about displaying lyrics and tools to help the user recognise songs more easily. This information has strengthened the ideas our research provided and has helped us gain a better understanding of how music affects people’s moods. It has prompted us to create an app that helps people track their moods based on what they listen to on Spotify.
 
 \chapter{Risk Assessment - LG \& SD}
 Personal informatics applications already exist within a market, with many apps surrounding the tracking of music, such as Spotify Wrapped, and Last.fm. As a result, one risk we must consider is how our app is going to break into the market, with big music app owners already tracking their own data and sharing it with their customers. A potential solution to this is to have our app cover various music apps and for it to combine the statistics for all the apps. This would allow us to cover a larger audience than other apps would as many users only use one specific app to listen to music due to premium memberships in apps like Apple Music and Spotify. In addition to this, it would enable us to cater to users that use multiple apps as all their stats would be available in a single app rather than having them use various apps for several music streaming services.
@@ -984,6 +967,108 @@ As the team was unable to meet due to COVID-19 we were unable to sign it and ins
 	\caption{Group Contribution Form as seen on MS Teams}
 	\label{fig:gcf}
 \end{figure}
+
+\newpage
+
+\section{Research}
+\label{res:res}
+
+\subsection{Prior Research - LG}
+\label{res:prior}
+
+This research was performed before the final solution was decided, it was performed by various members then collated by Lance Garcia.\newline
+
+A recurring theme throughout our research into personal informatics is the idea that the user must want to track their data, as well understand how to best make use of the system given to them. \cite{Rapp2014a} suggests that “common users” with little prior experience can suffer from problems with familiarity and motivation with the tracking of their personal data. They go on to suggest factors that affect self-monitoring such as “motivation for change” and “goal-setting feedback and reinforcement” should be kept in mind during the development of the program in order to maximise user interaction with the app. Through the factors given in this article, we should be able to increase the effectiveness of the user monitoring their own data, as well as collect accurate and important data.
+
+This is supported by \cite{Fritz2014} who studied the long-term effects of using personal informatics tracking devices such as Nike’s “FuelBand” which discovered many users experienced a short-term improvement to their health. This was due to the encouragement that users receive on such devices. This highlights the potential for long term health benefits to users that are motivated enough to continue monitoring their data over longer period. While this is not directly applicable to our proposed solution, it provides insight to the effects of personal informatics in the long and short-term. In a similar manner, being able to track what kinds of music make the user happier or focused may provide benefits to them in the long run as they listen to more of that type of music.
+
+The idea of trust in a system is an important concept; a user’s trust in the system is important as that will affect their motivation, and their likelihood of continued use of the system. In the case that the program produces a result that either the user disagrees with or dislikes, this can lead to a loss in trust, and as a result, a loss of interest in the system. To increase this sense of trust, the user should be shown how the data is collected, and to provide them with an understanding of what the data means. In addition to this, meaningful data visualisation and explanation will help to provide this understanding to the user. \cite{Jaimes2013}
+
+\cite{Li2010} mentions five steps for developing personal informatics software being: preparation, collection, integration, reflection, and action.  It should be a conscious decision to integrate these steps into our software as it will enable the users to not only flit back and forth between these stages with ease. This will also allow us to make as much of the program software driven in order to make it more reliable and through reducing the amount that the user must do/understand will help the user to monitor their own data with minimal effort.
+
+\subsection{Security Ethics - AG}
+\label{res:secethics}
+
+This research was performed during the production of the product, in order to assertain ethcal guidelines for users to developers to follow when securing user data.\newline
+
+The idea of responsible disclosure is highlighted by \cite{2010a} which describe it as: “researchers who uncover a flaw don't go public until the system's developer has had a chance to fix it”.  This is of note as this not only provides the developer’s with time to patch their system, but also to prevent the public from losing trust in said system.  Responsible disclosure is a “community accepted” protocol, so while it may not be mandatory for researchers and developers to follow through, it is in the best interest of most companies to align themselves by it.
+
+A growing ethical concern is the phenomenon of social networks.  With the group project being involved with music apps, which are commonly linked to users’ social media accounts, this is of important note.  The issue comes in the place of a lack of “central command” which is compounded by anonymity, as well as virtual/multiple personalities.  This brings in a wide range or social and ethical issues with the use of social networking, examples of this being cyberbullying, cyberstalking, and cyber-harassment.  According to a survey taken by i-SAFE, more than 53\% of children admit to having been abusive over the internet, with 42\% having admitted to being victims of said abuse \cite{iSAFE2004}. In addition to this, the use of social networking has led to internet addiction being a clinical disorder.  Users that are extroverted/unselfconscious, shy, or narcissistic \cite{Kizza2016} tend to have higher usages of social networking applications.  
+
+
+\subsection{Hashing and Password Storage - AG}
+\label{res:passsec}
+
+This research was performed during the production of the product, in order to assertain security guidelines for the storing of passwords.\newline
+
+Without any sort of hashing or protection a database breach could lead attacks to obtaining users usernames and passwords in plaintext, allowing them to access users accounts on this or any other service which they used the same credientials for in a credential stuffing attack, one of the most common styles of cyber attacks \cite{OWASP2020}. Hasing turns a plaintext password into a random string of characters which cannot be unhashed, instead, when a user enters their password it is hashed and the 2 hashes are comapred.
+
+A common principle to follow in system security is Shannon's Maxim: "one ought to design systems under the assumption that the enemy will immediately gain full familiarity with them" \cite{Shannon1949}.This essentially means that a system shouldn’t be secure through obscurity, i.e even if the attackers know the algorithms/protocols that encrypt the data, they still shouldn’t be able to break the security. In theory hashing can be brute forced with current technology, however, the necessary computing power is not readily available at this moment, but, this may change in the near future. Another common approach to breaking hashes is to use a lookup table which stores the most commonly used passwords along with their hashes, which makes these passwords trivial to break. For this reason hashing alone is insufficient for password security. \cite{Tsudik1992}
+
+For this reason salts are used, which are randomly generated strings added to the password before hashing when the password is created, the salt is stored in the database alongside the password. This helps prevent against these pre-calculated hash tables because the hacker has to then recalculate these tables for each user they wish to hack into as they will have their own unique salt with them which makes these attacks more costly. Brute force attacks can never be fully stopped but using a modern hashing alogrithm can make it more expensive for the attcker, as these focus less on speed, but instead flexiblity, for exmaple, argon2 has parameters such as memory size, iteration count, parallelism and salt length which can be adjusted to make the hash more (or less) complex making it more expensive to brute force as more resources can be required to perform a hash \cite{Biryukov2016}. For these reasons we recommened the use of Argon2 over other modern algorithms such as the SHA family or Bcrypt.
+
+\subsection{Ethics of Data Storage - SD}
+\label{res:datastor}
+
+This research was performed during the production of the product, in order to assertain guidelines for the storage and usage of user data.\newline
+
+Data today is something that is a key asset to companies and the day to day operations in the world. Behind it, there are many legal and ethical aspects which are important to the privacy and safety of the users who give up their data. To understand what the responsibilities are we would look into the Association of Computing  Machinery’s Code of Ethics and Professional Conduct. In section 1.2 it is considered a general ethical principle to “avoid harm”, harm meaning any negative or unfair and significant consequences \cite{ComputingMachineryACM2018}. In terms of the data that we hold, if we pass on or give up the data to anyone else other than just for our program then we would potentially be harming the user, who have put their trust in us using their data. One example of a large company misusing information is the Facebook-Cambridge Analytica scandal in 2018. This is when Facebook allowed enough data for the political consulting company Cambridge Analytica to create psychological profiles on 70.6 million US citizens during the US presidential election in 2016 \cite{Horwitz2018}. They used this collected data to create political regressive models on users for advertisement purposes, this led to predicting users personalities which were then presented with adverts which promoted certain political agendas, influencing voters through micro-targeted advertisements \cite{Rathi2019}. This incident was considered illegal and unethical as they broke the British law, harvesting almost all data without explicit consent \cite{ASNC2018}. As we are dealing with personal information as well, it is very possible that the data we collect could create psychological profiles. This must be avoided and data collected will be deleted after its intended use.
+
+So when considering the ethical concerns for storing and analysis of data, there is none when the user has given their expressed consent where they are informed fully of what the data will be used for. Additionally, with accordance to the GDPR, which looks for fairness and transparency, if a user wishes to retract their information from being used then we must return or delete the data. We must also only use the data we collect for the use we have clearly said to the user
+
+
+\subsection{Song attributes and mood - SC}
+\label{res:mood}
+
+This resesarch was performed during the production of the product, in order to assertain the relationship between characteristics of songs and their moods.\newline
+
+The Mood Table was created based on Thayer’s mood mode, Figure \ref{fig:thayermoodmodel}, which considers the energy and the valence of a song to determine basic moods. “In most existing methods of music mood classification, the moods of songs are divided according to psychologist Robert Thayer’s traditional model of mood. The model divides songs along the lines of energy and stress, from happy to sad and calm to energetic, respectively (Bhat et al 359). The eight categories created by Thayer’s model include the extremes of the two lines as well as each of the possible intersections of the lines (e.g. happy-energetic or sad-calm). [...]” \cite{Nuzzolo2015}. The mood table makes use of this information by working with data provided by Spotify, the energy and the valence. The model has been refined by taking into consideration another 3 variables, acousticness, instrumentalness and danceability. These are considered attributes that create subsets of the already existing moods, making them more specific and detailed. High acousticness and instrumentalness can be used to determine a song is motivational or good for concentration, while danceability can help determine how lively a song is. 
+
+This led us to the following matrix, here all values must align with the required values for a song to be catergorised as a certain mood.
+Required values:
+\begin{itemize}
+\item 'n' - Neutral - Value must be between 0.4 and 0.6
+\item '+' - Positive - Value must be above 0.6
+\item '-' - Negative - Value must be below 0.4
+\item '/' - None dependant - Value does not matter
+\end{itemize} 
+
+
+\begin{longtable}{| p{5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} |  p{2.5cm} |}
+\hline
+\textbf{Mood} & \textbf{Valency} & \textbf{Energy} & \textbf{Acoutstic} & \textbf{Danceability} \\
+\hline
+\endfirsthead
+
+\endlastfoot
+
+\multicolumn{5}{c}{\textit{Continued from last page}}
+\endhead
+
+\multicolumn{5}{c}{\textit{Continued on next page}}
+\endfoot
+
+Neutral		&n&n&/&/\\
+Happy			&+&n&/&/\\
+Sad			&-&n&/&/\\
+Calm			&n&-&/&/\\
+Energetic		&n&+&/&/\\
+Exuberance		&+&+&/&/\\
+Lively			&+&+&/&+\\
+Joyful			&+&n&/&+\\
+Contentment		&+&-&/&/\\
+Relaxation		&+&-&/&/\\
+Frantic		&-&+&/&/\\
+Depressing		&-&-&/&/\\
+Melancholic		&-&-&+&/\\
+For Concerntraion	&n&-&+&/\\
+Motivational		&n&+&+&/\\
+\hline
+\end{longtable}
+
+\subsection{Questionnaire - SC}
+\label{res:quest}
+A questionnaire has been used to gather data about the correlation between people’s moods and their music listening habits. Of our 24 repsonses we found out that around 90\% of people agree with the statement “My listening habits change based on my mood” while 40\% out of them strongly agree. Furthermore, 70\% of people state that music plays a big role in their lives, while 60\% of them think the music they listen to helps them understand themselves more. Most people stated that they listen to music at least 4 days a week, while a big part of them (65\%) listen to music daily. Generally, people listen to music a couple of hours a day, while some listen to music all the time, or less than an hour a day. Music seems to help people deal with their emotions \ref{fig:question-moods} and most people seem to use Spotify as their main music app \ref{fig:question-format}. We have also asked if there were any features they wished music apps included. A couple of responses addressed the way songs are recommended to them and organised, stating that they wished the recommended songs would fit the way they are feeling at the time more, and that they would like to be able to have direct access to songs they listened to before. Other responses talked about displaying lyrics and tools to help the user recognise songs more easily. This information has strengthened the ideas our research provided and has helped us gain a better understanding of how music affects people’s moods. It has prompted us to create an app that helps people track their moods based on what they listen to on Spotify.
 
 \newpage
 
