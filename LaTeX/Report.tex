@@ -1,6 +1,7 @@
 \documentclass[10pt, notitlepage]{report}
 %\usepackage[utf8]{inputenc}
 \usepackage{titlesec}
+\usepackage{breakurl}
 \usepackage[hyphens]{url}
 \usepackage{verbatim}
 \usepackage{longtable}
@@ -30,9 +31,10 @@
 
 %Removes 'Chapter x' at the start of each section
 \titleformat{\chapter}[display] {\normalfont\bfseries}{}{0pt}{\Large}
-\titlespacing*{\chapter}{0pt}{-25pt}{40pt}
+\titlespacing*{\chapter}{0pt}{-25pt}{30pt}
 %Decreases space after subsubsections
 \titlespacing{\subsubsection}{0pt}{0\baselineskip}{0\baselineskip}
+\titlespacing{\section}{0pt}{10pt}{5pt}
 
 
 \title{\leavevmode \\\leavevmode \\SpotiMy\\\leavevmode \\}
@@ -77,7 +79,7 @@
 \textbf{Group Member}&\textbf{Username}&\textbf{Degree Course}\\
 \hline
 S. Corradi&smc202&MComp Computer Science and Maths, Year 1\\
-J. Cryer&jjc82&BSc Comptuter Science, Year 1\\
+J. Cryer&jjc82&BSc Computer Science, Year 1\\
 S. Davidson&sd2122&BSc Computer Science, Year 1\\
 T. Dinca&td598&BSc Computer Science, Year 1\\
 E. Dunton&eed34&MComp Computer Science, Year 1\\
@@ -102,7 +104,7 @@ A. George&ad2479&MComp Computer Science, Year 1\\
 
 \begin{abstract}
 
-We have designed and built a web application which has a principal focus in the area of Music Informatics, a branch of Personal Informatics. Personal Informatics is the study of data collection tools and the ways in which self-monitoring data can be beneficial. The main problem we set out to overcome was to illustrate the moods of the songs that the user listens in a meaningful way. Music plays a large part in many peoples lives, however, not many people are aware of the composition of the moods that make up the songs they listen to. By knowing the moods associated with the songs that the users are listening to, can help them decide what music would be best for a given scenario. For example, songs with high levels of exuberance and motivation might be best suited for study sessions. This can help users reflect upon their moods, which is made especially easy with our timeline feature which shows users their levels of certain moods over the course of the previous week. Our solution utilises the Spotify API to collect and process information from the user’s Spotify account. This makes our solution widely available and easily accessible since anyone with an internet connection and a Spotify account can use it.
+SpotiMy is a web application which has a principal focus in the area of Music Informatics, a branch of Personal Informatics. Personal Informatics is the study of data collection tools and the ways in which self-monitoring data can be beneficial. The main problem we set out to overcome was to illustrate the moods of the songs that the user listens in a meaningful way. Music plays a large part in many people's lives, however, not many people are aware of the composition of the moods that make up the songs they listen to. By knowing the moods associated with the songs that the users are listening to, can help them decide what music would be best for a given scenario. For example, songs with high levels of exuberance and motivation might be best suited for study sessions. This can help users reflect upon their moods, which is made especially easy with our timeline feature which shows users their levels of certain moods over the course of the previous week. SpotiMy utilises the Spotify API to collect and process information from the user’s Spotify account. This makes our solution widely available and easily accessible since anyone with an internet connection and a Spotify account can use it.
 
 \end{abstract}
 
@@ -128,11 +130,11 @@ However, PI tracking tools aren’t without their flaws. Many PI tracking tools 
 
 Since the problem domain is personal informatics, we have decided to research how music can affect a listeners' mood and perspective based mainly on the type of music they are listening to, whether that is upbeat music or it’s a more calming sound, etc. We will also be looking into how different genres will impact on users, and we will take into consideration the time of day as well. Our application will analyse this data and return the mood that a user would generally feel while listening to it. We will be collecting this data from music streaming app Spotify. We would like to have the framework to include different music streaming services such as Apple Music, Deezer, etc.
 
-We know of features which are similar to what we aim to create. For example, Spotify Wrapped, which started as a simple microsite in 2015, showing users how they engaged with the service \cite{Swant}. In 2018, they introduced a personalised feature based off the original in 2015. This personalised feature shows their most listened-to artists, albums, songs, playlists and features from across the year for all users \cite{Somerville}. This has required Spotify to start taking users listening data in order for them to create their annual list for each user. This helps us as the Spotify API which we are going to end up using has a lot of features which we can implement into our own work \cite{WebAPI}. We can use this API to look at the danceability, energy, liveliness, loudness, etc. These will be taken into account when analysing the data.
+We know of features which are similar to what we aim to create. For example, Spotify Wrapped, which started as a simple microsite in 2015, showing users how they engaged with the service \cite{Swant}. In 2018, they introduced a personalised feature based off the original in 2015. This personalised feature shows their most listened-to artists, albums, songs, playlists and features from across the year for all users \cite{Somerville}. This has required Spotify to start taking users listening data in order for them to create their annual list for each user. This helps us as the Spotify API which we are going to end up using has a lot of features which we can implement into our own work \cite{WebAPI}. We can use this API to look at the danceability, energy, liveliness, loudness, etc. These will be considered when analysing the data.
 
 For this project we will primarily be looking into the Spotify API only in order to show the main features and the capability of our application, however, we will generalise a lot of the code, this will greatly increase the extensibility of the application. This makes it so we able to add other APIs such as Apple Music and Deezer. Doing this, our application would be able to be used by more than one music streaming apps, broadening our target audience, making it accessible to a larger number of potential users. This will maximise the amount of people we can potentially help with our app.
 
-There have been a number of articles related to studies conducted linking people’s moods to upbeat or sad songs. According to a study by Psych Central, upbeat music more than likely raises the mood and perception of a listener \cite{Nauert2018}. Upbeat music tends to be more happier. It has also been established that people listen to sad music are often sad and are looking for comfort, pleasure or pain \cite{Eerola2016}. All this type of information will be very useful in determining the mood and perspective of a listener. However, there are other things we must include like what makes exactly makes a song a happy one or a sad one, and whether a genre has an impact on being happy or sad.
+There have been a number of articles related to studies conducted linking people’s moods to upbeat or sad songs. According to a study by Psych Central, upbeat music more than likely raises the mood and perception of a listener \cite{Nauert2018}. Upbeat music tends to be happier. It has also been established that people listen to sad music are often sad and are looking for comfort, pleasure or pain \cite{Eerola2016}. All this type of information will be very useful in determining the mood and perspective of a listener. However, there are other things we must include like what makes exactly makes a song a happy one or a sad one, and whether a genre has an impact on being happy or sad.
 
 
 \chapter{Agile Software Process Planning and Management - FD}
@@ -171,7 +173,7 @@ Proof of our use of agile can be seen in Appendix, section \ref{sec:agileapp}
 
 \chapter{Research}
 
-We did a large amount of research for our project, the conclusions of our research can be found below, the full writeups can be found in Appendix \ref{res:res}
+We did a large amount of research for our project, the conclusions of our research are below, the full writeups can be found in Appendix \ref{res:res}
 
 \leavevmode \\
 \textbf{Prior Research - LG - Appendix \ref{res:prior}}
@@ -187,12 +189,12 @@ To prevent a loss of trust in a system, companies must align themselves with the
 \textbf{Hashing and Password Research - AG - Appendix \ref{res:passsec}}
 
 Without hashing or protection a database breach could lead to attacks to obtain usernames and passwords in plaintext, allowing access to accounts and other services using the same 
-credentials. A common principle to follow in security is Shannon’s Maxim, “one ought to design systems under the assumption an enemy will immediately gain full familiarity with them”. This means obscurity isn’t secure enough as algorithms will be known quickly. For this reason, parameters such as salts (a random string added to the data before encryption), memory size, iteration count, parallelism and salt length are added to make attacks more expensive for an attacker.
+credentials. A common principle to follow in security is Shannon’s Maxim, “one ought to design systems under the assumption an enemy will immediately gain full familiarity with them” \cite{Shannon1949}. This means obscurity isn’t secure enough as algorithms will be known quickly. For this reason, parameters such as salts (a random string added to the data before encryption), memory size, iteration count, parallelism and salt length are added to make attacks more expensive for an attacker.
 
 \leavevmode \\
 \textbf{Ethics of Data Storage - SD - Appendix \ref{res:datastor}}
 
-When using the data and storing it for the right reason then there are generally no ethical issues. As long as the law is being followed, ie. GDPR, and the user is informed of what data is being collected and why then there should be no issues. The users put their trust into an organisation to hold their data and use it responsibly, if they do not then this can be a violation of a users safety and privacy.
+When using the data and storing it for the right reason then there are generally no ethical issues. As long as the law is being followed, ie. GDPR, and the user is informed of what data is being collected and why then there should be no issues. The user's put their trust into an organisation to hold their data and use it responsibly, if they do not then this can be a violation of a users safety and privacy.
 
 \leavevmode \\
 \textbf{Song Attributes and Mood - SC - Appendix \ref{res:mood}}
@@ -219,15 +221,13 @@ The Scrum methodology which we will be using throughout this project has many te
 
 Full risk assessment table can be seen in appendix figure \ref{fig:risks}
 
-\chapter{Requirements}
+\chapter{Software Requirements Specification}
 
 \section{Gathering - FD}
 
 In order to make our system as useful as possible, we decided to collect our requirements from a wide range of varying resources. Primarily, we researched heavily into the area surrounding Personal Informatics and based a large portion of our requirements off this. By gathering a lot of requirements from articles such as those that have been peer reviewed allows us to have a better understanding about the sorts of things that our final system should and shouldn’t be doing.
 
-Moreover, we held a focus group. During this focus group, several requirements that we had missed were made apparent. By having a semi-structured conversation with potential stake holders, we were able to see roughly what a large proportion of people would want from a system like the one that we are developing. In addition to this, the focus group allowed us to quickly and efficiently gather data from people who most greatly reflect the audience we are aiming for. This meant that we had more time to work on constructing the system as opposed to researching for more requirements.
-
-Finally, we also sent out a questionnaire. We received 24 reponses, from which we were able to gather additional requirements. From the focus group, a mass of information was yielded which showed us a lot of perspectives we hadn’t necessarily put a lot of thought into. It also provided many niche requirements which if we have time to get to would really enrich our system and take it a step above where we were aiming before.
+We also sent out a questionnaire which received 24 responses, from which we were able to gather additional requirements. This helped us understand which parts of music informatics real people are interested, which helped us shape our ideas more towards the real users in this domain.
 
 \section{Specific Domain -  FD}
 
@@ -242,7 +242,7 @@ There are several different types of users in our problem domain. Everyone who u
 
 The more experienced music listeners stand to gain a deeper understanding of why they like the music they do, for example by seeing strong correlation between beats per minute and music danceability perhaps. A less experienced music listener may not appreciate this sort of information as much as the more avid music streamer, however, both types of users would benefit from discovering more songs that they might like through song recommendations based on mood, tempo, genre, etc… This is because many people would describe it as being difficult when it comes to finding new music that they actually like.
 
-All types of users may feel concerns regarding the ethics to a server listening constantly to the user’s phone / streaming device. There are some clear ethical implications here such as security and privacy. This may stunt the amount of potential stakeholders, but by using hashing and salting of user passwords and storing only the necessary user data on a secure server may convince people to use our music informatic tracking tool. There also may be concerns about selling personal data to third parties or it being stolen, however, in order for our system to be functional, we only need to collect minimal personal data and it would never be sold to third parties. Many users would see that the ethical concerns aren’t too major and that the consequences are minimal in the rarity of anything happening.
+All types of users may feel concerns regarding the ethics to a server listening constantly to the user’s phone / streaming device. There are some clear ethical implications here such as security and privacy. This may stunt the number of potential stakeholders, but by using hashing and salting of user passwords and storing only the necessary user data on a secure server may convince people to use our music informatic tracking tool. There also may be concerns about selling personal data to third parties or it being stolen, however, in order for our system to be functional, we only need to collect minimal personal data and it would never be sold to third parties. Many users would see that the ethical concerns aren’t too major and that the consequences are minimal in the rarity of anything happening.
 
 
 \section{Priorities - FD}
@@ -255,19 +255,21 @@ When we had created our list of requirements, we were careful to avoid any confl
 
 \section{Cutbacks - ED}
 
-The COVID-19 pandemic hit roughly half just after our first sprint had ended and caused large amounts of disruption to our project. All our team members were displaced during the duration of the project causing man hours to be lost and the physical distance caused strains in communication as we adapted to the changing circumstances.
+COVID-19 hit roughly half just after our first sprint had ended and caused large amounts of disruption to our project. All our team members were displaced during the duration of the project causing man hours to be lost and the physical distance caused strains in communication as we adapted to the changing circumstances.
 
 For these reasons we decided that the initial scope of our project was too large and would have to be scaled back. We decided to focus on scaling back parts which had little time already invested in them and that were less necessary to the function of the system. This was not too difficult for us as most of the first sprint focused on the backend, collecting data from Spotify and storing it in in our own database, which is an essential part of our project and could not have been scaled back anyway.
 
-Our final product focuses on tracking what the user is listening to and the mood of those songs, the outcome of this analysis is then displayed to the user. However, in earlier versions we also planned to use this to determine trends in user moods and then recommend songs based on these trends and the other songs the user listens to. This part of the project would have been dependant on almost all of the other parts of the project, and would have required additional research into how to dictate trends how then to recommend songs based on this, which would have been quite a large undertaking and most likely would have required an entire additional sprint, for these reasons it seemed natural that this part of the project would have to be scaled back and we instead decided to display the data directly to the user. We do not believe this will end up being much less useful to our users, as with time remaining it seems unlikely that we would be able to develop algorithms which would offer more insight than what the user could draw from the data itself. This caused the focuses of sprint 3 to move towards smart methods of displaying user data rather than laying the groundwork for more advanced data analysis.
+Our final product focuses on tracking what the user is listening to and the mood of those songs, the outcome of this analysis is then displayed to the user. However, in earlier versions we also planned to use this to determine trends in user moods and then recommend songs based on these trends and the other songs the user listens to (Functional 3.3, 3.4, since moved to appendix \ref{fig:cutback}). This part of the project would have been dependant on almost all of the other parts of the project, and would have required additional research into how to dictate trends how then to recommend songs based on this, which would have been quite a large undertaking and most likely would have required an entire additional sprint, for these reasons it seemed natural that this part of the project would have to be scaled back and we instead decided to display the data directly to the user. This caused the focuses of sprint 3 to move towards smart methods of displaying user data rather than laying the groundwork for more advanced data analysis.
 
 
-\section{Functional Requirements}
+\section{Requirements}
 
-The source of each requirement is what orginally generated that requirement. Requirements that considered implict in the project are marked with Product Description (shortened to PD) and those which were necessitated by the Coursework Specification are marked with Coursework Specification (CWS)
+The source of each requirement is what originally generated that requirement. Requirements that considered implicit in the project are marked with Product Description (shortened to PD) and those which were necessitated by the Coursework Specification are marked with Coursework Specification (CWS). 2 Entries were later cut back and thus have been moved to appendix section \ref{fig:cutback}.
 
+\subsection{Functional}
+
+A full Dependency Matrix for functional requirements can be seen in Appendix \ref{fig:depmat}.
 \begin{center}
-
 \begin{longtable}{| p{13cm} | p{3cm} |}
 \endfirsthead
 \endlastfoot
@@ -291,7 +293,7 @@ The web app must attempt to send data to the client when requested. This data co
 The server must check is the supplied username and password are valid. This will be done by checking if the username exists (see 1.3) and then comparing the given password with the corresponding stored hash. The server will either return an error or a confirmation that the details are correct. &
 \makecell{Priority: HIGH \\ Dependencies: 1.3, \\4.3 \\Source: PD}\\
 \hline
-\textbf{1.3 - Check if username alreay exists} & \textbf{Author: SC} \\
+\textbf{1.3 - Check if username already exists} & \textbf{Author: SC} \\
 \hline
 The server must be able to check if a supplied username exists. It will be compared with a list of existing usernames and it will either return an error or a confirmation &
 \makecell{Priority: HIGH\\Dependencies: 4.1\\Source: PD}\\
@@ -333,16 +335,6 @@ The server must process the data received from the Spotify API and store it on t
 The server must be able to use the songs data of the user to determine the mood of the song. This will be done by considering 5 variables: valency, energy, acousticness, instrumentalness, danceability. Check the mood table heading for more details. & 
 \makecell{Priority: HIGH\\Dependencies: 2.1,\\2.2, 3.1\\Source: Research,\\ Song attributes}\\
 \hline
-\textbf{3.3 - Create mood playlists} & \textbf{Author: SC} \\
-\hline
-The server must store the mood of each song and be able to sort through them in order to create playlists of songs with the same mood. & 
-\makecell{Priority: MED\\Dependencies: 3.1,\\3.2\\Source: Research,\\ Song attributes}\\
-\hline
-\textbf{3.4 - Recommend songs based on trends} & \textbf{Author: FD} \\
-\hline
-The system should be able to recommend songs to the user based on mood patterns. The server should determine the current mood of the user based on the songs they are listening to or past mood patterns. Once the mood is determined, the generated playlist of that mood (see 3.3) will be used with the Spotify API to suggest new songs of the same type. &  
-\makecell{Priority: MED\\Dependencies: 2.2,\\ 2.3\\Source: PD}\\
-\hline
 \textbf{3.5 - Continuously collect song data} & \textbf{Author: SC} \\
 \hline
 The system must be able to collect song data continuously. This will retrieve the information about a track which is collected and then processed to return a mood. There will be a delay before the next command to collect data on the song, this may be every 15 seconds or so. & 
@@ -379,7 +371,7 @@ Moods of each song within a user’s library should be able to be displayed in a
 \hline
 \textbf{4.6 - Display recently listened to songs.} & \textbf{Author: SD} \\
 \hline
-The system must be able to show the user their previously listened to songs on that day and at what time. This will display in a list with the following data; time they listened to the song, the album artwork for the album, the title of the song, album, artist, and the mood. This will request a lot of data however, this should be stored when the data for the track is collected to be processed.&
+The system must be able to show the user their previously listened to songs on that day and at what time. This will display in a list with the following data; time they listened to the song, the album artwork for the album, the title of the song, album, artist, and the mood. This will request a lot of data however; this should be stored when the data for the track is collected to be processed.&
 \makecell{Priority: HIGH\\Dependencies: 3.1,\\4.4, 4.9\\Source: CWS}\\
 \hline
 \textbf{4.7 - Display all songs mood within a user’s library within a table along with other details.} & \textbf{Author: SD} \\
@@ -397,9 +389,7 @@ The web app must be able to request specific data from the server, to be used fo
 
 \end{center}
 
-\section{Non-Functional Requirements}
-
-See Functional Requirements for explaination of 'Source'
+\subsection{Non-Functional}
 
 \begin{center}
 
@@ -423,7 +413,7 @@ We must use the agile development technique called ‘Scrum’. This involves re
 \hline
 \textbf{1.2 - We must have at least 3 sprints} & \textbf{Author: FD} \\
 \hline
-In order for our project to be successful, having many sprint meetings will be vital. Sprints allow us to have target focussed goals allowing for increased productivity. These sprints will also present developments in terms of what needs to be done in the next sprint by throwing up new issues which can be added to the product backlog and dealt with in the next sprint.&
+For our project to be successful, having many sprint meetings will be vital. Sprints allow us to have target focussed goals allowing for increased productivity. These sprints will also present developments in terms of what needs to be done in the next sprint by throwing up new issues which can be added to the product backlog and dealt with in the next sprint.&
 \makecell{Priority: HIGH\\Dependencies: 1.3\\Source: CWS} \\
 \hline
 \textbf{1.3 - Sprint duration must be between 1 and 3 weeks} & \textbf{Author: FD} \\
@@ -473,7 +463,7 @@ The user’s stored data will be kept secure by encrypting it and securing it on
 \textbf{4.3 - The user must have given permission for their data to be collected} & \textbf{Author: FD} \\
 \hline
 The user must agree for any of their data to be collected and stored before it is recorded. The user must also be given permission to restrict the data that is collected about them.&
-\makecell{Priority: HIGH\\Dependencies: None\\Source: Research,\\Ethics of Data}\\
+\makecell{Priority: HIGH\\Dependencies: None\\Source: CWS}\\
 \hline
 
 \multicolumn{2}{|l|}{\textbf{\textit{5 - Usability}}} \\
@@ -493,13 +483,13 @@ The system produced must undergo a series of test plans since test-driven develo
 \hline
 \textbf{6.2 - Our hypotheses must connect claims found in research to observable behaviours in the finished system} & \textbf{Author: FD} \\
 \hline
-In order for our project to be successful, having many sprint meetings will be vital. Sprints allow us to have target focussed goals allowing for increased productivity. These sprints will also present developments in terms of what needs to be done in the next sprint by throwing up new issues which can be added to the product backlog and dealt with in the next sprint.&
+For our project to be successful, having many sprint meetings will be vital. Sprints allow us to have target focussed goals allowing for increased productivity. These sprints will also present developments in terms of what needs to be done in the next sprint by throwing up new issues which can be added to the product backlog and dealt with in the next sprint.&
 \makecell{Priority: HIGH\\Dependencies: None\\Source: CWS}\\
 \hline
 \textbf{6.3 - We must analyse the data generated from users using our finished system.} & \textbf{Author: FD} \\
 \hline
 We must analyse data generated by our system using valid statistical methods to discover any trends or patterns within our collected data.&
-\makecell{Priority: HIGH\\Dependencies: None\\Source: Prior}\\
+\makecell{Priority: HIGH\\Dependencies: None\\Source: PD}\\
 \hline
 \textbf{6.4 - The system must generate error reports upon crashing} & \textbf{Author: FD} \\
 \hline
@@ -512,11 +502,7 @@ The user interface must be thoroughly tested against things such as invalid user
 \makecell{Priority: HIGH\\Dependencies: None\\Source: Research,\\Prior}\\
 \hline
 \end{longtable}
-
 \end{center}
-
-
-
 \chapter{Design}
 
 \section{High Level Architecture Diagram - FD \& ED}
@@ -628,10 +614,10 @@ CheckIfUserExists checks if a given username already exists in the database.
 \hrulefill
 
 \subsubsection{SortUserSongs}
-The SortUserSongs method uses the GetAllTracks method to get all of a user’s tracks, before using the GetTracksInfo method to get those tracks’ names and artists, and then the GetAudioFeatures method to get those tracks’ audio features. Each track is then classified as a specific mood using the Classify method, and is returned through an API call.
+The SortUserSongs method uses the GetAllTracks method to get all of a user’s tracks, before using the GetTracksInfo method to get those tracks’ names and artists, and then the GetAudioFeatures method to get those tracks’ audio features. Each track is then classified as a specific mood using the Classify method and is returned through an API call.
 
 \subsubsection{ProcessRecentTracks}
-ProcessRecentTracks uses the GetListenInfo method from the database to get all recently listened to tracks, before using the GetTracksInfo method to get those tracks’ names and artists, and then the GetAudioFeatures method to get those tracks’ audio features. Each track is then classified as a specific mood using the Classify method, and is returned through an API call.
+ProcessRecentTracks uses the GetListenInfo method from the database to get all recently listened to tracks, before using the GetTracksInfo method to get those tracks’ names and artists, and then the GetAudioFeatures method to get those tracks’ audio features. Each track is then classified as a specific mood using the Classify method and is returned through an API call.
 
 \subsubsection{Classify}
 The Classify method looks at the audio features of a song and classifies it as a specific mood using a mood defining algorithm.
@@ -664,11 +650,21 @@ The GetTracks API endpoint uses the GetAllTracks method and returns that data, f
 \subsubsection{MoodClassification}
 The MoodClassification API endpoint uses the SortUserSongs method and returns that data, for use with the mood charts on the front end.
 
+
+\section{Sequence Diagram - TD} 
+
+Figure \ref{fig:seqdia} shows the normal path a user will take through the system, it first checks for a valid login, or allows the user to create an account (See functional 1.2, 1.3, 1.4, 1.5, 4.1, 4.3, non-functional 4.2). Once their credentials have been validated the system connects to their Spotify account and collects and analyses their song data, this in then stored in the database (See functional 2.1, 2.2, 3.1, 3.2, 3.5, 4.2). This data can then be displayed to the user in a variety of ways (See functional 4.4, 4.5, 4.6, 4.7, 4.8, non-functional 5.1)
+
+\begin{figure}[h]
+	\centering
+	\makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{seq-dia.png}}%
+	\caption{Sequence Diagram for our system}
+	\label{fig:seqdia}
+\end{figure}
+
 \section{Class Diagram - AG}
 
-See figure \ref{fig:classdia}
-
-The class diagram contains almost 2 separate sets of classes, Server and Client. The server classes handle things on the server side, such as storing and receiving from the database, accessing, retriving and processing spotify data. The client mostly contains the GUI which is responsible for formatting and displaying data in interesting ways for the user, showing their mood over a day, month etc. The connecting classes are ServerHandler and API and these handle the sending and receiving of data between client and server. So for example if user wishes to see their mood over the last day, the client passes a request to the server handler in which it passes it to the API which handles the request and calls the getListenInfo function and can return to the server handler in which returns it to the GUI. In reference to the relationships between the classes, the server only exists as one entity but will create new instances/threads of the other classes for each client connected. Therefore the server has a 1 to (possible many) relationship with the 4 server side classes. While the client has a 1 to 1 relationship with the GUI and ServerHandler.
+Figure \ref{fig:classdia} contains almost 2 separate sets of classes, Server and Client. The server classes handle things on the server side, such as storing and receiving from the database, accessing, retrieving and processing Spotify data. The client mostly contains the GUI which is responsible for formatting and displaying data in interesting ways for the user, showing their mood over a day, month etc. The connecting classes are ServerHandler and API and these handle the sending and receiving of data between client and server. So for example if user wishes to see their mood over the last day, the client passes a request to the server handler in which it passes it to the API which handles the request and calls the getListenInfo function and can return to the server handler in which returns it to the GUI. In reference to the relationships between the classes, the server only exists as one entity but will create new instances/threads of the other classes for each client connected. Therefore, the server has a 1 to (possible many) relationship with the 4 server side classes. While the client has a 1 to 1 relationship with the GUI and ServerHandler.
 
 \begin{figure}[h]
 	\centering
@@ -679,7 +675,7 @@ The class diagram contains almost 2 separate sets of classes, Server and Client.
 
 \section{Use Case Diagrams - FD}
 
-There are not a large number of use cases for our program. All of the data enrtry is automatic so there are no use cases that allow for the user to edit their data. This means we end up with a small number of use case scenarios, which helps to simplify user experience design
+There are not many use cases for our program. All of the data entry is automatic so there are no use cases that allow for the user to edit their data. This means we end up with a small number of use case scenarios, which helps to simplify user experience design (See non-functional 5.1)
 
 Figure \ref{fig:usecase1} shows the typical path a user would take when logging in, should they not have an account then they would have to follow figure \ref{fig:usecase2} to create one first and then they can view their data, following figure \ref{fig:usecase3}
 
@@ -689,7 +685,7 @@ Both figures \ref{fig:usecase1} and \ref{fig:usecase2} have corresponding state 
 \centering
 \begin{subfigure}{\textwidth}
 	\centering	
-	\includegraphics[width=0.6\linewidth]{usecase1.png}
+	\includegraphics[width=0.5\linewidth]{usecase1.png}
 	\caption{Use Case Scenario 1}
 	\label{fig:usecase1}
 \end{subfigure}
@@ -711,11 +707,11 @@ Both figures \ref{fig:usecase1} and \ref{fig:usecase2} have corresponding state 
 
 \end{figure}
 
-\section{State Machine Diagrams}
+\section{State Machine Diagrams - AG}
 
-Figure \ref{fig:statemach1} shows the login state diagram, for use case \ref{fig:usecase1}. The  user enters in username and password on client side and this is sent to the server which first checks if the username exists in the database, if so then prepends the salt stored in that record to the given password and hashes it. If the passwords match then access is granted and they have successfully logged in (See functional requirements 1.1, 1.2, 1.3, 1.5, 4.3 and non-functional 4.2). If the password or username don’t match then it prints an error and starts again at the login page.
+Figure \ref{fig:statemach1} shows the login state diagram, for use case \ref{fig:usecase1}. The  user enters in username and password on client side and this is sent to the server which first checks if the username exists in the database, if so then prepends the salt stored in that record to the given password and hashes it. If the passwords match then access is granted and they have successfully logged in (See functional 1.1, 1.2, 1.3, 1.5, 4.3 and non-functional 4.2). If the password or username don’t match then it prints an error and starts again at the login page. 
 
-Figure \ref{fig:statemach2} shows the register state diagram, for use case \ref{fig:usecase2}. It requests a username and password, checks if the username exists and if it doesn’t then it prepends a uniquely randomated salt to the password then hashes it and adds the new user record with the username, salt and hashed password. If the username already exists then an error message is printed and it restarts at the register page (See functional requirements 1.1, 1.3, 1.4, 1.5, 4.1).
+Figure \ref{fig:statemach2} shows the process the system goes through for getting the users data from Spotify and storing it. First the system gets authorisation from the user to allow us to access their account (See functional 2.1, 4.2, non functional 4.3), this gives us an access token which allows us to access their account in future (non-functional 4.2). It then gets all the songs from their library, categorises these into moods and stores them (See functional 2.2, 3.1, 3.2, 4.2). It will then continuously check what the user is listening to, and add any new songs along with the timestamp and mood to the database (See functional 2.2, 3.2, 3.5). This provides the data necessary for functional requirements 4.4, 4.5, 4.6, 4.7, 4.8.
 
 \begin{figure}[h]
 \centering
@@ -728,7 +724,7 @@ Figure \ref{fig:statemach2} shows the register state diagram, for use case \ref{
 \end{subfigure}%This Removes the space after these
 \begin{subfigure}{0.5\textwidth}
 	\centering	
-	\includegraphics[width=1\linewidth]{statemach2.png}
+	\includegraphics[width=1.2\linewidth]{statemach2.png}
 	\caption{State Machine Model for \ref{fig:usecase2}}
 	\label{fig:statemach2}
 \end{subfigure}
@@ -741,8 +737,83 @@ Figure \ref{fig:statemach2} shows the register state diagram, for use case \ref{
 
 \chapter{Testing}
 
-\section{Testing Plans}
+We performed testing at the end of every sprint. Each sprint looked to build upon the last one (see dependency matrix, figure: \ref{fig:depmat}), so we started with being able to interact between the Server and Client and then moved up to handling accounts and Spotify then finally the user facing front end. This ensured that items that were heavily depended on were done first. This made scaling back our project for COVID-19 as we scaled back items which were less necessary and therefore depended on and we ended up not having to remove any requirements that had already been done. This also made later testing easier as it allows us to incrementally test a larger and larger system, whilst being sure that some parts of it work correctly, rather than having to test all of a large system at once. 
 
+\section{Testing Plans - JC}
+
+All evidence of testing can be found in appendix \ref{test}\\
+\textbf{Specification Statement:} F - Functional\quad\quad NF - Non-Functional\\
+\textbf{Type:} N - Normal\quad\quad  E - Erroneous\quad\quad  B - Boundary \quad \quad PF - Post-fixing\\
+\textbf{Result:} F - Fail\quad\quad  P - Pass
+
+\begin{longtable}{| p{0.4cm} | p{1.8cm} | p{0.7cm} | p{6.5cm} | p{4.5cm} | p{0.5cm}|}
+\endfirsthead
+\endlastfoot
+
+\multicolumn{5}{c}{\textit{Continued from last page}}
+\endhead
+
+\multicolumn{5}{c}{\textit{Continued on next page}} 
+\endfoot
+
+\hline
+\textbf{N.} & \textbf{Spec. } & \textbf{Typ.} & \textbf{Action} & \textbf{Expected Results}  & \textbf{Re.}\\
+\hline
+\multicolumn{6}{|c|}{\textit{\textbf{Sprint 1}}} \\
+\hline
+
+1&F 1.1&N&Load Login/Register page (\url{http://csed-server.herokuapp.com/})&Login/Register page displays.&P\\ \hline
+2&F 1.1&N&Click the “No account? Register here.” Button twice.&The form swaps from the Login form to the Register and then back to the Login form.&P\\ \hline
+3&F 1.1, 1.2, 1.3, 1.4, 4.1&N&Go to the Register form and enter: Username: “testAccount”, Password: “password123”, Repeat: “password123”, Click “Register”&The form should close, and the window should redirect to Spotify’s login portal.&P\\ \hline
+4&F 1.1, 1.2, 1.3, 1.4, 4.1&E&Go to the Register form and enter: Username: “testAccount2”, Password: “password123”, Repeat: “password12”, Click “Register”&Error message displays: “Passwords do not match.”&P\\ \hline
+5&F 1.1, 1.2, 1.3, 1.4, 4.1&E&Go to the Register form and enter: Username: “”, Password: “password123”, Repeat: “password123”, Click “Register”&Error message displays: “You may not leave the username field empty.”&P\\ \hline
+6&F 1.1, 1.2, 1.3, 1.4, 4.1&E&Go to the Register form and enter: Username: “testAccount”, Password: “password12”, Repeat: “password12”, Click “Register”&Error message displays: “That username is already taken.”&P\\ \hline
+7&F 1.1, 1.2, 1.3, 1.4, 4.1&E&Go to the Register form and enter: Username: “testAccount2”, Password: “”, Repeat: “”, Click “Register”&Error message displays: “You may not leave the password field empty.”&P\\ \hline
+8&F 1.1, 1.2, 1.3, 1.4, 4.1&B&Go to the Register form and enter: Username: “ ” (space character), Password: “password123”, Repeat: “password123”, Click “Register”&Error message displays: “You may not leave the username field empty.”&F\\ \hline
+9&F 1.1, 1.2, 1.3, 1.4, 4.1&B, PF &Go to the Register form and enter: Username: “  ” (two space characters), Password: “password123”, Repeat: “password123”, Click “Register”&Error message displays: “You may not leave the username field empty.”&P\\ \hline
+10&F: 1.4, 4.1&N&Check database for account “testAccount”&Account “testAccount” is in database ‘Users’ table&P\\ \hline
+11&F: 1.2, 1.3, 1.4, 4.1&E&Check database for account “testAccount2”&Account “testAccount2” is not in database ‘Users’ table&P\\ \hline
+12&F: 1.1, 1.2, 1.3, 1.4, 4.1, 4.3&N&Go to the Login form and enter: Username: “testAccount”, Password: “password123” Click “Login”&The form should close, and the window should redirect to the landing page.&P\\ \hline
+13&F: 1.1, 1.2, 1.3, 1.4, 4.1, 4.3&E&Go to the Login form and enter: Username: “testAccount”, Password: “password12” Click “Login”&Error message displays: “Incorrect username or password.”&P\\ \hline
+14&F: 1.1, 1.2, 1.3, 1.4, 4.1, 4.3&E&Go to the Login form and enter: Username: “testAccount2”, Password: “password123”, Repeat: “password12”, Click “Login”&Error message displays: “Incorrect username or password.”&P\\ \hline
+15&F: 1.1, 1.2, 1.3, 1.4, 4.1, 4.3&E&Go to the Login form and enter: Username: “testAccount”, Password: “”, Click “Login”&Error message displays: “Incorrect username or password.”&P\\ \hline
+16&F: 2.1, 2.2, 4.2&N&Check database for account “testAccount” & Random string should be generated and stored in database ‘Users’ table ‘auth\_key’ field after being sent as a unique ID for Spotify’s callback request&P\\ \hline
+17&F: 2.1, 2.2, 4.2&N&Login to Spotify using the previously opened Spotify login portal. Check database for account “testAccount”&User should be redirected to the landing page. Previously generated random string should be replaced with an authorisation key from Spotify&P\\ \hline
+18&F: 2.1, 2.2, 4.2&N&Check database for account “testAccount”&A temporary access key should have been generated by the backend, storing a refresh token from Spotify in the database ‘Users’ table ‘refresh\_token’ field.&P\\ \hline
+
+\multicolumn{6}{|c|}{\textit{\textbf{Sprint 2}}} \\
+\hline
+
+19&F: 1.5 NF: 4.2&N&Go to the Register form and enter: Username: “hashTest”, Password: “password123”, Repeat: “password123”, Click “Register”&The form should close, and the window should redirect to Spotify’s login portal.&P\\ \hline
+20&F: 1.5 NF: 4.2&N&Check database for account “hashTest”&Account “hashTest” is in database ‘Users’ table, password is hashed.&P\\ \hline
+21&F: 1.2, 1.5 NF: 4.2&N&Go to the Login form and enter: Username: “hashTest”, Password: “password123”, Click “Login”&The form should close, and the window should redirect to the landing page.&P\\ \hline
+22&F: 1.2, 1.5 NF: 4.2&E&Go to the Login form and enter: Username: “hashTest”, Password: “password12”, Click “Login” &Error message displays: “Incorrect username or password.”&P\\ \hline
+23&F: 1.2 NF: 4.2&N&Go to the Login form and enter: Username: “hashTest”, Password: “password123”, Click “Login”, Reload landing page &The form should close, and the window should redirect to the landing page. The landing page should load again when reloaded.&P\\ \hline
+24&F: 1.2 NF: 4.2&E&Go to the Login form and enter: Username: “hashTest”, Password: “password123”, Click “Login”, Wait 30 minutes (or go to incognito mode), Reload landing page&The form should close, and the window should redirect to the landing page. Upon reload, the landing page should be replaced by an error message: “You need to log in.”&P\\ \hline
+25&F: 1.2 NF: 4.2&E&Go to the landing page: https://csed-server.herokuapp.com/landing&An error message should display: “You need to log in.”&P\\ \hline
+26&F: 1.2 NF: 4.2&E &Go to an API endpoint: http://csed-server.herokuapp.com/api/moodCount&An error message should display: “You need to log in.”&P\\ \hline
+27&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.4, 4.8 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”&The form should close, and the window should redirect to the landing page. The daily mood graph should be visible and filled in.&P\\ \hline
+28&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.8 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”, Go to an API endpoint: http://csed-server.herokuapp.com/api/dayMood?date= 4/3/2020&The form should close, and the window should redirect to the landing page. At the API endpoint, JSON data should be presented.&P\\ \hline
+29&F: 2.1, 2.2, 3.1, 3.2, 4.5 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”&The form should close, and the window should redirect to the landing page. The library mood classification pie chart should be visible and filled in.&P\\ \hline
+30&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.5 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”, Go to an API endpoint: http://csed-server.herokuapp.com/api/moodCount&The form should close, and the window should redirect to the landing page. At the API endpoint, JSON data should be presented.&P\\ \hline
+
+\multicolumn{6}{|c|}{\textit{\textbf{Sprint 3}}} \\
+\hline
+
+31&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.6, 4.8 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”&The form should close, and the window should redirect to the landing page. The timeline table should be visible and filled in.&P\\ \hline
+32&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.6, 4.8 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”, Go to the timeline table and scroll down within it&The form should close, and the window should redirect to the landing page. The timeline table should be visible and filled in. The timeline table should update as the user scrolls down, filling in previous days.&P\\ \hline
+33&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.8 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”, Go to an API endpoint: http://csed-server.herokuapp.com/api/getRecentTracks ?date=5/4/2020&The form should close, and the window should redirect to the landing page. At the API endpoint, JSON data should be presented.&P\\ \hline
+34&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.8 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”, Go to an API endpoint: http://csed-server.herokuapp.com/api/getRecentTracks ?date=5/1/2020&The form should close, and the window should redirect to the landing page. At the API endpoint, JSON data should be presented. The data should be different to the previous test.&P\\ \hline
+35&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.8 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”&The form should close, and the window should redirect to the landing page. The top songs table should be visible and filled in.&P\\ \hline
+36&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.8 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”, Go to an API endpoint: http://csed-server.herokuapp.com/api/topTen&The form should close, and the window should redirect to the landing page. At the API endpoint, JSON data should be presented.&P\\ \hline
+37&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.4, 4.8 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”, Select a new date for the daily mood graph (5/1/2020)&The form should close, and the window should redirect to the landing page. The daily mood graph should be visible and filled in. The daily mood graph should change when the date is changed on it.&P\\ \hline
+38&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.4, 4.8 NF: 4.2, 4.3, 6.3&E&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”, Select a future date for the daily mood graph (5/10/2020)&The form should close, and the window should redirect to the landing page. The daily mood graph should be visible and filled in. The future date should not be selectable.&P\\ \hline
+39&F: 2.1, 2.2, 3.1, 3.2, 3.5, 4.8 NF: 4.2, 4.3, 6.3&N&Go to the Login form and enter: Username: “joe”, Password: “test”, Click “Login”, Go to an API endpoint: http://csed-server.herokuapp.com/api/dayMood?date= 5/4/2020&The form should close, and the window should redirect to the landing page. At the API endpoint, JSON data should be presented.&P\\ \hline
+
+\end{longtable}
+
+
+\begin{comment} OLD
 \begin{center}
 
 \begin{longtable}{| p{2.5cm} | p{6cm} | p{2cm} | p{2cm} | p{2.5cm} | }
@@ -911,25 +982,29 @@ Statistics on library and listen makeup should be displayed on page if the user 
 \end{longtable}
 
 \end{center}
+\end{comment}
 
 \chapter{Conclusion  - SC}
 
-‘Title’ has been a great learning experience for our team and, overall, a success. The final version of our project has met our expectations and the journey of creating it has taught us about organisation, teamwork, self-learning and utilising our sets of skills. ‘Title’ is a personal informatics software, which, upon research and development, helps the user understand and classify the songs they listen to, based on the mood the music conveys. It takes raw data from the user’s Spotify account which is then processed into something they can easily understand and reflect upon by the use of graphs and intuitive user interface. 
+SpotiMy has been a great learning experience for our team and, overall, a success. The final version of our project has met our expectations and the journey of creating it has taught us about organisation, teamwork, self-learning and utilising our sets of skills. SpotiMy is a personal informatics software, which, upon research and development, helps the user understand and classify the songs they listen to, based on the mood the music conveys. It takes raw data from the user’s Spotify account which is then processed into something they can easily understand and reflect upon by the use of graphs and intuitive user interface. 
 
-As any major project, ‘Title’ has its strengths and weaknesses. It started as a fun project idea, which took contour in the first weeks of the semester. Upon reflection, the planning stage of our project was vague, our idea not being well-defined. If something could have been done differently about this, assessing everyone’s skills and knowledge at the beginning of the project would have helped assure that everyone would be able to contribute in equal amounts. This would have also been a better guide about what our team was able to create in the most efficient way. 
-On the other hand, an advantage was that our set of requirements was constructed in a clear and concise way, which was useful when building the software as well as tracking our progress. The requirements were updated regularly if any change occurred and this helped make sure there were no misunderstandings. The testing plan was created before developing the software which was really useful because we knew exactly what the software was supposed to do. For one of our testing plans, upon feedback of our tutor, we had to break down some of our tests and 
+As any major project, SpotiMy has its strengths and weaknesses. It started as a fun project idea, which took contour in the first weeks of the semester. Upon reflection, the planning stage of our project was vague, our idea not being well-defined. If something could have been done differently about this, assessing everyone’s skills and knowledge at the beginning of the project would have helped assure that everyone would be able to contribute in equal amounts. This would have also been a better guide about what our team was able to create in the most efficient way. 
+
+On the other hand, an advantage was that our set of requirements was constructed concisely, which was useful when building the software as well as tracking our progress. The requirements were updated regularly if any change occurred and this helped make sure there were no misunderstandings. The testing plan was created before developing the software which was useful because we knew exactly what the software was supposed to do. For one of our testing plans, upon feedback of our tutor, we had to break down some of our tests and 
 make minor changes, but this did not cause any problems in the end. 
+
 Our design was also successful, giving us an idea of what the user interface was supposed to look like. Drawing diagrams to illustrate this before creating it helped us make sure we would not implement something that we were not happy with. The Class Diagrams, State Machine Diagrams and Use Case Diagrams were useful during the development of the software. They are detailed and clear, making them a great guide to how the software is supposed to function. 
 
 Regarding research, we found plenty of useful articles to base our software on. Although our research was useful, we have created and distributed our questionnaire too late in our development process, therefore we discarded it and we had a low amount of responses. It would have been better If we would have prioritised it in the beginning of our project. In this way we could have used it as a tool to guide us and suggest ways of making our project better and more useful to the target audience. 
+
 The organisation of the team was good, even though there were more people in this semester’s project compared to the project we made in the first semester, the Scrum method helped us greatly. It was a good way of us keeping track of our progress and our meetings. In the first semester we did not use GitHub and did not have a product backlog, which made us far less organised and less adaptable to change. It was hard to keep track of what everyone was doing, and it was hard to estimate the amount of time needed to complete the work, leaving us with a lot of work due before the deadline. 
 
 In this semester, iterative development was a good way of observing the project at different stages. This offered us more freedom and ability to change by reflecting on the previous sprints and thinking about where the project was going along the way. For example, we were able to decide to have a longer sprint during difficult times, so that the work could be finished. The scrum methodology helped us have a better attitude towards our responsibilities as everyone was able to pick a task they wanted to do, and they were supposed to complete it in the time of the sprint. We had deadlines that motivated us to get work done, and we helped each other as a team by reviewing each other’s progress and suggesting improvements in our meetings. 
-We learnt to help each other in case someone had questions about their task and to be understanding yet prompt. Because of the workload that needed to be done we also had to pick tasks we were not initially comfortable with, which have helped us with self development and with the help of our teammates and self-learning, broadening our sets of skills. The two projects helped us understand what working in a team is like and develop our attitude towards working with other people that have a common goal, as well as the advantages of using an agile method. 
+We learnt to help each other in case someone had questions about their task and to be understanding yet prompt. Because of the workload that needed to be done we also had to pick tasks we were not initially comfortable with, which have helped us with self-development and with the help of our teammates and self-learning, broadening our sets of skills. The two projects helped us understand what working in a team is like and develop our attitude towards working with other people that have a common goal, as well as the advantages of using an agile method. 
+
 We have developed our attitudes towards trying to get involved in new topics and dealing with difficult situations. We had to deal with some of our teammates not being able to participate because of personal issues as well as working remotely. Our original risk assessment helped us as we were prepared and anticipated these situations. To be able to keep working normally even during the Covid19 pandemic, we had online meetings using Teams, used Google Documents for our report so everyone could edit it, GitHub to upload our work and keep track of our progress, and WhatsApp to plan our meetings and communicate outside of them when needed. 
 
 After completing both the projects and being able to compare and reflect on them, we learnt that organisation is a highly important aspect when working in a team or tackling a big project. We were able to observe the advantages of using Scrum, as well as good communication and planning. Completing the two projects was a learning experience that will help us along the way while working in a software developing team.
-
 
 %Loads bibliography
 \bibliography{ref}{}
@@ -956,9 +1031,9 @@ Our Group Contribution Form can be seen in figure \ref{fig:gcf}
 
 Lance and Sam Freeman ended up getting lower scores as both were barely seen after sprint 1, and neither contributed any work towards the project after that point, Sam did however contribute more to the project during the period he was around and therefore has been given a higher score
 
-Eddy and Joe contributed the majority of the code and for that reason have been given higher scores, Fraser contributed a large amount towards the the contents of the report
+Eddy and Joe contributed the most of the code and for that reason have been given higher scores, Fraser contributed a large amount towards the contents of the report
 
-As the team was unable to meet due to COVID-19 we were unable to sign it and instead had to approve it via teams. As neither Lance nor Sam Freeman were around to communciate during sprint 2 and 3 we were unable to get their approval.
+As the team was unable to meet due to COVID-19 we were unable to sign it and instead had to approve it via teams. As neither Lance nor Sam Freeman were around to communicate during sprint 2 and 3 we were unable to get their approval.
 
 \newpage
 
@@ -989,7 +1064,7 @@ The idea of trust in a system is an important concept; a user’s trust in the s
 \subsection{Security Ethics - AG}
 \label{res:secethics}
 
-This research was performed during the production of the product, in order to assertain ethcal guidelines for users to developers to follow when securing user data.\newline
+This research was performed during the production of the product, in order to ascertain ethical guidelines for users to developers to follow when securing user data.\newline
 
 The idea of responsible disclosure is highlighted by \cite{2010a} which describe it as: “researchers who uncover a flaw don't go public until the system's developer has had a chance to fix it”.  This is of note as this not only provides the developer’s with time to patch their system, but also to prevent the public from losing trust in said system.  Responsible disclosure is a “community accepted” protocol, so while it may not be mandatory for researchers and developers to follow through, it is in the best interest of most companies to align themselves by it.
 
@@ -999,38 +1074,38 @@ A growing ethical concern is the phenomenon of social networks.  With the group 
 \subsection{Hashing and Password Storage - AG}
 \label{res:passsec}
 
-This research was performed during the production of the product, in order to assertain security guidelines for the storing of passwords.\newline
+This research was performed during the production of the product, in order to ascertain security guidelines for the storing of passwords.\newline
 
-Without any sort of hashing or protection a database breach could lead attacks to obtaining users usernames and passwords in plaintext, allowing them to access users accounts on this or any other service which they used the same credientials for in a credential stuffing attack, one of the most common styles of cyber attacks \cite{OWASP2020}. Hasing turns a plaintext password into a random string of characters which cannot be unhashed, instead, when a user enters their password it is hashed and the 2 hashes are comapred.
+Without any sort of hashing or protection a database breach could lead attacks to obtaining users usernames and passwords in plaintext, allowing them to access users accounts on this or any other service which they used the same credentials for in a credential stuffing attack, one of the most common styles of cyber-attacks \cite{OWASP2020}. Hashing turns a plaintext password into a random string of characters which cannot be reversed, instead, when a user enters their password it is hashed, and the 2 hashes are compared.
 
-A common principle to follow in system security is Shannon's Maxim: "one ought to design systems under the assumption that the enemy will immediately gain full familiarity with them" \cite{Shannon1949}.This essentially means that a system shouldn’t be secure through obscurity, i.e even if the attackers know the algorithms/protocols that encrypt the data, they still shouldn’t be able to break the security. In theory hashing can be brute forced with current technology, however, the necessary computing power is not readily available at this moment, but, this may change in the near future. Another common approach to breaking hashes is to use a lookup table which stores the most commonly used passwords along with their hashes, which makes these passwords trivial to break. For this reason hashing alone is insufficient for password security. \cite{Tsudik1992}
+A common principle to follow in system security is Shannon's Maxim: "one ought to design systems under the assumption that the enemy will immediately gain full familiarity with them" \cite{Shannon1949}.This essentially means that a system shouldn’t be secure through obscurity, i.e even if the attackers know the algorithms/protocols that encrypt the data, they still shouldn’t be able to break the security. In theory hashing can be brute forced with current technology, however, the necessary computing power is not readily available at this moment, but, this may change in the near future. Another common approach to breaking hashes is to use a lookup table which stores the most commonly used passwords along with their hashes, which makes these passwords trivial to break. For this reason, hashing alone is insufficient for password security. \cite{Tsudik1992}
 
-For this reason salts are used, which are randomly generated strings added to the password before hashing when the password is created, the salt is stored in the database alongside the password. This helps prevent against these pre-calculated hash tables because the hacker has to then recalculate these tables for each user they wish to hack into as they will have their own unique salt with them which makes these attacks more costly. Brute force attacks can never be fully stopped but using a modern hashing alogrithm can make it more expensive for the attcker, as these focus less on speed, but instead flexiblity, for exmaple, argon2 has parameters such as memory size, iteration count, parallelism and salt length which can be adjusted to make the hash more (or less) complex making it more expensive to brute force as more resources can be required to perform a hash \cite{Biryukov2016}. For these reasons we recommened the use of Argon2 over other modern algorithms such as the SHA family or Bcrypt.
+For this reason salts are used, which are randomly generated strings added to the password before hashing when the password is created, the salt is stored in the database alongside the password. This helps prevent against these pre-calculated hash tables because the hacker has to then recalculate these tables for each user they wish to hack into as they will have their own unique salt with them which makes these attacks more costly. Brute force attacks can never be fully stopped but using a modern hashing algorithm can make it more expensive for the attacker, as these focus less on speed, but instead flexibility, for example, argon2 has parameters such as memory size, iteration count, parallelism and salt length which can be adjusted to make the hash more (or less) complex making it more expensive to brute force as more resources can be required to perform a hash \cite{Biryukov2016}. For these reasons we recommend the use of Argon2 over other modern algorithms such as the SHA family or Bcrypt.
 
 \subsection{Ethics of Data Storage - SD}
 \label{res:datastor}
 
-This research was performed during the production of the product, in order to assertain guidelines for the storage and usage of user data.\newline
+This research was performed during the production of the product, in order to ascertain guidelines for the storage and usage of user data.\newline
 
-Data today is something that is a key asset to companies and the day to day operations in the world. Behind it, there are many legal and ethical aspects which are important to the privacy and safety of the users who give up their data. To understand what the responsibilities are we would look into the Association of Computing  Machinery’s Code of Ethics and Professional Conduct. In section 1.2 it is considered a general ethical principle to “avoid harm”, harm meaning any negative or unfair and significant consequences \cite{ComputingMachineryACM2018}. In terms of the data that we hold, if we pass on or give up the data to anyone else other than just for our program then we would potentially be harming the user, who have put their trust in us using their data. One example of a large company misusing information is the Facebook-Cambridge Analytica scandal in 2018. This is when Facebook allowed enough data for the political consulting company Cambridge Analytica to create psychological profiles on 70.6 million US citizens during the US presidential election in 2016 \cite{Horwitz2018}. They used this collected data to create political regressive models on users for advertisement purposes, this led to predicting users personalities which were then presented with adverts which promoted certain political agendas, influencing voters through micro-targeted advertisements \cite{Rathi2019}. This incident was considered illegal and unethical as they broke the British law, harvesting almost all data without explicit consent \cite{ASNC2018}. As we are dealing with personal information as well, it is very possible that the data we collect could create psychological profiles. This must be avoided and data collected will be deleted after its intended use.
+Data today is something that is a key asset to companies and the day to day operations in the world. Behind it, there are many legal and ethical aspects which are important to the privacy and safety of the users who give up their data. To understand what the responsibilities are we would look into the Association of Computing Machinery’s Code of Ethics and Professional Conduct. In section 1.2 it is considered a general ethical principle to “avoid harm”, harm meaning any negative or unfair and significant consequences \cite{ComputingMachineryACM2018}. In terms of the data that we hold, if we pass on or give up the data to anyone else other than just for our program then we would potentially be harming the user, who have put their trust in us using their data. One example of a large company misusing information is the Facebook-Cambridge Analytica scandal in 2018. This is when Facebook allowed enough data for the political consulting company Cambridge Analytica to create psychological profiles on 70.6 million US citizens during the US presidential election in 2016 \cite{Horwitz2018}. They used this collected data to create political regressive models on users for advertisement purposes, this led to predicting users’ personalities which were then presented with adverts which promoted certain political agendas, influencing voters through micro-targeted advertisements \cite{Rathi2019}. This incident was considered illegal and unethical as they broke the British law, harvesting almost all data without explicit consent \cite{ASNC2018}. As we are dealing with personal information as well, it is very possible that the data we collect could create psychological profiles. This must be avoided, and data collected will be deleted after its intended use.
 
-So when considering the ethical concerns for storing and analysis of data, there is none when the user has given their expressed consent where they are informed fully of what the data will be used for. Additionally, with accordance to the GDPR, which looks for fairness and transparency, if a user wishes to retract their information from being used then we must return or delete the data. We must also only use the data we collect for the use we have clearly said to the user
+When considering the ethical concerns for storing and analysis of data, there is none when the user has given their expressed consent where they are informed fully of what the data will be used for. Additionally, with accordance to the GDPR, which looks for fairness and transparency, if a user wishes to retract their information from being used then we must return or delete the data. We must also only use the data we collect for the use we have clearly said to the user
 
 
 \subsection{Song attributes and mood - SC}
 \label{res:mood}
 
-This resesarch was performed during the production of the product, in order to assertain the relationship between characteristics of songs and their moods.\newline
+This resesarch was performed during the production of the product, in order to ascertain the relationship between characteristics of songs and their moods.\newline
 
 The Mood Table was created based on Thayer’s mood mode, Figure \ref{fig:thayermoodmodel}, which considers the energy and the valence of a song to determine basic moods. “In most existing methods of music mood classification, the moods of songs are divided according to psychologist Robert Thayer’s traditional model of mood. The model divides songs along the lines of energy and stress, from happy to sad and calm to energetic, respectively (Bhat et al 359). The eight categories created by Thayer’s model include the extremes of the two lines as well as each of the possible intersections of the lines (e.g. happy-energetic or sad-calm). [...]” \cite{Nuzzolo2015}. The mood table makes use of this information by working with data provided by Spotify, the energy and the valence. The model has been refined by taking into consideration another 3 variables, acousticness, instrumentalness and danceability. These are considered attributes that create subsets of the already existing moods, making them more specific and detailed. High acousticness and instrumentalness can be used to determine a song is motivational or good for concentration, while danceability can help determine how lively a song is. 
 
-This led us to the following matrix, here all values must align with the required values for a song to be catergorised as a certain mood.
+This led us to the following matrix, here all values must align with the required values for a song to be categorised as a certain mood.
 Required values:
 \begin{itemize}
 \item 'n' - Neutral - Value must be between 0.4 and 0.6
 \item '+' - Positive - Value must be above 0.6
 \item '-' - Negative - Value must be below 0.4
-\item '/' - None dependant - Value does not matter
+\item '/' - Non-dependant - Value does not matter
 \end{itemize} 
 
 
@@ -1068,7 +1143,7 @@ Motivational		&n&+&+&/\\
 
 \subsection{Questionnaire - SC}
 \label{res:quest}
-A questionnaire has been used to gather data about the correlation between people’s moods and their music listening habits. Of our 24 repsonses we found out that around 90\% of people agree with the statement “My listening habits change based on my mood” while 40\% out of them strongly agree. Furthermore, 70\% of people state that music plays a big role in their lives, while 60\% of them think the music they listen to helps them understand themselves more. Most people stated that they listen to music at least 4 days a week, while a big part of them (65\%) listen to music daily. Generally, people listen to music a couple of hours a day, while some listen to music all the time, or less than an hour a day. Music seems to help people deal with their emotions \ref{fig:question-moods} and most people seem to use Spotify as their main music app \ref{fig:question-format}. We have also asked if there were any features they wished music apps included. A couple of responses addressed the way songs are recommended to them and organised, stating that they wished the recommended songs would fit the way they are feeling at the time more, and that they would like to be able to have direct access to songs they listened to before. Other responses talked about displaying lyrics and tools to help the user recognise songs more easily. This information has strengthened the ideas our research provided and has helped us gain a better understanding of how music affects people’s moods. It has prompted us to create an app that helps people track their moods based on what they listen to on Spotify.
+A questionnaire has been used to gather data about the correlation between people’s moods and their music listening habits. Of our 24 responses we found out that around 90\% of people agree with the statement “My listening habits change based on my mood” while 40\% out of them strongly agree. Furthermore, 70\% of people state that music plays a big role in their lives, while 60\% of them think the music they listen to helps them understand themselves more. Most people stated that they listen to music at least 4 days a week, while a big part of them (65\%) listen to music daily. Generally, people listen to music a couple of hours a day, while some listen to music all the time, or less than an hour a day. Music seems to help people deal with their emotions \ref{fig:question-moods} and most people seem to use Spotify as their main music app \ref{fig:question-format}. We have also asked if there were any features, they wished music apps included. A couple of responses addressed the way songs are recommended to them and organised, stating that they wished the recommended songs would fit the way they are feeling at the time more, and that they would like to be able to have direct access to songs they listened to before. Other responses talked about displaying lyrics and tools to help the user recognise songs more easily. This information has strengthened the ideas our research provided and has helped us gain a better understanding of how music affects people’s moods. It has prompted us to create an app that helps people track their moods based on what they listen to on Spotify.
 
 \newpage
 
@@ -1191,6 +1266,166 @@ Be sure that the person is communicating with us to allow us time to adjust to l
 
 \newpage
 
+\begin{figure}[h]
+	\textbf{Key:}
+	\begin{itemize}
+	\item D: X is dependant on Y
+	\item R: X is related to Y
+	\end{itemize}
+
+	\leavevmode \\
+	
+	\centering
+
+
+	\begin{tabular}{p{0.4cm}| p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm} p{0.3cm}}
+
+	y\textbackslash x&1.1&1.2&1.3&1.4&1.5&1.6&2.1&2.2&3.1&3.2&3.3&3.4&3.5&4.1&4.2&4.3&4.4&4.5&4.6&4.7&4.8\\ \hline
+	1.1&-&&&&&&D&D&D&&&&&&&&&&&&D\\
+	1.2&&-&D&R&R&&&&&&&&&D&&D&&&&&D\\
+	1.3&&R&-&&&&&&&&&&&D&&&&&&&D\\
+	1.4&&&&-&R&&&&&&&&&D&&R&&&&&D\\
+	1.5&&&&D&-&&&&&&&&&&&&&&&&\\
+	1.6&&&&&&-&&&&&&&&&&&&&&&\\
+	2.1&&&&&&&-&&&&&&&&&&&&&&\\
+	2.2&&&&&&&D&-&&&&&&&&&&&&&\\
+	3.1&&&&&&&D&D&-&&&&&&D&&&&&&\\
+	3.2&&&&&&&D&D&D&-&&&&&D&&&&&&\\
+	3.3&&&&&&&D&D&D&D&-&&&&D&&&&&&\\
+	3.4&&&&&&&D&D&D&D&D&-&&&&&&&&&\\
+	3.5&&&&&&&D&D&&&&&-&&&&&&&&\\
+	4.1&&R&R&R&R&&&&R&&&&&-&&&&&&&\\
+	4.2&&&&&&&&&&&&&&&-&&&&&&\\
+	4.3&D&D&D&D&D&&&&&&&&&D&&-&&&&&\\
+	4.4&D&&&&&&D&D&D&D&&&D&&D&&-&&&&D\\
+	4.5&D&&&&&&D&D&D&D&&&D&&D&&&-&&&D\\
+	4.6&D&&&&&&D&D&D&D&&&&&D&&&&-&&D\\
+	4.7&D&&&&&&D&D&&&&&D&&D&&&&&-&D\\
+	4.8&D&&&&&&D&D&D&&&&&&&&&&&&-\\
+	\end{tabular}
+
+	\caption{Dependency Matrix for Functional Requirements}
+	\label{fig:depmat}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h]
+\centering
+
+\begin{tabular}{| p{13cm} | p{3cm} |}
+\hline
+\textbf{3.3 - Create mood playlists (CUTBACK)} & \textbf{Author: SC} \\
+\hline
+The server must store the mood of each song and be able to sort through them in order to create playlists of songs with the same mood. & 
+\makecell{Priority: MED\\Dependencies: 3.1,\\3.2\\Source: Research,\\ Song attributes}\\
+\hline
+\textbf{3.4 - Recommend songs based on trends (CUTBACK)} & \textbf{Author: FD} \\
+\hline
+The system should be able to recommend songs to the user based on mood patterns. The server should determine the current mood of the user based on the songs they are listening to or past mood patterns. Once the mood is determined, the generated playlist of that mood (see 3.3) will be used with the Spotify API to suggest new songs of the same type. &  
+\makecell{Priority: MED\\Dependencies: 2.2,\\ 2.3\\Source: PD}\\
+\hline
+\end{tabular}
+
+\caption{Functional requirements which were later cut}
+\label{fig:cutback}
+
+\end{figure}
+
+\newpage
+
+\section{Testing Evidence}
+\label{test}
+
+\newcommand{\testedv}[1]{
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{test/Test#1-1.png}
+	\caption{Test #1}
+	\label{fig:test#1}
+\end{figure}
+
+\newpage}
+
+\newcommand{\testedvsub}[1]{
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{0.4\textwidth}
+	\includegraphics[width=\linewidth]{test/Test#1-1.png}
+	\caption{Test #1 Part 1}
+	\label{fig:test#1-1}
+\end{subfigure}
+\begin{subfigure}{0.4\textwidth}
+	\includegraphics[width=\linewidth]{test/Test#1-2.png}
+	\caption{Test #1 Part 2}
+	\label{fig:test#1-2}
+\end{subfigure}
+\caption{Test #1}
+\label{fig:test#1}
+\end{figure}
+\newpage}
+
+\testedv{1}
+\testedvsub{2}
+\testedvsub{3}
+\testedv{4}
+\testedv{5}
+\testedv{6}
+\testedv{7}
+\testedv{8}
+\testedv{9}
+\testedv{10}
+\testedv{11}
+\testedvsub{12}
+\testedv{13}
+\testedv{14}
+\testedv{15}
+\testedv{16}
+\testedv{17}
+\testedv{18}
+\testedv{19}
+\testedv{20}
+\testedvsub{21}
+\testedv{22}
+\testedvsub{23}
+\testedvsub{24}
+\testedv{25}
+\testedv{26}
+\testedv{27}
+\testedv{28}
+\testedv{29}
+\testedv{30}
+\testedv{31}
+\testedvsub{32}
+\testedv{33}
+\testedv{34}
+\testedv{35}
+\testedv{36}
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{0.4\textwidth}
+	\includegraphics[width=\linewidth]{test/Test37-1.png}
+	\caption{Test 37 Part 1}
+	\label{fig:test37-1}
+\end{subfigure}
+\begin{subfigure}{0.4\textwidth}
+	\includegraphics[width=\linewidth]{test/Test37-2.png}
+	\caption{Test 37 Part 2}
+	\label{fig:test37-2}
+\end{subfigure}
+\begin{subfigure}{0.4\textwidth}
+	\includegraphics[width=\linewidth]{test/Test37-3.png}
+	\caption{Test 37 Part 3}
+	\label{fig:test37-3}
+\end{subfigure}
+\caption{Test 37}
+\label{fig:test37}
+\end{figure}
+\newpage
+\testedv{38}
+\testedv{39}
+
+
 \section{Evidence of Agile Approach}
 \label{sec:agileapp}
 
@@ -1289,6 +1524,12 @@ Be sure that the person is communicating with us to allow us time to adjust to l
 	\caption{GitHub Report project board before sprint 3}
 	\label{fig:agileapp-rb3}
 \end{subfigure}
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-report-3-after.png}
+	\caption{GitHub Report project board after sprint 3}
+	\label{fig:agileapp-ra3}
+\end{subfigure}
 
 \caption{GitHub report project boards for sprint 3}
 
@@ -1301,6 +1542,12 @@ Be sure that the person is communicating with us to allow us time to adjust to l
 	\includegraphics[width=1\linewidth]{git-code-3-before.png}
 	\caption{GitHub Code project board before sprint 3}
 	\label{fig:agileapp-cb3}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+	\centering	
+	\includegraphics[width=1\linewidth]{git-code-3-after.png}
+	\caption{GitHub Code project board after sprint 3}
+	\label{fig:agileapp-ca3}
 \end{subfigure}
 
 \caption{GitHub code project boards for sprint 3}
@@ -1377,7 +1624,7 @@ Gather articles for research and a short paragraph on what they're about
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{20th of Feburary, 2020}
+\subsubsection{20th of Feburary 2020}
 
 \begin{lstlisting}
 Minutes 20/02/2020
@@ -1414,7 +1661,7 @@ By next meeting:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{24th of Feburary, 2020}
+\subsubsection{24th of Feburary 2020}
 
 \begin{lstlisting}
 Minutes 24/02/2020
@@ -1435,7 +1682,7 @@ By next meeting:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{27th of Feburary, 2020}
+\subsubsection{27th of Feburary 2020}
 
 \begin{lstlisting}
 Minutes 27/02/2020
@@ -1467,7 +1714,7 @@ Potential Features list:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{2nd of March, 2020}
+\subsubsection{2nd of March 2020}
 
 \begin{lstlisting}
 02/03/20
@@ -1493,7 +1740,7 @@ Decided:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{5th of March, 2020}
+\subsubsection{5th of March 2020}
 
 \begin{lstlisting}
 Minutes 05/03/2020
@@ -1519,7 +1766,7 @@ Eddy, Fraser:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{10th of March, 2020}
+\subsubsection{10th of March 2020}
 
 \begin{lstlisting}
 Minutes 10/03/2020
@@ -1543,7 +1790,7 @@ For next meeting:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{13th of March, 2020 at 12:00}
+\subsubsection{13th of March 2020 at 12:00}
 
 \begin{lstlisting}
 Meeting Minutes 12:00 12/3/20
@@ -1565,7 +1812,7 @@ Before next meeting:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{13th of March, 2020 at 17:00}
+\subsubsection{13th of March 2020 at 17:00}
 
 \begin{lstlisting}
 Meeting Minutes 17:00 12/3/20
@@ -1590,7 +1837,7 @@ Before next meeting:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{16th of March, 2020}
+\subsubsection{16th of March 2020}
 
 \begin{lstlisting}
 Meeting Minutes 16-03-20
@@ -1615,7 +1862,7 @@ Before next meeting:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{19th of March, 2020}
+\subsubsection{19th of March 2020}
 
 \begin{lstlisting}
 Meeting Minutes 19-03-20
@@ -1639,7 +1886,7 @@ Before Next meeting:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{23rd of March, 2020}
+\subsubsection{23rd of March 2020}
 
 \begin{lstlisting}
 Minutes 23/03/2020
@@ -1658,7 +1905,7 @@ Key points:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{26th of March, 2020}
+\subsubsection{26th of March 2020}
 
 \begin{lstlisting}
 Minutes 26/03/2020
@@ -1677,7 +1924,7 @@ Key points:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{30th of March, 2020}
+\subsubsection{30th of March 2020}
 
 \begin{lstlisting}
 Minutes 30/03/2020
@@ -1695,7 +1942,7 @@ Key points:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{2nd of April, 2020}
+\subsubsection{2nd of April 2020}
 
 \begin{lstlisting}
 Minutes 02/04/2020
@@ -1718,7 +1965,7 @@ Key points:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{9th of April, 2020}
+\subsubsection{9th of April 2020}
 
 \begin{lstlisting}
 Minutes 09/04/2020
@@ -1737,7 +1984,7 @@ Key points:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{14th of April, 2020}
+\subsubsection{14th of April 2020}
 
 \begin{lstlisting}
 Minutes 14/04/2020
@@ -1756,7 +2003,7 @@ Key points:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{16th of April, 2020}
+\subsubsection{16th of April 2020}
 
 \begin{lstlisting}
 Minutes 16/04/2020
@@ -1780,7 +2027,7 @@ Key points:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{21st of  April, 2020}
+\subsubsection{21st of  April 2020}
 
 \begin{lstlisting}
 Minutes 21/04/2020
@@ -1801,7 +2048,7 @@ Key points:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{23rd of April, 2020}
+\subsubsection{23rd of April 2020}
 
 \begin{lstlisting}
 Minutes 23/04/2020
@@ -1818,7 +2065,7 @@ Key points:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{28th of April, 2020}
+\subsubsection{28th of April 2020}
 
 \begin{lstlisting}
 Minutes 28/04/2020
@@ -1837,7 +2084,7 @@ Key points:
 \end{lstlisting}
 
 \leavevmode \\
-\subsubsection{30th of April, 2020}
+\subsubsection{30th of April 2020}
 
 \begin{lstlisting}
 Minutes 30/04/2020
